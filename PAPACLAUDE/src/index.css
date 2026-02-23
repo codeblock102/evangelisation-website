@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-ivory text-slate font-sans antialiased overflow-x-hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-semibold;
+  }
+
+  .drama-serif {
+    @apply font-serif italic font-medium;
+  }
+
+  .data-mono {
+    @apply font-mono text-sm uppercase tracking-wider;
+  }
+}
+
+@layer utilities {
+  .clip-path-bottom {
+    clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
+  }
+}
+
+/* Global Noise Overlay */
+.noise-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.05;
+}
+
+/* Base interactive button styles */
+.magnetic-btn {
+  @apply relative overflow-hidden inline-flex items-center justify-center transition-transform duration-500 rounded-full;
+  /* cubic-bezier(0.25, 0.46, 0.45, 0.94) is approx easeOutQuart */
+  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.magnetic-btn:hover {
+  transform: scale(1.03);
+}
+/* Sliding background trick for button hover */
+.magnetic-btn::before {
+  content: "";
+  @apply absolute inset-0 bg-accent-light rounded-full transition-transform duration-500 z-0 origin-bottom;
+  transform: scaleY(0);
+}
+.magnetic-btn:hover::before {
+  transform: scaleY(1);
+}
+.magnetic-btn-text {
+  @apply relative z-10;
+}
+
+/* Card hover lifts */
+.lift-card {
+  @apply transition-all duration-300 hover:-translate-y-2 hover:shadow-xl;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-ivory;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-primary/20 rounded-full;
+}
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-primary/40;
+}
