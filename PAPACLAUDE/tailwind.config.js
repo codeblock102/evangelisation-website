@@ -4,11 +4,13 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: "#0D0D12",
-        accent: "#C9A84C",
-        ivory: "#FAF8F5",
-        slate: "#2A2A35",
-        "primary-light": "#1A1A22",
+        primary: "#2D6A4F", // Forest green
+        secondary: "#F5F0E8", // Warm beige
+        accent: "#C9A84C", // Soft gold
+        background: "#FAFAF7", // Off-white
+        text: "#1C1C1C", // Dark charcoal
+        "primary-light": "#3D7A5F",
+        "primary-dark": "#1D4A2F",
         "accent-light": "#E0C274",
         "accent-dark": "#A98A20",
       },

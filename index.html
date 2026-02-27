@@ -1,0 +1,1171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumière Congo | Carrying Light to the Heart of the Congo</title>
+    <meta name="description" content="Lumière Congo sends teams to evangelize remote villages in the Democratic Republic of Congo, bringing hope and light to communities in need.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* CSS Variables - Warm Earth Tone Palette */
+        :root {
+            --warm-ivory: #FAF8F5;
+            --warm-cream: #F5F1EB;
+            --terracotta: #C97D60;
+            --terracotta-dark: #B85D47;
+            --warm-amber: #D4A574;
+            --warm-amber-dark: #C8955A;
+            --dusty-rose: #D4A5A5;
+            --dusty-rose-dark: #C89595;
+            --text-dark: #3A2E2A;
+            --text-charcoal: #2A1F1B;
+            --terracotta-deep: #A04D35;
+        }
+
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            background-color: var(--warm-ivory);
+            line-height: 1.8;
+            overflow-x: hidden;
+            font-weight: 400;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 500;
+            line-height: 1.3;
+            color: var(--text-charcoal);
+            letter-spacing: 0.02em;
+        }
+
+        /* Grain Texture Overlay */
+        .grain-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.03;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(250, 248, 245, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 20px 40px;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--terracotta);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--terracotta);
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 15px 20px;
+            }
+            .nav-links {
+                gap: 15px;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Section Base Styles */
+        section {
+            position: relative;
+            padding: 80px 0;
+            width: 100%;
+        }
+
+        .section-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        @media (min-width: 768px) {
+            section {
+                padding: 90px 0;
+            }
+
+            .section-inner {
+                padding: 0 40px;
+            }
+        }
+
+        @media (min-width: 1280px) {
+            .section-inner,
+            .nav-container,
+            .footer-content {
+                max-width: 1400px;
+            }
+        }
+
+        /* Fade-in Animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            padding: 0;
+            max-width: 100%;
+            margin-top: 0;
+        }
+
+        /* Organic Blob Shapes */
+        .blob {
+            position: absolute;
+            border-radius: 50% 40% 60% 30%;
+            filter: blur(60px);
+            opacity: 0.4;
+            animation: float 20s ease-in-out infinite;
+        }
+
+        .blob-1 {
+            width: 400px;
+            height: 400px;
+            background: var(--terracotta);
+            top: 10%;
+            left: -10%;
+            animation-delay: 0s;
+        }
+
+        .blob-2 {
+            width: 350px;
+            height: 350px;
+            background: var(--warm-amber);
+            bottom: 10%;
+            right: -5%;
+            animation-delay: 5s;
+        }
+
+        .blob-3 {
+            width: 300px;
+            height: 300px;
+            background: var(--dusty-rose);
+            top: 50%;
+            right: 10%;
+            animation-delay: 10s;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+            33% {
+                transform: translate(30px, -30px) rotate(120deg);
+            }
+            66% {
+                transform: translate(-20px, 20px) rotate(240deg);
+            }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            max-width: 800px;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 9vw, 6rem);
+            font-weight: 400;
+            margin-bottom: 30px;
+            color: var(--text-charcoal);
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+        }
+
+        .hero-cta {
+            display: inline-block;
+            padding: 16px 40px;
+            background-color: var(--terracotta);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+            box-shadow: 0 4px 15px rgba(185, 93, 71, 0.3);
+        }
+
+        .hero-cta:hover {
+            background-color: var(--terracotta-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(185, 93, 71, 0.4);
+        }
+
+        /* Our Story Section */
+        .our-story {
+            background-color: var(--warm-cream);
+            position: relative;
+        }
+
+        .our-story::before {
+            content: '';
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: var(--terracotta);
+            border-radius: 50% 40% 60% 30%;
+            filter: blur(80px);
+            opacity: 0.15;
+            top: 10%;
+            right: 5%;
+            z-index: 0;
+        }
+
+        .our-story > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .story-media-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .story-photo-card {
+            position: relative;
+            flex: 1 1 260px;
+            min-height: 220px;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 14px 35px rgba(0, 0, 0, 0.16);
+            background-color: #D8C9BE;
+        }
+
+        .story-photo-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .story-photo-card--overlay {
+            transform: translateY(16px);
+        }
+
+        .story-photo-caption {
+            position: absolute;
+            left: 16px;
+            bottom: 16px;
+            padding: 8px 14px;
+            border-radius: 999px;
+            background-color: rgba(58, 46, 42, 0.85);
+            color: #fff;
+            font-size: 0.85rem;
+            letter-spacing: 0.03em;
+        }
+
+        .story-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        @media (min-width: 768px) {
+            .story-container {
+                grid-template-columns: 2fr 1fr;
+                gap: 60px;
+            }
+        }
+
+        .story-quote {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.8rem, 4vw, 3rem);
+            font-style: italic;
+            color: var(--terracotta);
+            line-height: 1.4;
+            font-weight: 300;
+        }
+
+        .story-text {
+            font-size: 1.15rem;
+            color: var(--text-dark);
+            line-height: 1.9;
+        }
+
+        /* What We Do Section */
+        .what-we-do {
+            background-color: var(--warm-ivory);
+            position: relative;
+        }
+
+        .what-we-do::after {
+            content: '';
+            position: absolute;
+            width: 250px;
+            height: 250px;
+            background: var(--warm-amber);
+            border-radius: 50% 40% 60% 30%;
+            filter: blur(90px);
+            opacity: 0.12;
+            bottom: 10%;
+            left: -5%;
+            z-index: 0;
+        }
+
+        .what-we-do > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .what-we-do h2 {
+            text-align: center;
+            font-size: clamp(2.8rem, 6vw, 4.2rem);
+            margin-bottom: 50px;
+            color: var(--terracotta);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 25px;
+        }
+
+        @media (min-width: 768px) {
+            .services-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .service-card {
+            background-color: var(--warm-cream);
+            padding: 40px 30px;
+            border-radius: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            background-color: #F8F4ED;
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: var(--terracotta);
+            font-weight: 500;
+        }
+
+        .service-card p {
+            color: var(--text-dark);
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        /* The People Section */
+        .the-people {
+            background-color: var(--warm-cream);
+            padding-bottom: 60px;
+            position: relative;
+        }
+
+        .the-people::before {
+            content: '';
+            position: absolute;
+            width: 180px;
+            height: 180px;
+            background: var(--dusty-rose);
+            border-radius: 50% 40% 60% 30%;
+            filter: blur(70px);
+            opacity: 0.15;
+            top: 20%;
+            left: 3%;
+            z-index: 0;
+        }
+
+        .the-people > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .the-people h2 {
+            text-align: center;
+            font-size: clamp(2.8rem, 6vw, 4.2rem);
+            margin-bottom: 40px;
+            color: var(--terracotta);
+        }
+
+        .people-scroll {
+            display: flex;
+            gap: 25px;
+            overflow-x: auto;
+            padding: 20px 0;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .people-scroll::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .people-scroll::-webkit-scrollbar-track {
+            background: var(--warm-cream);
+            border-radius: 10px;
+        }
+
+        .people-scroll::-webkit-scrollbar-thumb {
+            background: var(--terracotta);
+            border-radius: 10px;
+        }
+
+        .people-card {
+            flex: 0 0 280px;
+            height: 380px;
+            border-radius: 20px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            scroll-snap-align: start;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .people-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, var(--terracotta), var(--warm-amber));
+            opacity: 0.9;
+            z-index: 1;
+        }
+
+        .people-card:nth-child(2n)::before {
+            background: linear-gradient(135deg, var(--warm-amber), var(--dusty-rose));
+        }
+
+        .people-card:nth-child(3n)::before {
+            background: linear-gradient(135deg, var(--dusty-rose), var(--terracotta));
+        }
+
+        .people-card-content {
+            position: relative;
+            z-index: 2;
+            color: white;
+        }
+
+        .people-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 8px;
+            color: white;
+        }
+
+        .people-card .role {
+            font-size: 1rem;
+            opacity: 0.95;
+        }
+
+        /* Impact Numbers Section */
+        .impact-numbers {
+            background-color: var(--warm-ivory);
+            text-align: center;
+        }
+
+        .impact-numbers h2 {
+            font-size: clamp(2.8rem, 6vw, 4.2rem);
+            margin-bottom: 50px;
+            color: var(--terracotta);
+        }
+
+        .numbers-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 50px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        @media (min-width: 768px) {
+            .numbers-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 40px;
+            }
+        }
+
+        .number-item {
+            position: relative;
+        }
+
+        .number-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            bottom: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 2px;
+            background: var(--terracotta);
+            border-radius: 2px;
+        }
+
+        @media (min-width: 768px) {
+            .number-item:not(:last-child)::after {
+                right: -20px;
+                left: auto;
+                top: 50%;
+                bottom: auto;
+                transform: translateY(-50%);
+                width: 2px;
+                height: 60px;
+            }
+        }
+
+        .number-value {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(3.5rem, 7vw, 6rem);
+            font-weight: 500;
+            color: var(--terracotta);
+            margin-bottom: 10px;
+        }
+
+        .number-label {
+            font-size: 1.1rem;
+            color: var(--text-dark);
+            font-weight: 500;
+        }
+
+        /* Get Involved Section */
+        .get-involved {
+            background-color: var(--warm-cream);
+        }
+
+        .get-involved h2 {
+            text-align: center;
+            font-size: clamp(2.8rem, 6vw, 4.2rem);
+            margin-bottom: 50px;
+            color: var(--terracotta);
+        }
+
+        .involved-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        @media (min-width: 768px) {
+            .involved-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .involved-card {
+            background-color: var(--warm-ivory);
+            padding: 50px 40px;
+            border-radius: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .involved-card:hover {
+            background-color: #F8F4ED;
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .involved-card h3 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            color: var(--terracotta);
+            font-weight: 500;
+        }
+
+        .involved-card p {
+            color: var(--text-dark);
+            margin-bottom: 25px;
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        .involved-card .card-link {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--terracotta);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .involved-card .card-link:hover {
+            background-color: var(--terracotta-dark);
+            transform: translateY(-2px);
+        }
+
+        /* Mobile-specific tweaks */
+        @media (max-width: 480px) {
+            nav {
+                padding: 12px 16px;
+            }
+
+            .hero {
+                height: auto;
+                min-height: 80vh;
+                padding-top: 80px;
+                padding-bottom: 60px;
+            }
+
+            .hero-content {
+                padding: 0 16px;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+                line-height: 1.15;
+                margin-bottom: 20px;
+            }
+
+            .hero-cta {
+                padding: 12px 28px;
+                font-size: 0.98rem;
+            }
+
+            section {
+                padding: 60px 0;
+            }
+
+            .section-inner {
+                padding: 0 16px;
+            }
+
+            .story-media-row {
+                flex-direction: column;
+            }
+
+            .story-photo-card,
+            .story-photo-card--overlay {
+                min-height: 190px;
+                transform: none;
+            }
+
+            .services-grid {
+                gap: 20px;
+            }
+
+            .service-card {
+                padding: 30px 22px;
+            }
+
+            .the-people {
+                padding-bottom: 40px;
+            }
+
+            .people-card {
+                height: 320px;
+            }
+
+            .numbers-grid {
+                gap: 30px;
+            }
+
+            .involved-card {
+                padding: 36px 24px;
+            }
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--terracotta-deep);
+            color: white;
+            padding: 50px 20px 25px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-top {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        @media (min-width: 768px) {
+            .footer-top {
+                grid-template-columns: 2fr 1fr 1fr;
+            }
+        }
+
+        .footer-brand h3 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: white;
+        }
+
+        .footer-brand p {
+            opacity: 0.9;
+            line-height: 1.7;
+        }
+
+        .footer-nav h4 {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            color: white;
+        }
+
+        .footer-nav ul {
+            list-style: none;
+        }
+
+        .footer-nav li {
+            margin-bottom: 10px;
+        }
+
+        .footer-nav a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-nav a:hover {
+            color: white;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-icon:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .footer-verse {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .footer-verse p {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 1.3rem;
+            line-height: 1.6;
+            opacity: 0.95;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Grain Texture Overlay -->
+    <div class="grain-overlay"></div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">Lumière Congo</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="our-mission.html">Our Mission</a></li>
+                <li><a href="about-us.html">About Us</a></li>
+                <li><a href="donate.html">Donate</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+        <div class="hero-content fade-in">
+            <h1>Carrying Light to the Heart of the Congo</h1>
+            <a href="#get-involved" class="hero-cta">Join the Mission</a>
+        </div>
+    </section>
+
+    <!-- Our Story Section -->
+    <section class="our-story fade-in">
+        <div class="section-inner">
+            <div class="story-container">
+                <div>
+                    <p class="story-quote">"We go not because it is easy, but because the light must reach those who wait in darkness."</p>
+                </div>
+                <div>
+                    <p class="story-text">
+                        Lumière Congo was born from a simple calling: to bring the Gospel to remote villages in the Democratic Republic of Congo where hope is scarce and light is needed most. Our teams journey deep into the heart of Africa, building relationships, sharing truth, and planting seeds of faith that transform entire communities.
+                    </p>
+                    <p class="story-text" style="margin-top: 20px;">
+                        We believe that every person deserves to hear the message of hope in their own language and context. Through partnerships with local churches, community leaders, and dedicated volunteers, we've seen villages transformed—not just spiritually, but in their daily lives as well. The light we bring doesn't just illuminate; it transforms, heals, and restores.
+                    </p>
+                </div>
+            </div>
+
+            <div class="story-media-row">
+                <figure class="story-photo-card">
+                    <!-- TODO: Replace with real photo from a village outreach -->
+                    <img src="https://placehold.co/800x550?text=Village+Outreach+Photo" alt="Mission team sharing the Gospel in a village in Congo">
+                    <figcaption class="story-photo-caption">Village outreach deep in the Congo.</figcaption>
+                </figure>
+                <figure class="story-photo-card story-photo-card--overlay">
+                    <!-- TODO: Replace with real photo from a church gathering or prayer time -->
+                    <img src="https://placehold.co/720x520?text=Church+Gathering+Photo" alt="Local church gathering in a village with worship and prayer">
+                    <figcaption class="story-photo-caption">Local believers gathering for worship.</figcaption>
+                </figure>
+            </div>
+        </div>
+    </section>
+
+    <!-- What We Do Section -->
+    <section class="what-we-do fade-in">
+        <div class="section-inner">
+            <h2>What We Do</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">✝️</div>
+                    <h3>Evangelism</h3>
+                    <p>We share the Gospel through personal relationships, village gatherings, and one-on-one conversations, meeting people where they are with love and truth.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🤝</div>
+                    <h3>Community Building</h3>
+                    <p>Beyond words, we build lasting connections—supporting local churches, training leaders, and walking alongside communities in their journey of faith.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🙏</div>
+                    <h3>Prayer Support</h3>
+                    <p>Every mission is covered in prayer. We believe in the power of intercession and invite you to join us in lifting up these villages before the Lord. Our prayer network spans continents, connecting hearts across oceans to lift up the work God is doing in the Congo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The People Section -->
+    <section class="the-people fade-in">
+        <div class="section-inner">
+            <h2>The People</h2>
+            <div class="people-scroll">
+                <div class="people-card">
+                    <div class="people-card-content">
+                        <h3>Sarah Mitchell</h3>
+                        <p class="role">Missionary & Team Leader</p>
+                    </div>
+                </div>
+                <div class="people-card">
+                    <div class="people-card-content">
+                        <h3>James Kabila</h3>
+                        <p class="role">Local Coordinator</p>
+                    </div>
+                </div>
+                <div class="people-card">
+                    <div class="people-card-content">
+                        <h3>Marie Dubois</h3>
+                        <p class="role">Prayer Coordinator</p>
+                    </div>
+                </div>
+                <div class="people-card">
+                    <div class="people-card-content">
+                        <h3>David Ntumba</h3>
+                        <p class="role">Community Builder</p>
+                    </div>
+                </div>
+                <div class="people-card">
+                    <div class="people-card-content">
+                        <h3>Anna Thompson</h3>
+                        <p class="role">Missionary</p>
+                    </div>
+                </div>
+                <div class="people-card">
+                    <div class="people-card-content">
+                        <h3>Pierre Mwamba</h3>
+                        <p class="role">Translator & Guide</p>
+                    </div>
+                </div>
+                <div class="people-card">
+                    <div class="people-card-content">
+                        <h3>Rachel Kipanga</h3>
+                        <p class="role">Children's Ministry</p>
+                    </div>
+                </div>
+                <div class="people-card">
+                    <div class="people-card-content">
+                        <h3>Michael Banza</h3>
+                        <p class="role">Field Missionary</p>
+                    </div>
+                </div>
+                <div class="people-card">
+                    <div class="people-card-content">
+                        <h3>Grace Mubenga</h3>
+                        <p class="role">Medical Support</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Numbers Section -->
+    <section class="impact-numbers fade-in">
+        <div class="section-inner">
+            <h2>Our Impact</h2>
+            <div class="numbers-grid">
+                <div class="number-item">
+                    <div class="number-value" data-target="45">0</div>
+                    <div class="number-label">Villages Reached</div>
+                </div>
+                <div class="number-item">
+                    <div class="number-value" data-target="1200">0</div>
+                    <div class="number-label">People Baptised</div>
+                </div>
+                <div class="number-item">
+                    <div class="number-value" data-target="8">0</div>
+                    <div class="number-label">Years of Mission</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Get Involved Section -->
+    <section id="get-involved" class="get-involved fade-in">
+        <div class="section-inner">
+            <h2>Get Involved</h2>
+            <div class="involved-grid">
+                <div class="involved-card">
+                    <h3>Go on Mission</h3>
+                    <p>Join one of our mission teams and experience firsthand the joy of sharing the Gospel in remote villages. No experience required—just a willing heart. We provide training, support, and guidance every step of the way. Whether you can commit to a week or a month, your presence makes a difference.</p>
+                    <a href="about-us.html" class="card-link">Learn More</a>
+                </div>
+                <div class="involved-card">
+                    <h3>Give a Gift</h3>
+                    <p>Your financial support helps us reach more villages, train more leaders, and bring light to communities that have never heard the Good News. Every dollar goes directly to mission work—funding travel, resources, Bibles, and training materials that transform lives.</p>
+                    <a href="donate.html" class="card-link">Donate</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <h3>Lumière Congo</h3>
+                    <p>Carrying light to the heart of the Congo, one village at a time. Join us in bringing hope and truth to those who need it most.</p>
+                    <div class="footer-social">
+                        <a href="#" class="social-icon" aria-label="Facebook">f</a>
+                        <a href="#" class="social-icon" aria-label="Instagram">@</a>
+                        <a href="#" class="social-icon" aria-label="Email">✉</a>
+                    </div>
+                </div>
+                <div class="footer-nav">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="our-mission.html">Our Mission</a></li>
+                        <li><a href="about-us.html">About Us</a></li>
+                        <li><a href="donate.html">Donate</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                    </ul>
+                </div>
+                <div class="footer-nav">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="mailto:info@lumierecongo.org">info@lumierecongo.org</a></li>
+                        <li><a href="donate.html">Support Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-verse">
+                <p>"The light shines in the darkness, and the darkness has not overcome it."<br>— John 1:5</p>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Lumière Congo. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in elements
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Number counting animation
+        function animateNumber(element, target, duration = 2000) {
+            const start = 0;
+            const increment = target / (duration / 16); // 60fps
+            let current = start;
+
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    element.textContent = target + (target === 45 ? '+' : target === 1200 ? '+' : '');
+                    clearInterval(timer);
+                } else {
+                    element.textContent = Math.floor(current) + (target === 45 ? '+' : target === 1200 ? '+' : '');
+                }
+            }, 16);
+        }
+
+        // Observe number elements
+        const numberObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !entry.target.classList.contains('counted')) {
+                    entry.target.classList.add('counted');
+                    const target = parseInt(entry.target.getAttribute('data-target'));
+                    animateNumber(entry.target, target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('.number-value').forEach(el => {
+            numberObserver.observe(el);
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Initial hero fade-in
+        window.addEventListener('load', () => {
+            const heroContent = document.querySelector('.hero-content');
+            if (heroContent) {
+                setTimeout(() => {
+                    heroContent.classList.add('visible');
+                }, 100);
+            }
+        });
+    </script>
+</body>
+</html>

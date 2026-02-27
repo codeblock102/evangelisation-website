@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery | Lumière Congo</title>
+    <meta name="description" content="View images from our missions to remote villages in the Democratic Republic of Congo.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --warm-ivory: #FAF8F5;
+            --warm-cream: #F5F1EB;
+            --terracotta: #C97D60;
+            --terracotta-dark: #B85D47;
+            --warm-amber: #D4A574;
+            --warm-amber-dark: #C8955A;
+            --terracotta-deep: #A04D35;
+            --dusty-rose: #D4A5A5;
+            --dusty-rose-dark: #C89595;
+            --text-dark: #3A2E2A;
+            --text-charcoal: #2A1F1B;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            background-color: var(--warm-ivory);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 500;
+            line-height: 1.3;
+            color: var(--text-charcoal);
+            letter-spacing: 0.02em;
+        }
+
+        .grain-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.03;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(250, 248, 245, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 20px 40px;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--terracotta);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--terracotta);
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 15px 20px;
+            }
+            .nav-links {
+                gap: 15px;
+                font-size: 0.9rem;
+            }
+        }
+
+        .page-header {
+            margin-top: 80px;
+            padding: 90px 20px 50px;
+            text-align: center;
+            background: linear-gradient(135deg, var(--warm-cream), var(--warm-ivory));
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: var(--warm-amber);
+            border-radius: 50% 40% 60% 30%;
+            filter: blur(80px);
+            opacity: 0.2;
+            top: -100px;
+            left: -50px;
+        }
+
+        .page-header h1 {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            color: var(--text-dark);
+            max-width: 700px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        section {
+            padding: 70px 0;
+            width: 100%;
+        }
+
+        .section-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .gallery-section {
+            margin-bottom: 60px;
+        }
+
+        .gallery-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            text-align: center;
+            color: var(--terracotta);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        @media (min-width: 768px) {
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .gallery-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            aspect-ratio: 4 / 3;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .gallery-image {
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        /* Warm gradient placeholders for images */
+        .gallery-image.placeholder-1 {
+            background: linear-gradient(135deg, var(--terracotta), var(--warm-amber));
+        }
+
+        .gallery-image.placeholder-2 {
+            background: linear-gradient(135deg, var(--warm-amber), var(--dusty-rose));
+        }
+
+        .gallery-image.placeholder-3 {
+            background: linear-gradient(135deg, var(--dusty-rose), var(--terracotta));
+        }
+
+        .gallery-image.placeholder-4 {
+            background: linear-gradient(135deg, var(--terracotta-deep), var(--terracotta));
+        }
+
+        .gallery-image.placeholder-5 {
+            background: linear-gradient(135deg, var(--warm-amber), var(--terracotta-deep));
+        }
+
+        .gallery-image.placeholder-6 {
+            background: linear-gradient(135deg, var(--terracotta), var(--dusty-rose));
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+            padding: 30px 20px 20px;
+            color: white;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+
+        .gallery-overlay h3 {
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+            color: white;
+        }
+
+        .gallery-overlay p {
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Mobile-specific tweaks */
+        @media (max-width: 480px) {
+            .page-header {
+                padding: 80px 16px 40px;
+            }
+
+            .page-header h1 {
+                font-size: 2.1rem;
+            }
+
+            .page-header p {
+                font-size: 1rem;
+            }
+
+            .section-inner {
+                padding: 0 16px;
+            }
+
+            .gallery-section h2 {
+                font-size: 2.1rem;
+            }
+
+            .gallery-grid {
+                gap: 16px;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .section-inner {
+                padding: 0 40px;
+            }
+        }
+
+        @media (min-width: 1280px) {
+            .section-inner,
+            .nav-container,
+            .footer-content {
+                max-width: 1400px;
+            }
+        }
+
+        footer {
+            background-color: var(--terracotta-deep);
+            color: white;
+            padding: 50px 20px 25px;
+            margin-top: 70px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-top {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        @media (min-width: 768px) {
+            .footer-top {
+                grid-template-columns: 2fr 1fr 1fr;
+            }
+        }
+
+        .footer-brand h3 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: white;
+        }
+
+        .footer-brand p {
+            opacity: 0.9;
+            line-height: 1.7;
+        }
+
+        .footer-nav h4 {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            color: white;
+        }
+
+        .footer-nav ul {
+            list-style: none;
+        }
+
+        .footer-nav li {
+            margin-bottom: 10px;
+        }
+
+        .footer-nav a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-nav a:hover {
+            color: white;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-icon:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .footer-verse {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .footer-verse p {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 1.3rem;
+            line-height: 1.6;
+            opacity: 0.95;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="grain-overlay"></div>
+
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">Lumière Congo</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="our-mission.html">Our Mission</a></li>
+                <li><a href="about-us.html">About Us</a></li>
+                <li><a href="donate.html">Donate</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="page-header">
+        <h1>Gallery</h1>
+        <p>Moments from our missions to remote villages across the Congo</p>
+    </div>
+
+    <section class="fade-in">
+        <div class="section-inner">
+            <div class="gallery-section">
+                <h2>Villages We Serve</h2>
+                <div class="gallery-grid">
+                <div class="gallery-item">
+                    <div class="gallery-image placeholder-1"></div>
+                    <div class="gallery-overlay">
+                        <h3>Mwamba Village</h3>
+                        <p>Children gathering for Bible study in the village center</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image placeholder-2"></div>
+                    <div class="gallery-overlay">
+                        <h3>Kinshasa Outreach</h3>
+                        <p>Community members listening to the Gospel message</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image placeholder-3"></div>
+                    <div class="gallery-overlay">
+                        <h3>Eastern Province</h3>
+                        <p>Remote village accessible only by foot and canoe</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image placeholder-4"></div>
+                    <div class="gallery-overlay">
+                        <h3>Kasai Region</h3>
+                        <p>Village elders welcoming our mission team</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image placeholder-5"></div>
+                    <div class="gallery-overlay">
+                        <h3>River Community</h3>
+                        <p>Families along the Congo River hearing the Good News</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image placeholder-6"></div>
+                    <div class="gallery-overlay">
+                        <h3>Mountain Village</h3>
+                        <p>Highland community celebrating new church plant</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <section class="fade-in">
+        <div class="section-inner">
+            <div class="gallery-section">
+                <h2>Evangelists at Work</h2>
+                <div class="gallery-grid">
+                <div class="gallery-item">
+                    <div class="gallery-image placeholder-2"></div>
+                    <div class="gallery-overlay">
+                        <h3>Sharing the Gospel</h3>
+                        <p>Team member sharing the message of hope with villagers</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image placeholder-3"></div>
+                    <div class="gallery-overlay">
+                        <h3>Bible Study</h3>
+                        <p>Leading a small group Bible study in local language</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image placeholder-1"></div>
+                    <div class="gallery-overlay">
+                        <h3>Prayer Time</h3>
+                        <p>Praying with new believers after baptism</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image placeholder-4"></div>
+                    <div class="gallery-overlay">
+                        <h3>Discipleship</h3>
+                        <p>Training local leaders in evangelism and church planting</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image placeholder-5"></div>
+                    <div class="gallery-overlay">
+                        <h3>Worship Gathering</h3>
+                        <p>Village church service with singing and teaching</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image placeholder-6"></div>
+                    <div class="gallery-overlay">
+                        <h3>Baptism Celebration</h3>
+                        <p>Celebrating new believers being baptized in the river</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image placeholder-1"></div>
+                    <div class="gallery-overlay">
+                        <h3>Children's Ministry</h3>
+                        <p>Teaching children about Jesus through stories and songs</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image placeholder-2"></div>
+                    <div class="gallery-overlay">
+                        <h3>Community Building</h3>
+                        <p>Building relationships through shared meals and fellowship</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image placeholder-3"></div>
+                    <div class="gallery-overlay">
+                        <h3>Bible Distribution</h3>
+                        <p>Distributing Bibles in local languages to eager recipients</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image placeholder-4"></div>
+                    <div class="gallery-overlay">
+                        <h3>Worship Service</h3>
+                        <p>Sunday morning worship in a newly established church</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image placeholder-5"></div>
+                    <div class="gallery-overlay">
+                        <h3>Leadership Training</h3>
+                        <p>Training local pastors and church leaders in discipleship</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image placeholder-6"></div>
+                    <div class="gallery-overlay">
+                        <h3>Community Meal</h3>
+                        <p>Sharing meals and building relationships with villagers</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <h3>Lumière Congo</h3>
+                    <p>Carrying light to the heart of the Congo, one village at a time. Join us in bringing hope and truth to those who need it most.</p>
+                    <div class="footer-social">
+                        <a href="#" class="social-icon" aria-label="Facebook">f</a>
+                        <a href="#" class="social-icon" aria-label="Instagram">@</a>
+                        <a href="#" class="social-icon" aria-label="Email">✉</a>
+                    </div>
+                </div>
+                <div class="footer-nav">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="our-mission.html">Our Mission</a></li>
+                        <li><a href="about-us.html">About Us</a></li>
+                        <li><a href="donate.html">Donate</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                    </ul>
+                </div>
+                <div class="footer-nav">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="mailto:info@lumierecongo.org">info@lumierecongo.org</a></li>
+                        <li><a href="donate.html">Support Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-verse">
+                <p>"The light shines in the darkness, and the darkness has not overcome it."<br>— John 1:5</p>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Lumière Congo. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
