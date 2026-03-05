@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us | Lumière Congo</title>
-    <meta name="description" content="Learn about Lumière Congo's story, our team, and how we began our mission to bring light to the Congo.">
+    <meta name="description" content="Learn about Lumière Congo's story — our mission to bring the Gospel, education, and humanitarian aid to unreached communities across Cameroon.">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,17 +13,17 @@
     
     <style>
         :root {
-            --warm-ivory: #FAF8F5;
-            --warm-cream: #F5F1EB;
-            --terracotta: #C97D60;
-            --terracotta-dark: #B85D47;
-            --warm-amber: #D4A574;
-            --warm-amber-dark: #C8955A;
-            --terracotta-deep: #A04D35;
-            --dusty-rose: #D4A5A5;
-            --dusty-rose-dark: #C89595;
-            --text-dark: #3A2E2A;
-            --text-charcoal: #2A1F1B;
+            --warm-ivory: #F5F8FC;
+            --warm-cream: #EBF2FA;
+            --terracotta: #4A90D9;
+            --terracotta-dark: #3A7BC8;
+            --warm-amber: #6BB5E0;
+            --warm-amber-dark: #5AA0CC;
+            --terracotta-deep: #2C6FAC;
+            --dusty-rose: #A8D5E2;
+            --dusty-rose-dark: #8EC5D6;
+            --text-dark: #2A3444;
+            --text-charcoal: #1A2636;
         }
 
         * {
@@ -457,6 +457,122 @@
             opacity: 0.7;
             font-size: 0.9rem;
         }
+
+        /* Annual Highlights Section */
+        .annual-highlights {
+            background-color: var(--warm-ivory);
+        }
+
+        .annual-highlights-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .annual-highlights-header h2 {
+            font-size: clamp(2.4rem, 5vw, 3.6rem);
+            color: var(--terracotta);
+            margin-bottom: 12px;
+        }
+
+        .annual-highlights-header p {
+            font-size: 1.1rem;
+            color: var(--text-dark);
+            opacity: 0.8;
+        }
+
+        .highlights-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 28px;
+        }
+
+        @media (max-width: 768px) {
+            .highlights-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .highlight-card {
+            background-color: var(--warm-cream);
+            border-radius: 20px;
+            padding: 36px 32px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            border-top: 4px solid var(--terracotta);
+        }
+
+        .highlight-card:nth-child(2) {
+            border-top-color: var(--warm-amber);
+        }
+
+        .highlight-card:nth-child(3) {
+            border-top-color: var(--dusty-rose);
+        }
+
+        .highlight-card:nth-child(4) {
+            border-top-color: var(--terracotta-deep);
+        }
+
+        .highlight-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .highlight-card-icon {
+            font-size: 2.2rem;
+            margin-bottom: 14px;
+        }
+
+        .highlight-card h3 {
+            font-size: 1.7rem;
+            color: var(--terracotta);
+            margin-bottom: 16px;
+            font-weight: 500;
+        }
+
+        .highlight-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .highlight-card ul li {
+            position: relative;
+            padding-left: 22px;
+            margin-bottom: 12px;
+            font-size: 1rem;
+            line-height: 1.7;
+            color: var(--text-dark);
+        }
+
+        .highlight-card ul li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 10px;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: var(--terracotta);
+            opacity: 0.6;
+        }
+
+        .highlight-card:nth-child(2) ul li::before {
+            background-color: var(--warm-amber);
+        }
+
+        .highlight-card:nth-child(3) ul li::before {
+            background-color: var(--dusty-rose);
+        }
+
+        .highlight-card:nth-child(4) ul li::before {
+            background-color: var(--terracotta-deep);
+        }
+
+        @media (max-width: 480px) {
+            .highlight-card {
+                padding: 28px 22px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -467,7 +583,7 @@
             <a href="index.html" class="logo">Lumière Congo</a>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="our-mission.html">Our Mission</a></li>
+                <li><a href="get-involved.html">Get Involved</a></li>
                 <li><a href="about-us.html">About Us</a></li>
                 <li><a href="donate.html">Donate</a></li>
                 <li><a href="gallery.html">Gallery</a></li>
@@ -486,18 +602,16 @@
                 <div class="story-layout">
                     <div class="story-copy">
                         <h2>How We Began</h2>
-                        <p>Lumière Congo was born from a simple, profound calling. In 2017, a small group of believers felt compelled to go where few others were willing to travel—deep into the heart of the Democratic Republic of Congo, to villages that had never heard the name of Jesus.</p>
-                        <p>What started as a single mission trip has grown into a movement. Over the past eight years, we've seen God work in extraordinary ways—transforming not just individual lives, but entire communities. Villages that once lived in spiritual darkness now have thriving churches. Families that had no hope now know the love of Christ.</p>
-                        <p>Our approach has always been simple: go where the need is greatest, love people where they are, and trust God with the results. We don't have elaborate programs or complex strategies. We have the Gospel, willing hearts, and a commitment to walk alongside the people we serve.</p>
+                        <p>Lumière Congo grew out of Jubilee Apostolic Harvest Ministries — a calling placed on the heart of Brother Daniel to reach the unreached. What began as a burden for the families living in the jungles of Eastern Cameroon became a movement of evangelism, church planting, and humanitarian service that now spans multiple regions.</p>
+                        <p>From our headquarters church in Yaoundé, we send teams into the most remote areas of Cameroon — villages accessible only by foot through dense forest trails. In these communities, people have lived for generations without hearing the name of Jesus, without clean water, without schools, and without medical care. We go to them.</p>
+                        <p>Our approach has always been simple: go where the need is greatest, love people where they are, and trust God with the results. Through schools of evangelism, weekly outreach in Yaoundé neighborhoods, the Apostolic Bible College, children's music programs, and back-to-school scholarships, we walk alongside the people we serve — meeting both spiritual and physical needs.</p>
                     </div>
                     <div class="story-photo-column">
                         <div class="story-photo">
-                            <!-- TODO: Replace with real photo of the team in the Congo -->
-                            <img src="https://placehold.co/800x550?text=Founding+Team+in+Congo" alt="Founding team of Lumière Congo standing together in a village">
+                            <img src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?w=800&h=550&fit=crop" alt="Ministry team during an evangelism outreach in Cameroon">
                         </div>
                         <div class="story-photo story-photo--small">
-                            <!-- TODO: Replace with real photo of a remote village -->
-                            <img src="https://placehold.co/600x420?text=Remote+Village" alt="Remote Congolese village reached by the mission">
+                            <img src="https://images.unsplash.com/photo-1504432842672-1a79f78e4084?w=600&h=420&fit=crop" alt="Remote village in Eastern Cameroon reached by the mission">
                         </div>
                     </div>
                 </div>
@@ -517,66 +631,105 @@
         </div>
     </section>
 
+    <!-- 2023 Annual Highlights -->
+    <section class="annual-highlights fade-in">
+        <div class="section-inner">
+            <div class="annual-highlights-header">
+                <h2>2023 Annual Highlights</h2>
+                <p>A look back at what God accomplished through our ministry</p>
+            </div>
+            <div class="highlights-grid">
+                <div class="highlight-card">
+                    <div class="highlight-card-icon">✝️</div>
+                    <h3>Evangelism &amp; Church Planting</h3>
+                    <ul>
+                        <li>A school of evangelism and discipleship was held in the Eastern region during the first week of January 2023</li>
+                        <li>Seven villages were evangelized with over 300 souls won for the Lord</li>
+                        <li>Baptism of over 100 converts was slated for Easter</li>
+                        <li>Weekly Saturday evangelism outreach in the neighborhoods of Mefou-Assi, Etoa, and the Ahala food market in Yaound&eacute;</li>
+                        <li>New converts added weekly to the headquarters church, with a school of discipleship held every Thursday for follow-up</li>
+                    </ul>
+                </div>
+                <div class="highlight-card">
+                    <div class="highlight-card-icon">🌍</div>
+                    <h3>Missions</h3>
+                    <ul>
+                        <li><strong>Q1:</strong> Brother Daniel travelled to Dubai for the AWAKE Middle East prayers and leadership conference</li>
+                        <li><strong>Q2:</strong> Brother Daniel and wife traveled to the U.S. for missions and health-related matters</li>
+                        <li><strong>Q4:</strong> Special Christmas love feast outreaches and missions in the Eastern region of Cameroon</li>
+                    </ul>
+                </div>
+                <div class="highlight-card">
+                    <div class="highlight-card-icon">📚</div>
+                    <h3>Schools &amp; Training</h3>
+                    <ul>
+                        <li>The Apostolic Bible College (ABC) covered two-thirds of their second-level program</li>
+                        <li>The music school for kids registered 15 new students into the program</li>
+                    </ul>
+                </div>
+                <div class="highlight-card">
+                    <div class="highlight-card-icon">🎓</div>
+                    <h3>Caritas &amp; Education</h3>
+                    <ul>
+                        <li>Two orphans and two internally displaced young girls benefitted from the 2023 educational back-to-school sponsorship</li>
+                        <li>Scholarships covered registration, tuition, books, writing materials, and uniforms</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="fade-in">
         <div class="section-inner">
             <h2 style="text-align: center; font-size: 2.8rem; margin-bottom: 40px; color: var(--terracotta);">Our Team</h2>
             <div class="team-grid">
                 <div class="team-card">
                     <div class="team-avatar">
-                        <!-- TODO: Replace with real headshot -->
-                        <img src="https://placehold.co/160x160?text=Sarah" alt="Portrait of Sarah Mitchell">
+                        <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=160&h=160&fit=crop&crop=face" alt="Portrait of Brother Daniel">
                     </div>
-                    <h3>Sarah Mitchell</h3>
-                    <p class="role">Founder & Missionary</p>
-                    <p>Sarah felt called to the Congo after a life-changing mission trip in 2016. She has led over 20 missions and has a deep heart for seeing the Gospel transform remote communities.</p>
+                    <h3>Brother Daniel</h3>
+                    <p class="role">Founder &amp; Lead Missionary</p>
+                    <p>Brother Daniel is the founder of Jubilee Apostolic Harvest Ministries. He leads mission trips across Cameroon and internationally, from the AWAKE Middle East conference in Dubai to outreaches deep in the Eastern Cameroon jungles.</p>
                 </div>
                 <div class="team-card">
                     <div class="team-avatar">
-                        <img src="https://placehold.co/160x160?text=James" alt="Portrait of James Kabila">
+                        <img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=160&h=160&fit=crop&crop=face" alt="Portrait of Sister Daniel">
                     </div>
-                    <h3>James Kabila</h3>
-                    <p class="role">Local Coordinator</p>
-                    <p>James, a native of the DRC, bridges cultures and languages, ensuring our message is understood and received. His local knowledge and relationships are invaluable to our work.</p>
+                    <h3>Sister Daniel</h3>
+                    <p class="role">Co-Missionary &amp; Ministry Partner</p>
+                    <p>Sister Daniel serves alongside her husband in every aspect of the ministry — from traveling on international mission trips to supporting the headquarters church in Yaound&eacute; and caring for the communities they serve.</p>
                 </div>
                 <div class="team-card">
                     <div class="team-avatar">
-                        <img src="https://placehold.co/160x160?text=Marie" alt="Portrait of Marie Dubois">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=160&h=160&fit=crop&crop=face" alt="Apostolic Bible College Director">
                     </div>
-                    <h3>Marie Dubois</h3>
-                    <p class="role">Prayer Coordinator</p>
-                    <p>Marie organizes prayer teams and intercessory support for every mission. She believes that prayer is the unseen foundation of all visible ministry.</p>
+                    <h3>ABC Director</h3>
+                    <p class="role">Apostolic Bible College</p>
+                    <p>Leads the Apostolic Bible College (ABC) training program, equipping students with deep Biblical knowledge and preparing them for ministry. The college has completed two-thirds of its second-level curriculum.</p>
                 </div>
                 <div class="team-card">
                     <div class="team-avatar">
-                        <img src="https://placehold.co/160x160?text=David" alt="Portrait of David Ntumba">
+                        <img src="https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=160&h=160&fit=crop&crop=face" alt="Music School Coordinator">
                     </div>
-                    <h3>David Ntumba</h3>
-                    <p class="role">Community Builder</p>
-                    <p>David focuses on discipleship and training local leaders. He helps establish Bible study groups and ensures new believers have ongoing support and growth opportunities.</p>
+                    <h3>Music School Lead</h3>
+                    <p class="role">Children's Music Program</p>
+                    <p>Oversees the music school for children, nurturing young talent and using music as a bridge to share the Gospel. In 2023, 15 new children were registered into the program.</p>
                 </div>
                 <div class="team-card">
                     <div class="team-avatar">
-                        <img src="https://placehold.co/160x160?text=Rachel" alt="Portrait of Rachel Kipanga">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=160&h=160&fit=crop&crop=face" alt="Eastern Region Coordinator">
                     </div>
-                    <h3>Rachel Kipanga</h3>
-                    <p class="role">Children's Ministry Director</p>
-                    <p>Rachel has a special heart for children and has developed programs that teach the Gospel in ways children can understand and embrace. Her work has touched hundreds of young lives.</p>
+                    <h3>Eastern Region Lead</h3>
+                    <p class="role">Branch Coordinator — Eastern Cameroon</p>
+                    <p>Coordinates all ministry activities at the Eastern Cameroon branch — from village evangelism and the "Let There Be Light" project to building construction and community outreach in the surrounding jungle villages.</p>
                 </div>
                 <div class="team-card">
                     <div class="team-avatar">
-                        <img src="https://placehold.co/160x160?text=Michael" alt="Portrait of Michael Banza">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=160&h=160&fit=crop&crop=face" alt="Education Sponsorship Coordinator">
                     </div>
-                    <h3>Michael Banza</h3>
-                    <p class="role">Field Missionary</p>
-                    <p>Michael travels extensively throughout the Congo, often to the most remote areas. His dedication and willingness to go where others cannot has opened doors to many unreached villages.</p>
-                </div>
-                <div class="team-card">
-                    <div class="team-avatar">
-                        <img src="https://placehold.co/160x160?text=Grace" alt="Portrait of Grace Mubenga">
-                    </div>
-                    <h3>Grace Mubenga</h3>
-                    <p class="role">Medical Coordinator</p>
-                    <p>Grace combines her medical training with her faith, providing healthcare while sharing the love of Christ. Her work has been instrumental in building trust in many communities.</p>
+                    <h3>Education Coordinator</h3>
+                    <p class="role">Back-to-School Scholarship Program</p>
+                    <p>Manages the scholarship program that sponsors orphans, displaced children, and students in need — from nursery through university. In 2024, all 12 sponsored students were promoted to their next grade.</p>
                 </div>
             </div>
         </div>
@@ -587,7 +740,7 @@
             <div class="footer-top">
                 <div class="footer-brand">
                     <h3>Lumière Congo</h3>
-                    <p>Carrying light to the heart of the Congo, one village at a time. Join us in bringing hope and truth to those who need it most.</p>
+                    <p>Carrying light to the heart of Cameroon, one village at a time. Join us in bringing hope and truth to those who need it most.</p>
                     <div class="footer-social">
                         <a href="#" class="social-icon" aria-label="Facebook">f</a>
                         <a href="#" class="social-icon" aria-label="Instagram">@</a>
@@ -598,7 +751,7 @@
                     <h4>Navigation</h4>
                     <ul>
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="our-mission.html">Our Mission</a></li>
+                        <li><a href="get-involved.html">Get Involved</a></li>
                         <li><a href="about-us.html">About Us</a></li>
                         <li><a href="donate.html">Donate</a></li>
                         <li><a href="gallery.html">Gallery</a></li>

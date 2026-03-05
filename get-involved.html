@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Mission | Lumière Congo</title>
-    <meta name="description" content="Learn about Lumière Congo's mission to bring the Gospel to remote villages in the Democratic Republic of Congo.">
+    <title>Get Involved | Lumière Congo</title>
+    <meta name="description" content="Learn about Lumière Congo's initiatives in Cameroon — evangelism, building projects, clean water wells, education, and more. See how you can get involved.">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,19 +15,19 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
     
     <style>
-        /* CSS Variables - Warm Earth Tone Palette */
+        /* CSS Variables - Light Blue Palette */
         :root {
-            --warm-ivory: #FAF8F5;
-            --warm-cream: #F5F1EB;
-            --terracotta: #C97D60;
-            --terracotta-dark: #B85D47;
-            --warm-amber: #D4A574;
-            --warm-amber-dark: #C8955A;
-            --terracotta-deep: #A04D35;
-            --dusty-rose: #D4A5A5;
-            --dusty-rose-dark: #C89595;
-            --text-dark: #3A2E2A;
-            --text-charcoal: #2A1F1B;
+            --warm-ivory: #F5F8FC;
+            --warm-cream: #EBF2FA;
+            --terracotta: #4A90D9;
+            --terracotta-dark: #3A7BC8;
+            --warm-amber: #6BB5E0;
+            --warm-amber-dark: #5AA0CC;
+            --terracotta-deep: #2C6FAC;
+            --dusty-rose: #A8D5E2;
+            --dusty-rose-dark: #8EC5D6;
+            --text-dark: #2A3444;
+            --text-charcoal: #1A2636;
         }
 
         * {
@@ -602,7 +602,7 @@
         .leaflet-control-zoom a {
             background-color: var(--warm-cream);
             color: var(--terracotta);
-            border: 1px solid rgba(201, 125, 96, 0.3);
+            border: 1px solid rgba(74, 144, 217, 0.3);
         }
 
         .leaflet-control-zoom a:hover {
@@ -665,6 +665,164 @@
         .zone-popup .zone-info div {
             margin-bottom: 8px;
         }
+
+        /* Financial Partner Section */
+        .financial-partner {
+            background: linear-gradient(135deg, var(--terracotta-deep) 0%, var(--terracotta) 50%, var(--warm-amber) 100%);
+            padding: 100px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .financial-partner::before {
+            content: '';
+            position: absolute;
+            top: -80px;
+            right: -80px;
+            width: 350px;
+            height: 350px;
+            background: rgba(255, 255, 255, 0.06);
+            border-radius: 50%;
+        }
+
+        .financial-partner::after {
+            content: '';
+            position: absolute;
+            bottom: -60px;
+            left: -60px;
+            width: 280px;
+            height: 280px;
+            background: rgba(255, 255, 255, 0.04);
+            border-radius: 50%;
+        }
+
+        .fp-inner {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .fp-accent {
+            width: 60px;
+            height: 3px;
+            background: rgba(255, 255, 255, 0.6);
+            margin: 0 auto 30px;
+            border-radius: 3px;
+        }
+
+        .fp-inner h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2.4rem, 5vw, 3.8rem);
+            color: white;
+            font-weight: 500;
+            margin-bottom: 25px;
+            letter-spacing: 0.02em;
+        }
+
+        .fp-inner > p {
+            color: rgba(255, 255, 255, 0.92);
+            font-size: 1.15rem;
+            line-height: 1.9;
+            max-width: 700px;
+            margin: 0 auto 50px;
+        }
+
+        .fp-features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-bottom: 50px;
+        }
+
+        .fp-feature {
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(6px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            border-radius: 18px;
+            padding: 32px 20px;
+            transition: all 0.3s ease;
+        }
+
+        .fp-feature:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-4px);
+        }
+
+        .fp-feature-icon {
+            font-size: 2.4rem;
+            margin-bottom: 14px;
+        }
+
+        .fp-feature h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            color: white;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .fp-feature p {
+            color: rgba(255, 255, 255, 0.82);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .fp-cta-btn {
+            display: inline-block;
+            padding: 18px 50px;
+            background: white;
+            color: var(--terracotta-deep);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
+            letter-spacing: 0.02em;
+        }
+
+        .fp-cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.2);
+            background: var(--warm-ivory);
+        }
+
+        .fp-verse {
+            margin-top: 50px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.2rem;
+            font-style: italic;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .financial-partner {
+                padding: 70px 20px;
+            }
+
+            .fp-features {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            .fp-feature {
+                padding: 24px 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .financial-partner {
+                padding: 60px 16px;
+            }
+
+            .fp-cta-btn {
+                padding: 14px 36px;
+                font-size: 1rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -676,7 +834,7 @@
             <a href="index.html" class="logo">Lumière Congo</a>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="our-mission.html">Our Mission</a></li>
+                <li><a href="get-involved.html">Get Involved</a></li>
                 <li><a href="about-us.html">About Us</a></li>
                 <li><a href="donate.html">Donate</a></li>
                 <li><a href="gallery.html">Gallery</a></li>
@@ -686,124 +844,173 @@
 
     <!-- Page Header -->
     <div class="page-header">
-        <h1>Our Mission</h1>
-        <p>Bringing the light of the Gospel to remote villages across the Democratic Republic of Congo</p>
+        <h1>Get Involved</h1>
+        <p>Evangelism, humanitarian projects, and community development across Cameroon — discover the projects that are transforming lives and how you can be a part of it</p>
     </div>
 
-    <!-- Mission Content -->
+    <!-- Project Content -->
     <section class="fade-in">
         <div class="section-inner">
             <div class="mission-content">
+                <!-- Project 1 -->
                 <div class="mission-card">
                     <div class="mission-image">
-                        <!-- TODO: Replace with real photo from an evangelism trip -->
-                        <img src="https://placehold.co/900x600?text=Evangelism+Trip+Photo" alt="Sharing the Gospel with a group in a Congolese village">
+                        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=900&h=600&fit=crop" alt="Church building under construction in Cameroon">
+                    </div>
+                    <div class="icon">🏗️</div>
+                    <h2>Building Project</h2>
+                    <p>Across the Eastern region of Cameroon, many communities lack basic infrastructure — no permanent churches, no meeting halls, and no safe gathering spaces. Our Building Project constructs durable structures where communities can worship, hold Bible studies, and come together for fellowship.</p>
+                    <p>These buildings become the heart of each village — a visible sign of hope and a foundation for long-term spiritual growth. Each project is built in partnership with local believers who contribute labor and materials, ensuring ownership and sustainability.</p>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="mission-card">
+                    <div class="mission-image">
+                        <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=900&h=600&fit=crop" alt="Evangelism outreach in surrounding villages of Eastern Cameroon">
                     </div>
                     <div class="icon">✝️</div>
-                    <h2>Evangelism</h2>
-                    <p>Our primary calling is to share the Good News of Jesus Christ with those who have never heard. We journey to remote villages, often accessible only by foot or canoe, to bring the message of hope and salvation.</p>
-                    <p>We believe that every person deserves to hear the Gospel in their own language and context. Our teams work alongside local translators and community leaders to ensure the message is understood and received with love.</p>
+                    <h2>Evangelize 138 Surrounding Villages</h2>
+                    <p>In the jungles of Eastern Cameroon, 138 villages surrounding our base have never heard the Gospel. Many of these communities are only accessible by foot through dense forest trails. Our evangelism teams travel village to village, spending days in each community — sharing the message of Jesus through personal conversations, open-air gatherings, and film screenings.</p>
+                    <p>In January 2023 alone, our school of evangelism in the Eastern region reached seven villages with over 300 souls won for the Lord. Every Saturday, our headquarters church in Yaoundé conducts outreach in the neighborhoods of Mefou-Assi, Etoa, and the Ahala food market, adding new converts weekly.</p>
                 </div>
-            <div class="mission-card">
-                    <div class="mission-image">
-                        <!-- TODO: Replace with real photo of community building or fellowship -->
-                        <img src="https://placehold.co/900x600?text=Community+Building+Photo" alt="Community members gathered together in fellowship">
-                    </div>
-                    <div class="icon">🤝</div>
-                    <h2>Community Building</h2>
-                    <p>Evangelism is not just about words—it's about building lasting relationships. We invest in communities by training local leaders, supporting new churches, and walking alongside believers as they grow in their faith.</p>
-                    <p>We help establish Bible study groups, provide discipleship materials, and create networks of support so that new believers can continue to grow even after our teams return home.</p>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <section class="fade-in">
-        <div class="section-inner">
-            <div class="quote-block">
-                <p>"Go into all the world and preach the gospel to all creation."</p>
-                <cite>— Mark 16:15</cite>
-            </div>
-        </div>
-    </section>
+                <!-- Project 3 -->
+                <div class="mission-card">
+                    <div class="mission-image">
+                        <img src="https://images.unsplash.com/photo-1594398901394-4e34939a02eb?w=900&h=600&fit=crop" alt="Community water well providing clean drinking water">
+                    </div>
+                    <div class="icon">💧</div>
+                    <h2>Dig Drinking Water Wells</h2>
+                    <p>In the remote villages of Eastern Cameroon, families walk hours to collect water from rivers and streams — water that often carries disease. Waterborne illness is one of the leading causes of child mortality in these communities. Our well-digging initiative provides clean, safe drinking water directly within village reach.</p>
+                    <p>Each well serves an entire community, dramatically reducing illness and freeing women and children from daily water-fetching journeys. Clean water opens the door for trust, deeper relationships, and the opportunity to share the Gospel with communities that have been overlooked.</p>
+                </div>
 
-    <section class="fade-in">
-        <div class="section-inner">
-            <div class="mission-content">
-            <div class="mission-card">
+                <!-- Project 4 -->
+                <div class="mission-card">
                     <div class="mission-image">
-                        <!-- TODO: Replace with real photo of prayer and support -->
-                        <img src="https://placehold.co/900x600?text=Prayer+Gathering+Photo" alt="Team and villagers praying together">
-                    </div>
-                    <div class="icon">🙏</div>
-                    <h2>Prayer & Support</h2>
-                    <p>Every mission is covered in prayer. We believe that prayer is the foundation of all effective ministry. Before, during, and after each trip, we commit to interceding for the villages we visit, the people we meet, and the seeds of faith being planted.</p>
-                    <p>We also provide ongoing support to the communities we serve, maintaining relationships through regular communication, follow-up visits, and continued prayer partnerships.</p>
-                </div>
-            <div class="mission-card">
-                    <div class="mission-image">
-                        <!-- TODO: Replace with real photo illustrating sustainable impact -->
-                        <img src="https://placehold.co/900x600?text=Sustainable+Impact+Photo" alt="Village church and community growing together">
-                    </div>
-                    <div class="icon">🌱</div>
-                    <h2>Sustainable Impact</h2>
-                    <p>Our goal is not just to visit, but to see lasting transformation. We work to ensure that the Gospel takes root in each community, growing into strong, self-sustaining churches that can continue the work long after we're gone.</p>
-                    <p>We train local leaders, provide resources, and create systems of accountability so that the light we bring continues to shine long into the future. Each village we serve becomes a beacon of hope, radiating the love of Christ to neighboring communities.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="fade-in">
-        <div class="section-inner">
-            <div class="mission-content">
-            <div class="mission-card">
-                    <div class="mission-image">
-                        <!-- TODO: Replace with real photo of Bible distribution -->
-                        <img src="https://placehold.co/900x600?text=Bible+Distribution+Photo" alt="People receiving Bibles in their own language">
-                    </div>
-                    <div class="icon">📖</div>
-                    <h2>Bible Translation & Distribution</h2>
-                    <p>We believe that everyone should have access to God's Word in their own language. Our teams work with local translators to provide Bibles and study materials in languages spoken throughout the Congo.</p>
-                    <p>Over the past eight years, we've distributed thousands of Bibles, many to people who had never owned one before. These Bibles become treasured possessions, read daily and shared within families and communities.</p>
-                </div>
-            <div class="mission-card">
-                    <div class="mission-image">
-                        <!-- TODO: Replace with real photo of medical or practical care -->
-                        <img src="https://placehold.co/900x600?text=Medical+Care+Photo" alt="Providing medical and practical care in a village">
+                        <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=900&h=600&fit=crop" alt="Healthcare and medical support in rural Cameroon">
                     </div>
                     <div class="icon">🏥</div>
-                    <h2>Medical & Practical Care</h2>
-                    <p>While our primary mission is spiritual, we recognize that meeting physical needs opens doors for the Gospel. We provide basic medical care, clean water initiatives, and support for education where possible.</p>
-                    <p>These practical expressions of love demonstrate that our faith is not just words, but action. They build trust, create relationships, and show the tangible love of Christ to those we serve.</p>
+                    <h2>Build a Health Center</h2>
+                    <p>The nearest medical facility for many Eastern Cameroon villages is a full day's journey away. Mothers give birth without medical support, children suffer from treatable illnesses, and preventable diseases claim lives that could be saved. Our health center project will bring basic medical care — consultations, maternal health, first aid, and disease prevention — directly to these underserved communities.</p>
+                    <p>Beyond healthcare, the center will serve as a hub for health education, nutrition programs, and community wellness. Meeting physical needs with compassion opens hearts to the message of the Gospel and demonstrates Christ's love in action.</p>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="mission-card">
+                    <div class="mission-image">
+                        <img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=900&h=600&fit=crop" alt="Children at a primary school in Cameroon">
+                    </div>
+                    <div class="icon">🏫</div>
+                    <h2>Build a Primary School</h2>
+                    <p>Most children in the remote villages of Eastern Cameroon have no access to formal education. Without a school nearby, they grow up without literacy, without opportunity, and without the tools to break the cycle of poverty. Our primary school project will give these children their first chance at education — a safe place to learn, grow, and dream.</p>
+                    <p>Through our existing Back-to-School Scholarship program, we already sponsor 25 children across nursery, primary, secondary, and university levels. Building a dedicated school will multiply that impact, reaching hundreds of children and training the next generation of community leaders.</p>
+                </div>
+
+                <!-- Project 6: Let There Be Light -->
+                <div class="mission-card">
+                    <div class="mission-image">
+                        <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=900&h=600&fit=crop" alt="Solar torchlight bringing light to families in Eastern Cameroon">
+                    </div>
+                    <div class="icon">🔦</div>
+                    <h2>"Let There Be Light" Project</h2>
+                    <p style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.15rem; color: var(--terracotta); margin-bottom: 18px;">"The people which sat in darkness saw great light; and to them which sat in the region and shadow of death light is sprung up." — Matthew 4:16</p>
+                    <p>A strategic evangelistic outreach to unreached families in the jungles of the Eastern region of Cameroon. Each family receives a solar torchlight at the end of every evangelistic visit — bringing both spiritual and physical light.</p>
+                    <p><strong>Objectives:</strong> Soul winning, discipleship, and implementation of good works.</p>
+                    <p><strong>How you can partner:</strong></p>
+                    <p style="padding-left: 10px;">🙏 <strong>Spiritually</strong> — Pray and fast for the success of the project<br>
+                    📦 <strong>Materially</strong> — Provide family-size solar torchlights<br>
+                    💰 <strong>Financially</strong> — Sponsor a torchlight at <strong>$30 USD</strong> (15,000 FCFA) per family</p>
+                    <p style="margin-top: 16px; font-size: 0.95rem; opacity: 0.85;">Contact: (00237) 678343805 &bull; 677727884 &bull; 697020291</p>
+                </div>
+
+                <!-- Project 7: Back-to-School Scholarship -->
+                <div class="mission-card">
+                    <div class="mission-image">
+                        <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=900&h=600&fit=crop" alt="Students benefitting from back-to-school scholarships in Cameroon">
+                    </div>
+                    <div class="icon">🎓</div>
+                    <h2>Back-to-School Scholarship Program</h2>
+                    <p>Our scholarship program provides education for orphans, internally displaced children, and those in need. In 2024, we sponsored 12 students — all of whom were promoted to their next grade. Praise the Lord!</p>
+                    <p><strong>2025/2026 Sponsorship Tiers:</strong></p>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 16px 0;">
+                        <div style="background: rgba(74, 144, 217, 0.08); padding: 14px; border-radius: 12px; text-align: center;">
+                            <div style="font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; color: var(--terracotta); font-weight: 600;">$200</div>
+                            <div style="font-size: 0.9rem; color: var(--text-dark);">Nursery School</div>
+                        </div>
+                        <div style="background: rgba(107, 181, 224, 0.1); padding: 14px; border-radius: 12px; text-align: center;">
+                            <div style="font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; color: var(--warm-amber-dark); font-weight: 600;">$300</div>
+                            <div style="font-size: 0.9rem; color: var(--text-dark);">Primary School</div>
+                        </div>
+                        <div style="background: rgba(168, 213, 226, 0.1); padding: 14px; border-radius: 12px; text-align: center;">
+                            <div style="font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; color: var(--dusty-rose-dark); font-weight: 600;">$400</div>
+                            <div style="font-size: 0.9rem; color: var(--text-dark);">Secondary School</div>
+                        </div>
+                        <div style="background: rgba(44, 111, 172, 0.08); padding: 14px; border-radius: 12px; text-align: center;">
+                            <div style="font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; color: var(--terracotta-deep); font-weight: 600;">$500</div>
+                            <div style="font-size: 0.9rem; color: var(--text-dark);">University</div>
+                        </div>
+                    </div>
+                    <p>Each scholarship covers registration, tuition, books and writing materials, a pair of uniforms, pullover, and sportswear.</p>
+                    <p><strong>25 children</strong> are trusting the Lord for a scholarship for the 2025/2026 school year. Your seed of love can change a child's future.</p>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Financial Partner Section -->
+    <section class="financial-partner fade-in">
+        <div class="fp-inner">
+            <div class="fp-accent"></div>
+            <h2>Become a Financial Partner</h2>
+            <p>Your ongoing support fuels every mission — sending teams, providing Bibles, digging wells, and building schools and health centers. Together, we can reach more communities and see lasting transformation.</p>
+
+            <div class="fp-features">
+                <div class="fp-feature">
+                    <div class="fp-feature-icon">💛</div>
+                    <h3>Monthly Giving</h3>
+                    <p>Provide consistent, reliable support that allows us to plan ahead and sustain long-term projects.</p>
+                </div>
+                <div class="fp-feature">
+                    <div class="fp-feature-icon">🎁</div>
+                    <h3>One-Time Gift</h3>
+                    <p>Make an immediate impact with a single contribution toward a specific project or general mission work.</p>
+                </div>
+                <div class="fp-feature">
+                    <div class="fp-feature-icon">⛪</div>
+                    <h3>Church Partnership</h3>
+                    <p>Partner as a church or organization to sponsor an entire village project or mission trip.</p>
+                </div>
+            </div>
+
+            <a href="donate.html" class="fp-cta-btn">Partner With Us</a>
+
+            <p class="fp-verse">"Each of you should give what you have decided in your heart to give, not reluctantly or under compulsion, for God loves a cheerful giver."<br>— 2 Corinthians 9:7</p>
         </div>
     </section>
 
     <!-- Interactive Map Section -->
     <section class="map-section fade-in">
         <div class="section-inner">
-            <h2>Our Footprint in the Congo</h2>
-            <p>Explore the villages across the Democratic Republic of Congo where we've shared the Gospel and planted churches. The map shows four evangelism zones where our teams have worked. Click on zone areas or village markers to learn more about our impact in each region.</p>
+            <h2>Our Footprint in Cameroon</h2>
+            <p>Explore the villages across Cameroon where we've shared the Gospel and planted churches. The map shows four evangelism zones where our teams have worked. Click on zone areas or village markers to learn more about our impact in each region.</p>
 
-            <div class="map-photo-strip" aria-label="Photos from missions across the Congo">
-                <!-- TODO: Replace placeholders with real mission photos -->
+            <div class="map-photo-strip" aria-label="Photos from missions across Cameroon">
                 <div class="map-photo-thumb">
-                    <img src="https://placehold.co/400x280?text=Village+Baptisms" alt="Baptisms taking place in a village river">
+                    <img src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?w=400&h=280&fit=crop" alt="Baptisms during a village outreach in Cameroon">
                     <span>Baptisms</span>
                 </div>
                 <div class="map-photo-thumb">
-                    <img src="https://placehold.co/400x280?text=Children%27s+Ministry" alt="Children gathered for Bible teaching and songs">
+                    <img src="https://images.unsplash.com/photo-1529390079861-591de354faf5?w=400&h=280&fit=crop" alt="Children gathered for Bible teaching and songs">
                     <span>Children's Ministry</span>
                 </div>
                 <div class="map-photo-thumb">
-                    <img src="https://placehold.co/400x280?text=New+Church+Plant" alt="Newly built village church with believers outside">
-                    <span>New Church Plant</span>
+                    <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=400&h=280&fit=crop" alt="Church building constructed for village believers">
+                    <span>Church Construction</span>
                 </div>
                 <div class="map-photo-thumb">
-                    <img src="https://placehold.co/400x280?text=Medical+Care" alt="Providing medical care to villagers in need">
-                    <span>Medical Care</span>
+                    <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=400&h=280&fit=crop" alt="Providing medical care to villagers in need">
+                    <span>Medical Outreach</span>
                 </div>
             </div>
 
@@ -817,7 +1024,7 @@
             <div class="footer-top">
                 <div class="footer-brand">
                     <h3>Lumière Congo</h3>
-                    <p>Carrying light to the heart of the Congo, one village at a time. Join us in bringing hope and truth to those who need it most.</p>
+                    <p>Carrying light to the heart of Cameroon, one village at a time. Join us in bringing hope and truth to those who need it most.</p>
                     <div class="footer-social">
                         <a href="#" class="social-icon" aria-label="Facebook">f</a>
                         <a href="#" class="social-icon" aria-label="Instagram">@</a>
@@ -828,7 +1035,7 @@
                     <h4>Navigation</h4>
                     <ul>
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="our-mission.html">Our Mission</a></li>
+                        <li><a href="get-involved.html">Get Involved</a></li>
                         <li><a href="about-us.html">About Us</a></li>
                         <li><a href="donate.html">Donate</a></li>
                         <li><a href="gallery.html">Gallery</a></li>
@@ -875,30 +1082,30 @@
         // Zone Definitions
         const zones = {
             zone1: {
-                name: "Kinshasa & Western",
-                color: "#C97D60", // Terracotta
-                provinces: ["Kinshasa", "Kongo-Central", "Kwilu"],
+                name: "South & Littoral",
+                color: "#4A90D9", // Light Blue
+                provinces: ["South", "Littoral", "South West"],
                 years: [2018, 2022],
                 villages: []
             },
             zone2: {
-                name: "Eastern Region",
-                color: "#D4A574", // Warm Amber
-                provinces: ["North Kivu", "South Kivu", "Ituri", "Tshopo"],
+                name: "Centre & East",
+                color: "#6BB5E0", // Sky Blue
+                provinces: ["Centre", "East"],
                 years: [2019, 2020, 2021, 2023],
                 villages: []
             },
             zone3: {
-                name: "Central Kasai",
-                color: "#D4A5A5", // Dusty Rose
-                provinces: ["Kasai-Central", "Kasai-Oriental", "Kasai"],
+                name: "West & North West",
+                color: "#A8D5E2", // Soft Teal
+                provinces: ["West", "North West"],
                 years: [2020, 2021],
                 villages: []
             },
             zone4: {
-                name: "Northern & Other",
-                color: "#B85D47", // Terracotta Dark
-                provinces: ["Haut-Katanga", "Tanganyika", "Maniema", "Équateur", "Haut-Uélé"],
+                name: "Northern Regions",
+                color: "#3A7BC8", // Medium Blue
+                provinces: ["Adamawa", "North", "Far North"],
                 years: [2019, 2024],
                 villages: []
             }
@@ -907,139 +1114,94 @@
         // Village Data with Zone Assignment
         const villages = [
             {
-                name: "Mwamba Village",
-                region: "Kinshasa Province",
-                lat: -4.3276,
-                lng: 15.3136,
+                name: "Kribi Region",
+                region: "South Province",
+                lat: 2.9390,
+                lng: 9.9079,
                 year: 2018,
                 zone: "zone1",
-                description: "First church plant established here. 45 families now attend weekly worship services, and three local leaders have been trained to continue the ministry."
+                description: "Coastal evangelism outreach. Established local church that serves as a base for nearby communities."
             },
             {
-                name: "Matadi Region",
-                region: "Kongo-Central Province",
-                lat: -5.8167,
-                lng: 13.4500,
+                name: "Douala Outskirts",
+                region: "Littoral Province",
+                lat: 4.0511,
+                lng: 9.7679,
                 year: 2022,
                 zone: "zone1",
-                description: "Coastal community evangelism. Trained local fishermen to share their faith with neighboring communities."
+                description: "Urban outreach providing community support and planting new believers' groups."
             },
             {
-                name: "Kikwit Village",
-                region: "Kwilu Province",
-                lat: -5.0400,
-                lng: 18.8161,
+                name: "Buea Community",
+                region: "South West Province",
+                lat: 4.1539,
+                lng: 9.2410,
                 year: 2022,
                 zone: "zone1",
-                description: "River community reached by boat. Established church that now serves as hub for surrounding villages."
+                description: "University town ministry engaging youth and distributing Bibles to students."
             },
             {
-                name: "Kisangani Community",
-                region: "Tshopo Province",
-                lat: 0.5153,
-                lng: 25.1910,
+                name: "Yaoundé Surroundings",
+                region: "Centre Province",
+                lat: 3.8480,
+                lng: 11.5021,
                 year: 2019,
                 zone: "zone2",
-                description: "Established Bible study groups and distributed 150 Bibles in local languages. Community center now serves as gathering place for believers."
+                description: "Central base for discipleship training and equipping local leaders to multiply the work."
             },
             {
-                name: "Bukavu Village",
-                region: "South Kivu Province",
-                lat: -2.5000,
-                lng: 28.8667,
+                name: "Bertoua Region",
+                region: "East Province",
+                lat: 4.5773,
+                lng: 13.6846,
                 year: 2020,
                 zone: "zone2",
-                description: "Planted church in remote mountain village. Clean water well project completed alongside spiritual ministry."
+                description: "Brought clean water and spiritual hope to remote eastern communities."
             },
             {
-                name: "Goma Area",
-                region: "North Kivu Province",
-                lat: -1.6792,
-                lng: 29.2228,
+                name: "Bamenda Outreach",
+                region: "North West Province",
+                lat: 5.9586,
+                lng: 10.1528,
                 year: 2021,
-                zone: "zone2",
-                description: "Medical mission combined with evangelism. Provided healthcare while sharing the Gospel, building trust in the community."
+                zone: "zone3",
+                description: "Peace-building initiative through the Gospel in highland communities."
             },
             {
-                name: "Uvira Community",
-                region: "South Kivu Province",
-                lat: -3.3953,
-                lng: 29.1378,
-                year: 2023,
-                zone: "zone2",
-                description: "Border community ministry. Established church that serves both Congolese and neighboring country residents."
-            },
-            {
-                name: "Bunia Area",
-                region: "Ituri Province",
-                lat: 1.5604,
-                lng: 30.2524,
-                year: 2023,
-                zone: "zone2",
-                description: "Peace-building initiative through Gospel ministry. Helped reconcile divided communities through shared faith."
-            },
-            {
-                name: "Kananga Region",
-                region: "Kasai-Central Province",
-                lat: -5.8962,
-                lng: 22.4166,
+                name: "Bafoussam Village",
+                region: "West Province",
+                lat: 5.4778,
+                lng: 10.4181,
                 year: 2020,
                 zone: "zone3",
-                description: "Multiple villages reached through mobile evangelism teams. Established 3 new churches with trained local leadership."
+                description: "Medical and practical care mission alongside active church planting."
             },
             {
-                name: "Mbuji-Mayi Community",
-                region: "Kasai-Oriental Province",
-                lat: -6.1360,
-                lng: 23.5898,
-                year: 2021,
-                zone: "zone3",
-                description: "Children's ministry program launched. Over 80 children now attend weekly Bible classes and learn about Jesus."
-            },
-            {
-                name: "Lubumbashi Outreach",
-                region: "Haut-Katanga Province",
-                lat: -11.6642,
-                lng: 27.4796,
+                name: "Garoua Center",
+                region: "North Province",
+                lat: 9.3000,
+                lng: 13.4000,
                 year: 2019,
                 zone: "zone4",
-                description: "Partnered with local churches to reach urban communities. Trained 8 local evangelists who continue the work today."
+                description: "Northern initiative establishing Bible study groups and leadership training."
             },
             {
-                name: "Kindu Village",
-                region: "Maniema Province",
-                lat: -2.9500,
-                lng: 25.9500,
+                name: "Ngaoundéré Community",
+                region: "Adamawa Province",
+                lat: 7.3227,
+                lng: 13.5836,
                 year: 2024,
                 zone: "zone4",
-                description: "Recent church plant in remote area. 30 new believers baptized, Bible study groups forming."
+                description: "Reaching nomadic and pastoral communities with the message of hope."
             },
             {
-                name: "Kalemie Town",
-                region: "Tanganyika Province",
-                lat: -5.9475,
-                lng: 29.1947,
+                name: "Maroua Outreach",
+                region: "Far North Province",
+                lat: 10.5936,
+                lng: 14.3258,
                 year: 2024,
                 zone: "zone4",
-                description: "Urban evangelism initiative. Multiple small groups established, training local leaders for multiplication."
-            },
-            {
-                name: "Mbandaka Region",
-                region: "Équateur Province",
-                lat: 0.0477,
-                lng: 18.2558,
-                year: 2024,
-                zone: "zone4",
-                description: "River basin ministry. Reached multiple villages along the Congo River through boat-based missions."
-            },
-            {
-                name: "Isiro Community",
-                region: "Haut-Uélé Province",
-                lat: 2.7739,
-                lng: 27.6160,
-                year: 2024,
-                zone: "zone4",
-                description: "Northeastern outreach. First Gospel presentation in this area, establishing foundation for future work."
+                description: "First Gospel presentations in the arid far north regions."
             }
         ];
 
@@ -1050,35 +1212,36 @@
             }
         });
 
-        // Zone Polygon Coordinates (Approximate boundaries for DRC regions)
+        // Zone Polygon Coordinates (Approximate boundaries for Cameroon regions)
         // These polygons represent the general areas where evangelism work has been conducted
         const zonePolygons = {
-            zone1: [ // Kinshasa & Western
-                [-5.8, 12.0], [-5.8, 19.5], [-3.8, 19.5], [-3.8, 15.5], 
-                [-4.2, 14.5], [-4.5, 13.0], [-5.2, 12.2], [-5.8, 12.0]
+            zone1: [ // South & Littoral
+                [2.0, 9.5], [4.5, 9.0], [5.0, 10.0], [3.0, 11.0], [2.0, 10.5]
             ],
-            zone2: [ // Eastern Region
-                [-1.5, 24.5], [-1.5, 31.0], [2.5, 31.0], [2.5, 27.5],
-                [1.2, 26.5], [0.3, 25.8], [-0.8, 25.2], [-1.5, 24.5]
+            zone2: [ // Centre & East
+                [3.0, 11.0], [5.0, 11.0], [5.5, 14.5], [2.0, 16.0], [2.0, 13.0]
             ],
-            zone3: [ // Central Kasai
-                [-7.2, 20.0], [-7.2, 25.2], [-5.2, 25.2], [-5.2, 21.8],
-                [-5.8, 21.0], [-6.3, 20.5], [-6.8, 20.2], [-7.2, 20.0]
+            zone3: [ // West & North West
+                [4.5, 9.0], [6.5, 9.5], [6.0, 11.0], [5.0, 11.0], [5.0, 10.0]
             ],
-            zone4: [ // Northern & Other (covers remaining areas)
-                [-12.5, 18.0], [-12.5, 30.5], [3.5, 30.5], [3.5, 26.8],
-                [1.5, 24.8], [-2.2, 22.2], [-5.5, 20.2], [-8.5, 19.2],
-                [-10.5, 18.6], [-12.5, 18.0]
+            zone4: [ // Northern Regions
+                [6.0, 11.0], [7.5, 15.0], [13.0, 15.0], [13.0, 14.0], [6.5, 9.5]
             ]
         };
 
-        // Simplified DRC Country Boundary (approximate, used as mask)
-        const congoBoundary = [
-            [-13.5, 12.0],
-            [-13.5, 31.0],
-            [5.5, 31.0],
-            [5.5, 12.0],
-            [-13.5, 12.0]
+        // Simplified Cameroon Country Boundary (approximate, used as mask)
+        const cameroonBoundary = [
+            [2.2, 9.8],
+            [4.0, 9.0],
+            [6.0, 9.5],
+            [10.0, 13.0],
+            [13.1, 14.0],
+            [11.0, 15.0],
+            [8.0, 15.5],
+            [4.0, 15.0],
+            [2.0, 16.0],
+            [1.6, 13.0],
+            [2.2, 9.8]
         ];
 
         // Initialize Map
@@ -1124,14 +1287,14 @@
                 });
             };
 
-            // Initialize map with Congo bounds
+            // Initialize map with Cameroon bounds
             const map = L.map('village-map', {
-                center: [-4.0, 23.0],
+                center: [6.0, 12.5],
                 zoom: 6,
                 minZoom: 5,
                 maxZoom: 12,
                 scrollWheelZoom: true,
-                maxBounds: [[-13.5, 12.0], [5.5, 31.0]], // Lock to DRC
+                maxBounds: [[1.6, 8.5], [13.1, 16.2]], // Lock to Cameroon
                 maxBoundsViscosity: 1.0 // Strict bounds
             });
 
@@ -1141,7 +1304,7 @@
                 maxZoom: 19
             }).addTo(map);
 
-            // Add mask to fade out everything outside Congo
+            // Add mask to fade out everything outside Cameroon
             const worldBounds = [
                 [-90, -180],
                 [-90, 180],
@@ -1149,8 +1312,8 @@
                 [90, -180]
             ];
 
-            // Polygon with outer ring (world) and inner ring (Congo) to mask outside area
-            L.polygon([worldBounds, congoBoundary], {
+            // Polygon with outer ring (world) and inner ring (Cameroon) to mask outside area
+            L.polygon([worldBounds, cameroonBoundary], {
                 color: 'transparent',
                 fillColor: 'rgba(250, 248, 245, 0.9)', // slightly lighter mask
                 fillOpacity: 0.9,
@@ -1158,9 +1321,9 @@
                 interactive: false
             }).addTo(map);
 
-            // Add Congo country boundary outline on top of mask
-            L.polygon(congoBoundary, {
-                color: '#C97D60',
+            // Add Cameroon country boundary outline on top of mask
+            L.polygon(cameroonBoundary, {
+                color: '#4A90D9',
                 fillColor: 'transparent',
                 fillOpacity: 0,
                 weight: 2,

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Donate | Lumière Congo</title>
-    <meta name="description" content="Support Lumière Congo's mission to bring the Gospel to remote villages in the Democratic Republic of Congo.">
+    <meta name="description" content="Support Lumière Congo's mission to bring the Gospel, education, and humanitarian aid to unreached communities across Cameroon.">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,17 +13,17 @@
     
     <style>
         :root {
-            --warm-ivory: #FAF8F5;
-            --warm-cream: #F5F1EB;
-            --terracotta: #C97D60;
-            --terracotta-dark: #B85D47;
-            --warm-amber: #D4A574;
-            --warm-amber-dark: #C8955A;
-            --terracotta-deep: #A04D35;
-            --dusty-rose: #D4A5A5;
-            --dusty-rose-dark: #C89595;
-            --text-dark: #3A2E2A;
-            --text-charcoal: #2A1F1B;
+            --warm-ivory: #F5F8FC;
+            --warm-cream: #EBF2FA;
+            --terracotta: #4A90D9;
+            --terracotta-dark: #3A7BC8;
+            --warm-amber: #6BB5E0;
+            --warm-amber-dark: #5AA0CC;
+            --terracotta-deep: #2C6FAC;
+            --dusty-rose: #A8D5E2;
+            --dusty-rose-dark: #8EC5D6;
+            --text-dark: #2A3444;
+            --text-charcoal: #1A2636;
         }
 
         * {
@@ -198,8 +198,8 @@
             max-width: 640px;
             padding: 40px 32px;
             border-radius: 28px;
-            background: radial-gradient(circle at top left, rgba(201, 125, 96, 0.18), transparent 55%),
-                        radial-gradient(circle at bottom right, rgba(212, 165, 165, 0.18), transparent 55%),
+            background: radial-gradient(circle at top left, rgba(74, 144, 217, 0.18), transparent 55%),
+                        radial-gradient(circle at bottom right, rgba(168, 213, 226, 0.18), transparent 55%),
                         var(--warm-cream);
             box-shadow: 0 18px 45px rgba(0, 0, 0, 0.12);
             position: relative;
@@ -242,7 +242,7 @@
         .amount-prefix {
             padding: 12px 16px;
             border-radius: 999px;
-            background-color: rgba(201, 125, 96, 0.08);
+            background-color: rgba(74, 144, 217, 0.08);
             color: var(--terracotta-dark);
             font-weight: 600;
             font-size: 0.95rem;
@@ -257,7 +257,7 @@
             width: 100%;
             padding: 14px 18px;
             border-radius: 999px;
-            border: 1px solid rgba(58, 46, 42, 0.18);
+            border: 1px solid rgba(42, 52, 68, 0.18);
             background-color: rgba(255, 255, 255, 0.9);
             font-size: 1.1rem;
             outline: none;
@@ -272,9 +272,9 @@
         }
 
         .amount-input-wrapper input[type="number"]:focus {
-            border-color: rgba(201, 125, 96, 0.9);
-            box-shadow: 0 0 0 3px rgba(201, 125, 96, 0.25);
-            background-color: #FFFBF7;
+            border-color: rgba(74, 144, 217, 0.9);
+            box-shadow: 0 0 0 3px rgba(74, 144, 217, 0.25);
+            background-color: #F0F6FD;
         }
 
         .amount-chips {
@@ -287,7 +287,7 @@
         .amount-chip {
             padding: 8px 16px;
             border-radius: 999px;
-            border: 1px solid rgba(201, 125, 96, 0.35);
+            border: 1px solid rgba(74, 144, 217, 0.35);
             background-color: rgba(255, 255, 255, 0.9);
             font-size: 0.95rem;
             font-weight: 500;
@@ -297,7 +297,7 @@
         }
 
         .amount-chip:hover {
-            background-color: rgba(201, 125, 96, 0.08);
+            background-color: rgba(74, 144, 217, 0.08);
             transform: translateY(-1px);
             box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
         }
@@ -369,6 +369,62 @@
             color: #2F6B3A;
         }
 
+        /* Cause Selector */
+        .cause-select-wrapper {
+            margin-bottom: 22px;
+        }
+
+        .cause-select-wrapper label {
+            display: block;
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+        }
+
+        .cause-select-wrapper select {
+            width: 100%;
+            padding: 14px 18px;
+            border-radius: 999px;
+            border: 1px solid rgba(42, 52, 68, 0.18);
+            background-color: rgba(255, 255, 255, 0.9);
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            color: var(--text-dark);
+            outline: none;
+            cursor: pointer;
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%233A2E2A' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 18px center;
+            background-size: 12px;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+        }
+
+        .cause-select-wrapper select:focus {
+            border-color: rgba(74, 144, 217, 0.9);
+            box-shadow: 0 0 0 3px rgba(74, 144, 217, 0.25);
+            background-color: #F0F6FD;
+        }
+
+        .cause-select-wrapper select option[value=""] {
+            color: #999;
+        }
+
+        .cause-select-wrapper select optgroup {
+            font-weight: 600;
+            color: var(--terracotta-dark);
+            font-family: 'Inter', sans-serif;
+        }
+
+        .cause-select-wrapper select option {
+            color: var(--text-dark);
+            font-weight: 400;
+            padding: 8px;
+        }
+
         @media (max-width: 640px) {
             .donate-panel {
                 padding: 32px 22px;
@@ -414,7 +470,7 @@
             align-items: center;
             margin-bottom: 30px;
             padding-bottom: 30px;
-            border-bottom: 1px solid rgba(58, 46, 42, 0.1);
+            border-bottom: 1px solid rgba(42, 52, 68, 0.1);
         }
 
         .story-item:last-child {
@@ -625,7 +681,7 @@
             <a href="index.html" class="logo">Lumière Congo</a>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="our-mission.html">Our Mission</a></li>
+                <li><a href="get-involved.html">Get Involved</a></li>
                 <li><a href="about-us.html">About Us</a></li>
                 <li><a href="donate.html">Donate</a></li>
                 <li><a href="gallery.html">Gallery</a></li>
@@ -641,13 +697,29 @@
     <section class="fade-in">
         <div class="section-inner">
             <div class="donate-intro">
-                <p>Every dollar you give helps us reach remote villages in the Democratic Republic of Congo with the message of hope. Your support funds mission trips, provides Bibles and resources, trains local leaders, and sustains the ongoing work of planting churches in places where the light of the Gospel has never shone.</p>
+                <p>Every dollar you give helps us reach remote villages across Cameroon with the message of hope. Your support funds mission trips, provides Bibles and resources, trains local leaders, sponsors children's education, and sustains the ongoing work of planting churches in places where the light of the Gospel has never shone.</p>
             </div>
 
             <div class="donate-panel" aria-labelledby="donate-panel-title">
                 <div class="donate-panel-inner">
                     <h2 id="donate-panel-title">Choose Your Gift</h2>
-                    <p>Enter a custom amount in Canadian Dollars (CAD) to support the work in Congo. Every gift, large or small, helps carry light to another village.</p>
+                    <p>Select a cause you'd like to support and enter an amount in Canadian Dollars (CAD). Every gift, large or small, helps carry light to another village.</p>
+
+                    <div class="cause-select-wrapper">
+                        <label for="cause-select">Where would you like your gift to go?</label>
+                        <select id="cause-select" name="cause">
+                            <option value="" disabled selected>— Select a cause —</option>
+                            <optgroup label="Headquarters — Yaoundé">
+                                <option value="Church in Construction">Church in Construction</option>
+                                <option value="Biblical School">Biblical School</option>
+                                <option value="Sponsor Education">Sponsor Education</option>
+                            </optgroup>
+                            <optgroup label="Branch — Eastern Cameroon">
+                                <option value="Building Construction">Building Construction</option>
+                                <option value="Let There Be Light Project">Let There Be Light Project (solar lights)</option>
+                            </optgroup>
+                        </select>
+                    </div>
 
                     <div class="amount-row">
                         <div class="amount-prefix" aria-hidden="true">CAD $</div>
@@ -696,52 +768,47 @@
                 <h2>Your Impact</h2>
                 <div class="story-item">
                     <div class="story-image">
-                        <!-- TODO: Replace with real photo from Mwamba village -->
-                        <img src="https://placehold.co/400x260?text=Mwamba+Village" alt="Church gathering in Mwamba village">
+                        <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=400&h=260&fit=crop" alt="Evangelism outreach in Eastern Cameroon villages">
                     </div>
                     <div class="story-text-content">
-                        <h3>Village of Mwamba</h3>
-                        <p>Thanks to generous donors, we were able to establish a church in Mwamba village. Today, 45 families gather weekly for worship, and three local leaders have been trained to continue the ministry.</p>
+                        <h3>300+ Souls Won in the Eastern Region</h3>
+                        <p>In January 2023, a school of evangelism and discipleship was held in the Eastern region. Seven villages were evangelized, and over 300 people gave their lives to Christ. Baptism of over 100 converts followed at Easter.</p>
                     </div>
                 </div>
                 <div class="story-item">
                     <div class="story-image">
-                        <!-- TODO: Replace with real photo of Bible distribution -->
-                        <img src="https://placehold.co/400x260?text=Bible+Distribution" alt="People receiving Bibles in their own language">
+                        <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=400&h=260&fit=crop" alt="Students going back to school with scholarship support">
                     </div>
                     <div class="story-text-content">
-                        <h3>Bible Distribution</h3>
-                        <p>Your gifts provided 200 Bibles in local languages to villages across the Eastern Province. Many recipients had never owned a Bible before and now read God's Word daily.</p>
+                        <h3>12 Students Sponsored &mdash; All Promoted</h3>
+                        <p>In 2024, your giving sponsored 12 students from nursery through university. Every single one of them passed their exams and was promoted to the next grade — from King Joshua in nursery to Bih and Senior at university level.</p>
                     </div>
                 </div>
                 <div class="story-item">
                     <div class="story-image">
-                        <!-- TODO: Replace with real photo of leader training -->
-                        <img src="https://placehold.co/400x260?text=Leader+Training" alt="Local leaders gathered for training">
+                        <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=400&h=260&fit=crop" alt="Solar torchlights provided to families in the jungle">
                     </div>
                     <div class="story-text-content">
-                        <h3>Leader Training</h3>
-                        <p>Monthly support enabled us to train 12 local leaders in discipleship and church planting. These leaders are now multiplying the work, reaching their own neighboring villages.</p>
+                        <h3>"Let There Be Light" &mdash; Solar Torchlights</h3>
+                        <p>Families in the jungles of Eastern Cameroon received solar torchlights through our outreach program. Each torchlight costs just $30 and brings both physical and spiritual light to homes that previously had none.</p>
                     </div>
                 </div>
                 <div class="story-item">
                     <div class="story-image">
-                        <!-- TODO: Replace with real photo of new church plant -->
-                        <img src="https://placehold.co/400x260?text=New+Churches" alt="New church building in a remote village">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=260&fit=crop" alt="Students at the Apostolic Bible College">
                     </div>
                     <div class="story-text-content">
-                        <h3>Church Planting Success</h3>
-                        <p>Your donations helped establish 8 new churches in remote areas. Each church now has trained leadership and is actively reaching out to surrounding communities with the Gospel.</p>
+                        <h3>Apostolic Bible College Growth</h3>
+                        <p>The Apostolic Bible College (ABC) has completed two-thirds of its second-level program, training future pastors and ministry leaders. Additionally, 15 children were enrolled in the music school in 2023.</p>
                     </div>
                 </div>
                 <div class="story-item">
                     <div class="story-image">
-                        <!-- TODO: Replace with real photo from children's ministry -->
-                        <img src="https://placehold.co/400x260?text=Children%27s+Ministry" alt="Children smiling and participating in ministry activities">
+                        <img src="https://images.unsplash.com/photo-1504432842672-1a79f78e4084?w=400&h=260&fit=crop" alt="Weekly Saturday evangelism outreach in Yaoundé">
                     </div>
                     <div class="story-text-content">
-                        <h3>Children's Ministry Growth</h3>
-                        <p>Through your support, we've been able to develop children's programs in 15 villages. Over 300 children now regularly attend Bible classes and learn about Jesus in age-appropriate ways.</p>
+                        <h3>Weekly Outreach in Yaound&eacute;</h3>
+                        <p>Every Saturday, our headquarters church conducts evangelism outreach in the neighborhoods of Mefou-Assi, Etoa, and the Ahala food market. New converts are added weekly, with a discipleship school held every Thursday for follow-up.</p>
                     </div>
                 </div>
             </div>
@@ -753,7 +820,7 @@
             <div class="footer-top">
                 <div class="footer-brand">
                     <h3>Lumière Congo</h3>
-                    <p>Carrying light to the heart of the Congo, one village at a time. Join us in bringing hope and truth to those who need it most.</p>
+                    <p>Carrying light to the heart of Cameroon, one village at a time. Join us in bringing hope and truth to those who need it most.</p>
                     <div class="footer-social">
                         <a href="#" class="social-icon" aria-label="Facebook">f</a>
                         <a href="#" class="social-icon" aria-label="Instagram">@</a>
@@ -764,7 +831,7 @@
                     <h4>Navigation</h4>
                     <ul>
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="our-mission.html">Our Mission</a></li>
+                        <li><a href="get-involved.html">Get Involved</a></li>
                         <li><a href="about-us.html">About Us</a></li>
                         <li><a href="donate.html">Donate</a></li>
                         <li><a href="gallery.html">Gallery</a></li>
@@ -808,11 +875,12 @@
         // Donation amount interactions (front-end only)
         (function () {
             const amountInput = document.getElementById('donation-amount');
+            const causeSelect = document.getElementById('cause-select');
             const chips = Array.from(document.querySelectorAll('.amount-chip'));
             const pledgeBtn = document.getElementById('pledge-btn');
             const statusEl = document.getElementById('donation-status');
 
-            if (!amountInput || !pledgeBtn || !statusEl) return;
+            if (!amountInput || !causeSelect || !pledgeBtn || !statusEl) return;
 
             function setStatus(message, type) {
                 statusEl.textContent = message || '';
@@ -840,7 +908,18 @@
                 setStatus('', null);
             });
 
+            causeSelect.addEventListener('change', () => {
+                setStatus('', null);
+            });
+
             pledgeBtn.addEventListener('click', () => {
+                const selectedCause = causeSelect.value;
+                if (!selectedCause) {
+                    setStatus('Please select a cause you would like to support.', 'error');
+                    causeSelect.focus();
+                    return;
+                }
+
                 const raw = amountInput.value.trim();
                 const amount = Number(raw);
 
@@ -856,7 +935,7 @@
                     maximumFractionDigits: 0
                 });
 
-                setStatus(`Thank you for your generous pledge of ${formatted}. We will contact you with simple next steps to give.`, 'success');
+                setStatus(`Thank you for your generous pledge of ${formatted} toward "${selectedCause}." We will contact you with simple next steps to give.`, 'success');
             });
         })();
     </script>

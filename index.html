@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lumière Congo | Carrying Light to the Heart of the Congo</title>
-    <meta name="description" content="Lumière Congo sends teams to evangelize remote villages in the Democratic Republic of Congo, bringing hope and light to communities in need.">
+    <title>Lumière Congo | Carrying Light to the Heart of Cameroon</title>
+    <meta name="description" content="Lumière Congo serves communities across Cameroon through evangelism, church planting, education, and humanitarian projects — bringing hope and light where it's needed most.">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,19 +12,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <style>
-        /* CSS Variables - Warm Earth Tone Palette */
+        /* CSS Variables - Light Blue Palette */
         :root {
-            --warm-ivory: #FAF8F5;
-            --warm-cream: #F5F1EB;
-            --terracotta: #C97D60;
-            --terracotta-dark: #B85D47;
-            --warm-amber: #D4A574;
-            --warm-amber-dark: #C8955A;
-            --dusty-rose: #D4A5A5;
-            --dusty-rose-dark: #C89595;
-            --text-dark: #3A2E2A;
-            --text-charcoal: #2A1F1B;
-            --terracotta-deep: #A04D35;
+            --warm-ivory: #F5F8FC;
+            --warm-cream: #EBF2FA;
+            --terracotta: #4A90D9;
+            --terracotta-dark: #3A7BC8;
+            --warm-amber: #6BB5E0;
+            --warm-amber-dark: #5AA0CC;
+            --dusty-rose: #A8D5E2;
+            --dusty-rose-dark: #8EC5D6;
+            --text-dark: #2A3444;
+            --text-charcoal: #1A2636;
+            --terracotta-deep: #2C6FAC;
         }
 
         /* Reset & Base Styles */
@@ -325,7 +325,7 @@
             bottom: 16px;
             padding: 8px 14px;
             border-radius: 999px;
-            background-color: rgba(58, 46, 42, 0.85);
+            background-color: rgba(42, 52, 68, 0.85);
             color: #fff;
             font-size: 0.85rem;
             letter-spacing: 0.03em;
@@ -628,11 +628,17 @@
             display: grid;
             grid-template-columns: 1fr;
             gap: 30px;
-            max-width: 900px;
+            max-width: 1100px;
             margin: 0 auto;
         }
 
-        @media (min-width: 768px) {
+        @media (min-width: 900px) {
+            .involved-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (min-width: 600px) and (max-width: 899px) {
             .involved-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
@@ -681,6 +687,63 @@
         .involved-card .card-link:hover {
             background-color: var(--terracotta-dark);
             transform: translateY(-2px);
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            background-color: var(--warm-ivory);
+        }
+
+        .testimonials h2 {
+            text-align: center;
+            font-size: clamp(2.6rem, 5vw, 3.6rem);
+            margin-bottom: 40px;
+            color: var(--terracotta);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+
+        @media (min-width: 900px) {
+            .testimonials-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (min-width: 600px) and (max-width: 899px) {
+            .testimonials-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .testimonial-card {
+            background-color: var(--warm-cream);
+            padding: 35px 30px;
+            border-radius: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .testimonial-quote {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4rem;
+            font-style: italic;
+            color: var(--terracotta);
+            line-height: 1.8;
+            margin-bottom: 16px;
+        }
+
+        .testimonial-name {
+            font-weight: 600;
+            color: var(--text-charcoal);
+            margin-bottom: 4px;
+        }
+
+        .testimonial-role {
+            font-size: 0.95rem;
+            color: rgba(42, 52, 68, 0.8);
         }
 
         /* Mobile-specific tweaks */
@@ -873,7 +936,7 @@
             <a href="index.html" class="logo">Lumière Congo</a>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="our-mission.html">Our Mission</a></li>
+                <li><a href="get-involved.html">Get Involved</a></li>
                 <li><a href="about-us.html">About Us</a></li>
                 <li><a href="donate.html">Donate</a></li>
                 <li><a href="gallery.html">Gallery</a></li>
@@ -887,7 +950,7 @@
         <div class="blob blob-2"></div>
         <div class="blob blob-3"></div>
         <div class="hero-content fade-in">
-            <h1>Carrying Light to the Heart of the Congo</h1>
+            <h1>Carrying Light to the Heart of Cameroon</h1>
             <a href="#get-involved" class="hero-cta">Join the Mission</a>
         </div>
     </section>
@@ -901,24 +964,22 @@
                 </div>
                 <div>
                     <p class="story-text">
-                        Lumière Congo was born from a simple calling: to bring the Gospel to remote villages in the Democratic Republic of Congo where hope is scarce and light is needed most. Our teams journey deep into the heart of Africa, building relationships, sharing truth, and planting seeds of faith that transform entire communities.
+                        Lumière Congo was born from a profound calling: to bring the Gospel to unreached villages across Cameroon — particularly in the Eastern region, where communities living in the jungle have never heard the name of Jesus. Led by Brother Daniel, our teams journey into some of the most remote areas, building relationships, sharing truth, and planting seeds of faith that transform entire communities.
                     </p>
                     <p class="story-text" style="margin-top: 20px;">
-                        We believe that every person deserves to hear the message of hope in their own language and context. Through partnerships with local churches, community leaders, and dedicated volunteers, we've seen villages transformed—not just spiritually, but in their daily lives as well. The light we bring doesn't just illuminate; it transforms, heals, and restores.
+                        From our headquarters church in Yaoundé, we carry out weekly evangelism outreaches, run discipleship schools, and send mission teams across Cameroon and beyond. We also sponsor children's education, provide solar torchlights to families living in darkness, and train local leaders through the Apostolic Bible College. The light we bring doesn't just illuminate; it transforms, heals, and restores.
                     </p>
                 </div>
             </div>
 
             <div class="story-media-row">
                 <figure class="story-photo-card">
-                    <!-- TODO: Replace with real photo from a village outreach -->
-                    <img src="https://placehold.co/800x550?text=Village+Outreach+Photo" alt="Mission team sharing the Gospel in a village in Congo">
-                    <figcaption class="story-photo-caption">Village outreach deep in the Congo.</figcaption>
+                    <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=800&h=550&fit=crop" alt="Mission team sharing the Gospel in a village in Cameroon">
+                    <figcaption class="story-photo-caption">Village outreach in Eastern Cameroon.</figcaption>
                 </figure>
                 <figure class="story-photo-card story-photo-card--overlay">
-                    <!-- TODO: Replace with real photo from a church gathering or prayer time -->
-                    <img src="https://placehold.co/720x520?text=Church+Gathering+Photo" alt="Local church gathering in a village with worship and prayer">
-                    <figcaption class="story-photo-caption">Local believers gathering for worship.</figcaption>
+                    <img src="https://images.unsplash.com/photo-1504432842672-1a79f78e4084?w=720&h=520&fit=crop" alt="Local church gathering for worship and prayer in Cameroon">
+                    <figcaption class="story-photo-caption">Local believers gathering for worship in Yaound&eacute;.</figcaption>
                 </figure>
             </div>
         </div>
@@ -942,7 +1003,7 @@
                 <div class="service-card">
                     <div class="service-icon">🙏</div>
                     <h3>Prayer Support</h3>
-                    <p>Every mission is covered in prayer. We believe in the power of intercession and invite you to join us in lifting up these villages before the Lord. Our prayer network spans continents, connecting hearts across oceans to lift up the work God is doing in the Congo.</p>
+                    <p>Every mission is covered in prayer. We believe in the power of intercession and invite you to join us in lifting up these villages before the Lord. Our prayer network spans continents, connecting hearts across oceans to lift up the work God is doing in Cameroon.</p>
                 </div>
             </div>
         </div>
@@ -955,56 +1016,50 @@
             <div class="people-scroll">
                 <div class="people-card">
                     <div class="people-card-content">
-                        <h3>Sarah Mitchell</h3>
-                        <p class="role">Missionary & Team Leader</p>
+                        <h3>Brother Daniel</h3>
+                        <p class="role">Founder &amp; Lead Missionary</p>
                     </div>
                 </div>
                 <div class="people-card">
                     <div class="people-card-content">
-                        <h3>James Kabila</h3>
-                        <p class="role">Local Coordinator</p>
+                        <h3>Sister Daniel</h3>
+                        <p class="role">Co-Missionary &amp; Partner</p>
                     </div>
                 </div>
                 <div class="people-card">
                     <div class="people-card-content">
-                        <h3>Marie Dubois</h3>
-                        <p class="role">Prayer Coordinator</p>
+                        <h3>ABC Director</h3>
+                        <p class="role">Apostolic Bible College</p>
                     </div>
                 </div>
                 <div class="people-card">
                     <div class="people-card-content">
-                        <h3>David Ntumba</h3>
-                        <p class="role">Community Builder</p>
+                        <h3>Music School Lead</h3>
+                        <p class="role">Children's Music Program</p>
                     </div>
                 </div>
                 <div class="people-card">
                     <div class="people-card-content">
-                        <h3>Anna Thompson</h3>
-                        <p class="role">Missionary</p>
+                        <h3>Eastern Region Lead</h3>
+                        <p class="role">Branch Coordinator</p>
                     </div>
                 </div>
                 <div class="people-card">
                     <div class="people-card-content">
-                        <h3>Pierre Mwamba</h3>
-                        <p class="role">Translator & Guide</p>
+                        <h3>Education Coordinator</h3>
+                        <p class="role">Scholarship Program</p>
                     </div>
                 </div>
                 <div class="people-card">
                     <div class="people-card-content">
-                        <h3>Rachel Kipanga</h3>
-                        <p class="role">Children's Ministry</p>
+                        <h3>Evangelism Team</h3>
+                        <p class="role">Saturday Outreach &mdash; Yaound&eacute;</p>
                     </div>
                 </div>
                 <div class="people-card">
                     <div class="people-card-content">
-                        <h3>Michael Banza</h3>
-                        <p class="role">Field Missionary</p>
-                    </div>
-                </div>
-                <div class="people-card">
-                    <div class="people-card-content">
-                        <h3>Grace Mubenga</h3>
-                        <p class="role">Medical Support</p>
+                        <h3>Discipleship Team</h3>
+                        <p class="role">Thursday Follow-Up</p>
                     </div>
                 </div>
             </div>
@@ -1017,16 +1072,16 @@
             <h2>Our Impact</h2>
             <div class="numbers-grid">
                 <div class="number-item">
-                    <div class="number-value" data-target="45">0</div>
-                    <div class="number-label">Villages Reached</div>
+                    <div class="number-value" data-target="138">0</div>
+                    <div class="number-label">Villages Targeted</div>
                 </div>
                 <div class="number-item">
-                    <div class="number-value" data-target="1200">0</div>
-                    <div class="number-label">People Baptised</div>
+                    <div class="number-value" data-target="300">0</div>
+                    <div class="number-label">Souls Won in 2023</div>
                 </div>
                 <div class="number-item">
-                    <div class="number-value" data-target="8">0</div>
-                    <div class="number-label">Years of Mission</div>
+                    <div class="number-value" data-target="25">0</div>
+                    <div class="number-label">Children Sponsored</div>
                 </div>
             </div>
         </div>
@@ -1047,6 +1102,36 @@
                     <p>Your financial support helps us reach more villages, train more leaders, and bring light to communities that have never heard the Good News. Every dollar goes directly to mission work—funding travel, resources, Bibles, and training materials that transform lives.</p>
                     <a href="donate.html" class="card-link">Donate</a>
                 </div>
+                <div class="involved-card">
+                    <h3>Become a Financial Partner</h3>
+                    <p>Financial partners walk with us over the long term, providing steady support that sustains every aspect of the mission—from sending teams to building wells, schools, and health centers.</p>
+                    <p>By committing to regular giving, you help ensure that villages continue to hear the Gospel and receive practical help year after year.</p>
+                    <a href="donate.html" class="card-link">Partner Financially</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials fade-in">
+        <div class="section-inner">
+            <h2>Testimonials</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-quote">"There is no better legacy than educating and training children in the way they should go so that when they grow up, they won't depart from it. This ministry is doing exactly that."</p>
+                    <p class="testimonial-name">Scholarship Beneficiary Family</p>
+                    <p class="testimonial-role">Back-to-School Program</p>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-quote">"When the team brought us a solar torchlight, it was more than just a light — it was a sign that someone cares. They shared the Gospel and gave us hope in the darkness."</p>
+                    <p class="testimonial-name">Family in the Eastern Region</p>
+                    <p class="testimonial-role">Let There Be Light Beneficiary</p>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-quote">"The Saturday outreaches in our neighborhood of Mefou-Assi have changed lives. New converts are added weekly, and the Thursday discipleship school has deepened our faith."</p>
+                    <p class="testimonial-name">Church Member</p>
+                    <p class="testimonial-role">Yaound&eacute; Headquarters Church</p>
+                </div>
             </div>
         </div>
     </section>
@@ -1057,7 +1142,7 @@
             <div class="footer-top">
                 <div class="footer-brand">
                     <h3>Lumière Congo</h3>
-                    <p>Carrying light to the heart of the Congo, one village at a time. Join us in bringing hope and truth to those who need it most.</p>
+                    <p>Carrying light to the heart of Cameroon, one village at a time. Join us in bringing hope and truth to those who need it most.</p>
                     <div class="footer-social">
                         <a href="#" class="social-icon" aria-label="Facebook">f</a>
                         <a href="#" class="social-icon" aria-label="Instagram">@</a>
@@ -1068,7 +1153,7 @@
                     <h4>Navigation</h4>
                     <ul>
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="our-mission.html">Our Mission</a></li>
+                        <li><a href="get-involved.html">Get Involved</a></li>
                         <li><a href="about-us.html">About Us</a></li>
                         <li><a href="donate.html">Donate</a></li>
                         <li><a href="gallery.html">Gallery</a></li>
