@@ -114,13 +114,96 @@
             color: var(--terracotta);
         }
 
+        /* Hamburger Menu */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 6px;
+            padding: 10px;
+            z-index: 1001;
+            background-color: rgba(74, 144, 217, 0.1);
+            border-radius: 12px;
+            border: 1px solid rgba(74, 144, 217, 0.2);
+            min-width: 44px;
+            min-height: 44px;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .hamburger:hover {
+            background-color: rgba(74, 144, 217, 0.15);
+            border-color: rgba(74, 144, 217, 0.3);
+            transform: scale(1.05);
+        }
+
+        .hamburger.active {
+            background-color: rgba(74, 144, 217, 0.2);
+            border-color: rgba(74, 144, 217, 0.4);
+        }
+
+        .hamburger span {
+            width: 30px;
+            height: 4px;
+            background-color: var(--terracotta);
+            transition: all 0.3s ease;
+            border-radius: 3px;
+            display: block;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(10px, 10px);
+            background-color: var(--terracotta-dark);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+            transform: translateX(-10px);
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(10px, -10px);
+            background-color: var(--terracotta-dark);
+        }
+
         @media (max-width: 768px) {
             nav {
                 padding: 15px 20px;
             }
+
+            .hamburger {
+                display: flex;
+            }
+
             .nav-links {
-                gap: 15px;
-                font-size: 0.9rem;
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 280px;
+                height: 100vh;
+                background-color: var(--warm-ivory);
+                flex-direction: column;
+                padding: 80px 30px 30px;
+                gap: 0;
+                box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+                transition: right 0.3s ease;
+                z-index: 1000;
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .nav-links li {
+                width: 100%;
+                border-bottom: 1px solid rgba(42, 52, 68, 0.1);
+            }
+
+            .nav-links a {
+                display: block;
+                padding: 15px 0;
+                font-size: 1.1rem;
             }
         }
 
@@ -821,7 +904,97 @@
             .fp-cta-btn {
                 padding: 14px 36px;
                 font-size: 1rem;
+                min-height: 44px; /* Touch-friendly */
             }
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .page-header {
+                padding: 70px 20px 40px;
+                margin-top: 70px;
+            }
+
+            .page-header h1 {
+                font-size: clamp(2rem, 6vw, 3rem);
+            }
+
+            .page-header p {
+                font-size: 1rem;
+            }
+
+            .mission-card {
+                padding: 30px 20px;
+            }
+
+            .mission-card h2 {
+                font-size: clamp(1.6rem, 4vw, 2rem);
+            }
+
+            .mission-card p {
+                font-size: 0.95rem;
+            }
+
+            .mission-image img {
+                width: 100%;
+                height: auto;
+                max-height: 300px;
+                object-fit: cover;
+            }
+
+            .map-container {
+                height: 400px !important;
+            }
+
+            .map-photo-strip {
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+
+            .map-photo-thumb {
+                flex: 1 1 calc(50% - 5px);
+                min-width: 0;
+            }
+
+            section {
+                padding: 50px 0;
+            }
+
+            .section-inner {
+                padding: 0 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .page-header {
+                padding: 60px 16px 30px;
+            }
+
+            .mission-card {
+                padding: 24px 16px;
+            }
+
+            .map-container {
+                height: 350px !important;
+            }
+
+            .map-photo-thumb {
+                flex: 1 1 100%;
+            }
+
+            .fp-inner h2 {
+                font-size: 2rem;
+            }
+
+            .fp-inner > p {
+                font-size: 1rem;
+            }
+        }
+
+        /* Ensure all images are responsive */
+        img {
+            max-width: 100%;
+            height: auto;
         }
     </style>
 </head>
@@ -832,6 +1005,11 @@
     <nav>
         <div class="nav-container">
             <a href="index.html" class="logo">Lumière Congo</a>
+            <button class="hamburger" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="get-involved.html">Get Involved</a></li>
@@ -1078,6 +1256,33 @@
         document.querySelectorAll('.fade-in').forEach(el => {
             observer.observe(el);
         });
+
+        // Hamburger menu toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        
+        if (hamburger && navLinks) {
+            hamburger.addEventListener('click', () => {
+                hamburger.classList.toggle('active');
+                navLinks.classList.toggle('active');
+            });
+
+            // Close menu when clicking on a link
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    hamburger.classList.remove('active');
+                    navLinks.classList.remove('active');
+                });
+            });
+
+            // Close menu when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
+                    hamburger.classList.remove('active');
+                    navLinks.classList.remove('active');
+                }
+            });
+        }
 
         // Zone Definitions
         const zones = {
