@@ -4,8 +4,9 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { 
   ChevronDown, Facebook, Twitter, Instagram, Mail, Phone, MapPin, 
   Play, ChevronLeft, ChevronRight, Calendar, Clock, MapPin as LocationIcon,
-  Heart, Users, Target, Award, Share2
+  Heart, Users, Target, Award, Share2, Globe
 } from 'lucide-react';
+import { useLanguage } from './LanguageContext';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -21,6 +22,7 @@ const scrollToSection = (id) => {
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [pagesOpen, setPagesOpen] = useState(false);
+  const { t, language, toggleLanguage } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -33,37 +35,48 @@ const Navbar = () => {
       scrolled ? 'bg-white shadow-md py-4' : 'bg-white/95 backdrop-blur-sm py-6'
     }`}>
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
-        <div className="font-serif text-2xl font-bold text-primary">Hope for Congo</div>
+        <div className="font-serif text-2xl font-bold text-primary">{t('navbar.brand')}</div>
         <div className="hidden md:flex items-center gap-8 text-sm text-text">
-          <a href="#home" onClick={(e) => { e.preventDefault(); scrollToSection('home'); }} className="hover:text-primary transition-colors">Home</a>
-          <a href="#about" onClick={(e) => { e.preventDefault(); scrollToSection('about'); }} className="hover:text-primary transition-colors">About Us</a>
+          <a href="#home" onClick={(e) => { e.preventDefault(); scrollToSection('home'); }} className="hover:text-primary transition-colors">{t('navbar.home')}</a>
+          <a href="#about" onClick={(e) => { e.preventDefault(); scrollToSection('about'); }} className="hover:text-primary transition-colors">{t('navbar.about')}</a>
           <div className="relative group">
             <button 
               onClick={() => setPagesOpen(!pagesOpen)}
               className="hover:text-primary transition-colors flex items-center gap-1"
             >
-              Pages
+              {t('navbar.pages')}
               <ChevronDown className={`w-4 h-4 transition-transform ${pagesOpen ? 'rotate-180' : ''}`} />
             </button>
             {pagesOpen && (
               <div className="absolute top-full left-0 mt-2 bg-white shadow-lg rounded-lg py-2 min-w-[180px]">
-                <a href="#causes" onClick={(e) => { e.preventDefault(); scrollToSection('causes'); setPagesOpen(false); }} className="block px-4 py-2 hover:bg-secondary transition-colors">Causes</a>
-                <a href="#projects" onClick={(e) => { e.preventDefault(); scrollToSection('projects'); setPagesOpen(false); }} className="block px-4 py-2 hover:bg-secondary transition-colors">Projects</a>
-                <a href="#volunteers" onClick={(e) => { e.preventDefault(); scrollToSection('volunteers'); setPagesOpen(false); }} className="block px-4 py-2 hover:bg-secondary transition-colors">Team</a>
-                <a href="#volunteer-form" onClick={(e) => { e.preventDefault(); scrollToSection('volunteer-form'); setPagesOpen(false); }} className="block px-4 py-2 hover:bg-secondary transition-colors">Volunteer</a>
-                <a href="#blog" onClick={(e) => { e.preventDefault(); scrollToSection('blog'); setPagesOpen(false); }} className="block px-4 py-2 hover:bg-secondary transition-colors">Blog</a>
+                <a href="#causes" onClick={(e) => { e.preventDefault(); scrollToSection('causes'); setPagesOpen(false); }} className="block px-4 py-2 hover:bg-secondary transition-colors">{t('navbar.causes')}</a>
+                <a href="#projects" onClick={(e) => { e.preventDefault(); scrollToSection('projects'); setPagesOpen(false); }} className="block px-4 py-2 hover:bg-secondary transition-colors">{t('navbar.projects')}</a>
+                <a href="#volunteers" onClick={(e) => { e.preventDefault(); scrollToSection('volunteers'); setPagesOpen(false); }} className="block px-4 py-2 hover:bg-secondary transition-colors">{t('navbar.team')}</a>
+                <a href="#volunteer-form" onClick={(e) => { e.preventDefault(); scrollToSection('volunteer-form'); setPagesOpen(false); }} className="block px-4 py-2 hover:bg-secondary transition-colors">{t('navbar.volunteer')}</a>
+                <a href="#blog" onClick={(e) => { e.preventDefault(); scrollToSection('blog'); setPagesOpen(false); }} className="block px-4 py-2 hover:bg-secondary transition-colors">{t('navbar.blog')}</a>
               </div>
             )}
           </div>
-          <a href="#events" onClick={(e) => { e.preventDefault(); scrollToSection('events'); }} className="hover:text-primary transition-colors">Events</a>
-          <a href="#contact" onClick={(e) => { e.preventDefault(); scrollToSection('contact'); }} className="hover:text-primary transition-colors">Contact</a>
+          <a href="#events" onClick={(e) => { e.preventDefault(); scrollToSection('events'); }} className="hover:text-primary transition-colors">{t('navbar.events')}</a>
+          <a href="#contact" onClick={(e) => { e.preventDefault(); scrollToSection('contact'); }} className="hover:text-primary transition-colors">{t('navbar.contact')}</a>
         </div>
-        <button 
-          onClick={(e) => { e.preventDefault(); scrollToSection('donate'); }}
-          className="bg-primary text-white px-6 py-2.5 rounded-full hover:bg-primary-dark transition-colors text-sm font-medium"
-        >
-          Donate
-        </button>
+        <div className="flex items-center gap-3 md:gap-4">
+          <button
+            onClick={toggleLanguage}
+            className="flex items-center gap-2 px-3 md:px-4 py-2 rounded-full border-2 border-primary/30 hover:border-primary hover:bg-primary/10 transition-all text-sm font-medium text-primary"
+            title={language === 'en' ? 'Switch to French' : 'Passer en anglais'}
+            aria-label={language === 'en' ? 'Switch to French' : 'Switch to English'}
+          >
+            <Globe className="w-4 h-4 md:w-5 md:h-5" />
+            <span className="font-semibold">{language.toUpperCase()}</span>
+          </button>
+          <button 
+            onClick={(e) => { e.preventDefault(); scrollToSection('donate'); }}
+            className="bg-primary text-white px-4 md:px-6 py-2 md:py-2.5 rounded-full hover:bg-primary-dark transition-colors text-sm font-medium"
+          >
+            {t('navbar.donate')}
+          </button>
+        </div>
       </div>
     </nav>
   );
@@ -72,6 +85,7 @@ const Navbar = () => {
 // Hero Section - Matching Humanity Style
 const Hero = () => {
   const scope = useRef(null);
+  const { t } = useLanguage();
 
   useLayoutEffect(() => {
     let ctx = gsap.context(() => {
@@ -97,22 +111,27 @@ const Hero = () => {
       
       <div className="relative z-10 px-6 md:px-12 w-full max-w-7xl mx-auto">
         <div className="max-w-4xl space-y-6">
-          <p className="hero-subtitle text-white/90 text-lg md:text-xl uppercase tracking-wider">Rural Communities in Need</p>
+          <p className="hero-subtitle text-white/90 text-lg md:text-xl uppercase tracking-wider">{t('hero.subtitle')}</p>
           <h1 className="hero-headline text-white font-serif text-6xl md:text-8xl lg:text-9xl font-bold leading-tight">
-            Being Hope Bringer<br />For Congo Villages
+            {t('hero.title').split('\n').map((line, i) => (
+              <React.Fragment key={i}>
+                {line}
+                {i < t('hero.title').split('\n').length - 1 && <br />}
+              </React.Fragment>
+            ))}
           </h1>
           <div className="hero-buttons flex flex-col sm:flex-row gap-4 pt-4">
             <button 
               onClick={(e) => { e.preventDefault(); scrollToSection('donate'); }}
               className="px-8 py-4 rounded-full bg-accent text-text hover:bg-accent-light transition-all duration-300 font-medium"
             >
-              Donate
+              {t('hero.donateButton')}
             </button>
             <button 
               onClick={(e) => { e.preventDefault(); scrollToSection('about'); }}
               className="px-8 py-4 rounded-full border-2 border-white text-white hover:bg-white hover:text-primary transition-all duration-300 font-medium"
             >
-              Discover
+              {t('hero.discoverButton')}
             </button>
           </div>
         </div>
@@ -130,6 +149,7 @@ const Hero = () => {
 // About Us Section with Service Items
 const AboutUs = () => {
   const scope = useRef(null);
+  const { t } = useLanguage();
 
   useLayoutEffect(() => {
     let ctx = gsap.context(() => {
@@ -149,12 +169,12 @@ const AboutUs = () => {
   }, []);
 
   const services = [
-    { icon: "🍽️", title: "Food Distribution", description: "Providing nutritious meals to families in need" },
-    { icon: "💰", title: "Financial Support", description: "Helping communities with economic development" },
-    { icon: "👕", title: "Clothing & Supplies", description: "Distributing essential items to those in need" },
-    { icon: "💧", title: "Clean Water Wells", description: "Building sustainable water access points" },
-    { icon: "📚", title: "School Resources", description: "Supporting education with books and supplies" },
-    { icon: "🎈", title: "Children's Programs", description: "Creating safe spaces for children to learn and play" }
+    { icon: "🍽️", key: "foodDistribution" },
+    { icon: "💰", key: "financialSupport" },
+    { icon: "👕", key: "clothingSupplies" },
+    { icon: "💧", key: "cleanWater" },
+    { icon: "📚", key: "schoolResources" },
+    { icon: "🎈", key: "childrenPrograms" }
   ];
 
   return (
@@ -170,19 +190,21 @@ const AboutUs = () => {
           </div>
           <div className="about-content space-y-6">
             <h2 className="font-serif text-4xl md:text-5xl font-bold text-primary">
-              Help People,<br />Our Main Goals
+              {t('about.title').split('\n').map((line, i) => (
+                <React.Fragment key={i}>
+                  {line}
+                  {i < t('about.title').split('\n').length - 1 && <br />}
+                </React.Fragment>
+              ))}
             </h2>
             <p className="text-lg text-text/80 leading-relaxed">
-              We want to do more and you can help. By committing a small fraction of your income to protect 
-              children in need, you can help save a child and contribute to humanity. See how you can partner 
-              with Hope for Congo to meet both the physical and spiritual needs of the poor one person, one 
-              family at a time. Be the change that you want to see in this world!
+              {t('about.description')}
             </p>
             <button 
               onClick={(e) => { e.preventDefault(); scrollToSection('donate'); }}
               className="px-8 py-3 rounded-full bg-primary text-white hover:bg-primary-dark transition-colors font-medium"
             >
-              More About
+              {t('about.moreButton')}
             </button>
           </div>
         </div>
@@ -191,8 +213,8 @@ const AboutUs = () => {
           {services.map((service, index) => (
             <div key={index} className="about-content bg-white rounded-lg p-6 text-center hover:shadow-lg transition-shadow">
               <div className="text-4xl mb-3">{service.icon}</div>
-              <h3 className="font-semibold text-primary mb-2">{service.title}</h3>
-              <p className="text-sm text-text/70">{service.description}</p>
+              <h3 className="font-semibold text-primary mb-2">{t(`about.services.${service.key}.title`)}</h3>
+              <p className="text-sm text-text/70">{t(`about.services.${service.key}.description`)}</p>
             </div>
           ))}
         </div>
@@ -205,6 +227,7 @@ const AboutUs = () => {
 const DonationCounter = () => {
   const scope = useRef(null);
   const [collection, setCollection] = useState(0);
+  const { t } = useLanguage();
   const goal = 5000000;
   const target = 2500000;
 
@@ -245,14 +268,14 @@ const DonationCounter = () => {
     <section ref={scope} className="py-20 md:py-32 px-6 md:px-12 bg-secondary">
       <div className="max-w-7xl mx-auto">
         <div className="donation-content text-center space-y-8">
-          <h2 className="font-serif text-4xl md:text-5xl font-bold text-primary">Total Donation</h2>
+          <h2 className="font-serif text-4xl md:text-5xl font-bold text-primary">{t('donation.title')}</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
             <div className="bg-white rounded-lg p-8">
-              <p className="text-text/70 mb-2">Collection</p>
+              <p className="text-text/70 mb-2">{t('donation.collection')}</p>
               <p className="text-4xl font-bold text-primary">${(collection / 1000000).toFixed(1)}M</p>
             </div>
             <div className="bg-white rounded-lg p-8">
-              <p className="text-text/70 mb-2">Goal</p>
+              <p className="text-text/70 mb-2">{t('donation.goal')}</p>
               <p className="text-4xl font-bold text-primary">${(goal / 1000000).toFixed(0)}M</p>
             </div>
           </div>
@@ -267,7 +290,7 @@ const DonationCounter = () => {
               onClick={(e) => { e.preventDefault(); scrollToSection('donate'); }}
               className="px-8 py-3 rounded-full bg-primary text-white hover:bg-primary-dark transition-colors font-medium"
             >
-              Donate Now
+              {t('donation.donateNow')}
             </button>
           </div>
         </div>
@@ -280,51 +303,16 @@ const DonationCounter = () => {
 const Causes = () => {
   const scope = useRef(null);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const { t } = useLanguage();
 
-  const causes = [
-    {
-      image: "https://picsum.photos/600/400?random=10",
-      title: "Build school for poor children",
-      amount: 10000,
-      raised: 7500,
-      description: "Education is the foundation of hope. Help us build schools in rural Congo villages."
-    },
-    {
-      image: "https://picsum.photos/600/400?random=11",
-      title: "Clean water well project",
-      amount: 18000,
-      raised: 12000,
-      description: "Providing access to safe, clean water for communities across the Congo."
-    },
-    {
-      image: "https://picsum.photos/600/400?random=12",
-      title: "Medical clinic establishment",
-      amount: 25000,
-      raised: 15000,
-      description: "Building healthcare facilities to serve remote villages in need."
-    },
-    {
-      image: "https://picsum.photos/600/400?random=13",
-      title: "Food security program",
-      amount: 15000,
-      raised: 9000,
-      description: "Ensuring families have access to nutritious food year-round."
-    },
-    {
-      image: "https://picsum.photos/600/400?random=14",
-      title: "Children's education fund",
-      amount: 8000,
-      raised: 5000,
-      description: "Supporting children's education with books, supplies, and scholarships."
-    },
-    {
-      image: "https://picsum.photos/600/400?random=15",
-      title: "Community center development",
-      amount: 20000,
-      raised: 11000,
-      description: "Creating spaces for community gatherings, worship, and learning."
-    }
-  ];
+  const causeKeys = ['school', 'water', 'medical', 'food', 'education', 'community'];
+  
+  const causes = causeKeys.map((key, index) => ({
+    image: `https://picsum.photos/600/400?random=${10 + index}`,
+    key: key,
+    amount: [10000, 18000, 25000, 15000, 8000, 20000][index],
+    raised: [7500, 12000, 15000, 9000, 5000, 11000][index]
+  }));
 
   useLayoutEffect(() => {
     let ctx = gsap.context(() => {
@@ -358,9 +346,9 @@ const Causes = () => {
       <div className="max-w-7xl mx-auto">
         <div className="causes-content text-center mb-12">
           <h2 className="font-serif text-4xl md:text-5xl font-bold text-primary mb-4">
-            You can help lots of people by donate something.
+            {t('causes.title')}
           </h2>
-          <button className="text-primary hover:underline font-medium">More Causes</button>
+          <button className="text-primary hover:underline font-medium">{t('causes.moreCauses')}</button>
         </div>
 
         <div className="relative">
@@ -369,7 +357,7 @@ const Causes = () => {
               <div className="relative h-64 md:h-auto">
                 <img 
                   src={currentCause.image} 
-                  alt={currentCause.title} 
+                  alt={t(`causes.items.${currentCause.key}.title`)} 
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -379,14 +367,14 @@ const Causes = () => {
                     ${currentCause.amount.toLocaleString()}
                   </h3>
                   <h4 className="text-xl md:text-2xl font-semibold text-text mb-3">
-                    {currentCause.title}
+                    {t(`causes.items.${currentCause.key}.title`)}
                   </h4>
-                  <p className="text-text/70 mb-6">{currentCause.description}</p>
+                  <p className="text-text/70 mb-6">{t(`causes.items.${currentCause.key}.description`)}</p>
                 </div>
                 <div>
                   <div className="mb-4">
                     <div className="flex justify-between text-sm text-text/70 mb-2">
-                      <span>Raised: ${currentCause.raised.toLocaleString()}</span>
+                      <span>{t('causes.raised')}: ${currentCause.raised.toLocaleString()}</span>
                       <span>{Math.round(progress)}%</span>
                     </div>
                     <div className="bg-white/50 rounded-full h-3 overflow-hidden">
@@ -400,7 +388,7 @@ const Causes = () => {
                     onClick={(e) => { e.preventDefault(); scrollToSection('donate'); }}
                     className="w-full px-6 py-3 rounded-full bg-primary text-white hover:bg-primary-dark transition-colors font-medium"
                   >
-                    Donate
+                    {t('causes.donate')}
                   </button>
                 </div>
               </div>
@@ -440,6 +428,7 @@ const Causes = () => {
 // Join With Us Banner Section
 const JoinBanner = () => {
   const scope = useRef(null);
+  const { t } = useLanguage();
 
   useLayoutEffect(() => {
     let ctx = gsap.context(() => {
@@ -468,17 +457,16 @@ const JoinBanner = () => {
       </div>
       <div className="relative z-10 max-w-7xl mx-auto text-center join-content">
         <h2 className="font-serif text-4xl md:text-6xl font-bold text-primary mb-6">
-          Join With Hope for Congo To Give Education For Poor Children
+          {t('joinBanner.title')}
         </h2>
         <p className="text-lg text-text/80 max-w-3xl mx-auto mb-8">
-          Join us in the fight against poverty! By becoming a Champion for the poor, you can create 
-          your own webpage and raise funds for the poorest of the poor in the Democratic Republic of Congo.
+          {t('joinBanner.description')}
         </p>
         <button 
           onClick={(e) => { e.preventDefault(); scrollToSection('donate'); }}
           className="px-10 py-4 rounded-full bg-primary text-white hover:bg-primary-dark transition-colors font-medium text-lg"
         >
-          Donate Now
+          {t('joinBanner.donateNow')}
         </button>
       </div>
     </section>
@@ -490,6 +478,7 @@ const VolunteerForm = () => {
   const scope = useRef(null);
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [submitted, setSubmitted] = useState(false);
+  const { t } = useLanguage();
 
   useLayoutEffect(() => {
     let ctx = gsap.context(() => {
@@ -521,16 +510,16 @@ const VolunteerForm = () => {
       <div className="max-w-4xl mx-auto">
         <div className="volunteer-content text-center mb-12">
           <h2 className="font-serif text-4xl md:text-5xl font-bold text-primary mb-4">
-            Become A Volunteer
+            {t('volunteerForm.title')}
           </h2>
           <p className="text-lg text-text/80">
-            Thank you for your interest in volunteering with Hope for Congo. Fill out the form below to get started.
+            {t('volunteerForm.description')}
           </p>
         </div>
 
         <form onSubmit={handleSubmit} className="volunteer-content bg-white rounded-lg p-8 md:p-12 shadow-lg space-y-6">
           <div>
-            <label className="block text-text font-medium mb-2">Name</label>
+            <label className="block text-text font-medium mb-2">{t('volunteerForm.name')}</label>
             <input
               type="text"
               value={formData.name}
@@ -540,7 +529,7 @@ const VolunteerForm = () => {
             />
           </div>
           <div>
-            <label className="block text-text font-medium mb-2">Email</label>
+            <label className="block text-text font-medium mb-2">{t('volunteerForm.email')}</label>
             <input
               type="email"
               value={formData.email}
@@ -550,7 +539,7 @@ const VolunteerForm = () => {
             />
           </div>
           <div>
-            <label className="block text-text font-medium mb-2">Message</label>
+            <label className="block text-text font-medium mb-2">{t('volunteerForm.message')}</label>
             <textarea
               value={formData.message}
               onChange={(e) => setFormData({ ...formData, message: e.target.value })}
@@ -563,7 +552,7 @@ const VolunteerForm = () => {
             type="submit"
             className="w-full px-8 py-4 rounded-full bg-primary text-white hover:bg-primary-dark transition-colors font-medium"
           >
-            {submitted ? 'Thank you! Your submission has been received!' : 'Submit'}
+            {submitted ? t('volunteerForm.thankYou') : t('volunteerForm.submit')}
           </button>
         </form>
       </div>
@@ -574,39 +563,22 @@ const VolunteerForm = () => {
 // What We Do Section
 const WhatWeDo = () => {
   const scope = useRef(null);
+  const { t } = useLanguage();
 
-  const services = [
-    {
-      icon: <Heart className="w-8 h-8" />,
-      title: "Medical Mission Support",
-      description: "Doing the most good is hard. We recommend some of the best charities in the world to you."
-    },
-    {
-      icon: <Users className="w-8 h-8" />,
-      title: "Clean Water Access",
-      description: "The funds from events enable volunteers like you help us make these events more successful."
-    },
-    {
-      icon: <Heart className="w-8 h-8" />,
-      title: "Community Care Programs",
-      description: "We distribute usable garments to the poorest of the poor children, women and the men of all ages."
-    },
-    {
-      icon: <Heart className="w-8 h-8" />,
-      title: "Food Security",
-      description: "Fundraising for local causes World Help received through the humanity and give hope to people."
-    },
-    {
-      icon: <Target className="w-8 h-8" />,
-      title: "Evangelism Outreach",
-      description: "Children's Hospital Foundation is proud to support a variety of community events and campaigns."
-    },
-    {
-      icon: <Award className="w-8 h-8" />,
-      title: "Educational Programs",
-      description: "A Fund is designed to support on-going giving which requires fund management services."
-    }
+  const serviceKeys = ['medical', 'water', 'community', 'food', 'evangelism', 'education'];
+  const icons = [
+    <Heart className="w-8 h-8" />,
+    <Users className="w-8 h-8" />,
+    <Heart className="w-8 h-8" />,
+    <Heart className="w-8 h-8" />,
+    <Target className="w-8 h-8" />,
+    <Award className="w-8 h-8" />
   ];
+
+  const services = serviceKeys.map((key, index) => ({
+    icon: icons[index],
+    key: key
+  }));
 
   useLayoutEffect(() => {
     let ctx = gsap.context(() => {
@@ -629,7 +601,7 @@ const WhatWeDo = () => {
     <section ref={scope} className="py-20 md:py-32 px-6 md:px-12 bg-white">
       <div className="max-w-7xl mx-auto">
         <h2 className="font-serif text-4xl md:text-5xl font-bold text-primary text-center mb-16">
-          We do it for People in Need
+          {t('whatWeDo.title')}
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
@@ -638,8 +610,8 @@ const WhatWeDo = () => {
               className="service-card bg-background rounded-lg p-8 hover:shadow-lg transition-shadow"
             >
               <div className="text-primary mb-4">{service.icon}</div>
-              <h3 className="font-serif text-2xl font-bold text-primary mb-3">{service.title}</h3>
-              <p className="text-text/70 leading-relaxed">{service.description}</p>
+              <h3 className="font-serif text-2xl font-bold text-primary mb-3">{t(`whatWeDo.services.${service.key}.title`)}</h3>
+              <p className="text-text/70 leading-relaxed">{t(`whatWeDo.services.${service.key}.description`)}</p>
             </div>
           ))}
         </div>
@@ -651,51 +623,14 @@ const WhatWeDo = () => {
 // Featured Projects Section (Enhanced)
 const Projects = () => {
   const scope = useRef(null);
+  const { t } = useLanguage();
 
-  const projects = [
-    {
-      image: "https://picsum.photos/400/300?random=30",
-      category: "Education",
-      subcategory: "Health",
-      title: "Make People Believe in Cause",
-      description: "Building schools and educational facilities in remote villages."
-    },
-    {
-      image: "https://picsum.photos/400/300?random=31",
-      category: "Water",
-      subcategory: "People",
-      title: "Building a well is the easy part",
-      description: "Providing sustainable water access to communities."
-    },
-    {
-      image: "https://picsum.photos/400/300?random=32",
-      category: "Children",
-      subcategory: "Needs",
-      title: "Carolina and Tabia's Walk",
-      description: "Supporting children's education and development programs."
-    },
-    {
-      image: "https://picsum.photos/400/300?random=33",
-      category: "Water",
-      subcategory: "Drinking",
-      title: "Help to Get Drinking Water",
-      description: "Installing clean water systems in rural areas."
-    },
-    {
-      image: "https://picsum.photos/400/300?random=34",
-      category: "Women",
-      subcategory: "Freedom",
-      title: "Provides Full Freedom to women",
-      description: "Empowering women through education and economic opportunities."
-    },
-    {
-      image: "https://picsum.photos/400/300?random=35",
-      category: "Education",
-      subcategory: "Health",
-      title: "Your Passion of Marvelous Performance",
-      description: "Creating educational opportunities for all."
-    }
-  ];
+  const projectKeys = ['believe', 'well', 'walk', 'drinking', 'freedom', 'passion'];
+  
+  const projects = projectKeys.map((key, index) => ({
+    image: `https://picsum.photos/400/300?random=${30 + index}`,
+    key: key
+  }));
 
   useLayoutEffect(() => {
     let ctx = gsap.context(() => {
@@ -719,13 +654,12 @@ const Projects = () => {
       <div className="max-w-7xl mx-auto">
         <div className="flex justify-between items-center mb-12">
           <h2 className="font-serif text-4xl md:text-5xl font-bold text-primary">
-            Featured Projects
+            {t('projects.title')}
           </h2>
-          <button className="text-primary hover:underline font-medium">More Project</button>
+          <button className="text-primary hover:underline font-medium">{t('projects.moreProject')}</button>
         </div>
         <p className="text-lg text-text/80 mb-12 max-w-3xl">
-          Join us in the fight against poverty! By becoming a Champion for the poor, you can create 
-          your own webpage and raise funds for the poorest of the poor in the Democratic Republic of Congo.
+          {t('projects.description')}
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
@@ -735,20 +669,20 @@ const Projects = () => {
             >
               <img 
                 src={project.image} 
-                alt={project.title} 
+                alt={t(`projects.items.${project.key}.title`)} 
                 className="w-full h-64 object-cover"
               />
               <div className="p-6">
                 <div className="flex gap-2 mb-3">
                   <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-medium">
-                    {project.category}
+                    {t(`projects.items.${project.key}.category`)}
                   </span>
                   <span className="px-3 py-1 bg-accent/10 text-accent rounded-full text-xs font-medium">
-                    {project.subcategory}
+                    {t(`projects.items.${project.key}.subcategory`)}
                   </span>
                 </div>
-                <h3 className="font-serif text-2xl font-bold text-primary mb-2">{project.title}</h3>
-                <p className="text-text/70">{project.description}</p>
+                <h3 className="font-serif text-2xl font-bold text-primary mb-2">{t(`projects.items.${project.key}.title`)}</h3>
+                <p className="text-text/70">{t(`projects.items.${project.key}.description`)}</p>
               </div>
             </div>
           ))}
@@ -762,33 +696,14 @@ const Projects = () => {
 const Testimonials = () => {
   const scope = useRef(null);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const { t } = useLanguage();
 
-  const testimonials = [
-    {
-      quote: "Hope for Congo is a wonderful, easy to use site. We were able to have a successful mission and we couldn't have done it without their support.",
-      name: "Pastor Jean",
-      role: "Community Leader",
-      avatar: "https://picsum.photos/100/100?random=40"
-    },
-    {
-      quote: "I Thank you very much Hope for Congo team. It will definitely help our students to enrich their reading skills and knowledge forever.",
-      name: "Marie Kabila",
-      role: "School Principal",
-      avatar: "https://picsum.photos/100/100?random=41"
-    },
-    {
-      quote: "This is great service, I really admire. Hope for Congo really dedicate the welfare of humanity general particularly in this country.",
-      name: "Elder Samuel",
-      role: "Village Elder",
-      avatar: "https://picsum.photos/100/100?random=42"
-    },
-    {
-      quote: "Thank you very much Hope for Congo team. It will definitely help our students to enrich their reading skills and knowledge forever.",
-      name: "Sara Taylor",
-      role: "Donator",
-      avatar: "https://picsum.photos/100/100?random=43"
-    }
-  ];
+  const testimonialKeys = ['pastor', 'marie', 'elder', 'sara'];
+  
+  const testimonials = testimonialKeys.map((key, index) => ({
+    key: key,
+    avatar: `https://picsum.photos/100/100?random=${40 + index}`
+  }));
 
   useLayoutEffect(() => {
     let ctx = gsap.context(() => {
@@ -820,22 +735,22 @@ const Testimonials = () => {
     <section ref={scope} className="py-20 md:py-32 px-6 md:px-12 bg-secondary">
       <div className="max-w-7xl mx-auto">
         <h2 className="font-serif text-4xl md:text-5xl font-bold text-primary text-center mb-16">
-          What People Say About Us
+          {t('testimonials.title')}
         </h2>
         
         <div className="relative max-w-4xl mx-auto">
           <div className="testimonial-content bg-white rounded-lg p-8 md:p-12 shadow-lg text-center">
             <div className="text-6xl text-primary/20 font-serif mb-6">"</div>
-            <p className="text-xl text-text/80 mb-8 leading-relaxed">{current.quote}</p>
+            <p className="text-xl text-text/80 mb-8 leading-relaxed">{t(`testimonials.items.${current.key}.quote`)}</p>
             <div className="flex items-center justify-center gap-4">
               <img 
                 src={current.avatar} 
-                alt={current.name} 
+                alt={t(`testimonials.items.${current.key}.name`)} 
                 className="w-16 h-16 rounded-full object-cover"
               />
               <div className="text-left">
-                <div className="font-semibold text-primary text-lg">{current.name}</div>
-                <div className="text-text/60">{current.role}</div>
+                <div className="font-semibold text-primary text-lg">{t(`testimonials.items.${current.key}.name`)}</div>
+                <div className="text-text/60">{t(`testimonials.items.${current.key}.role`)}</div>
               </div>
             </div>
           </div>
@@ -873,13 +788,21 @@ const Testimonials = () => {
 // Stats Section
 const Stats = () => {
   const scope = useRef(null);
+  const { t } = useLanguage();
 
-  const stats = [
-    { number: "50K", label: "Received Donations From Our People", icon: <Heart className="w-8 h-8" /> },
-    { number: "120+", label: "Projects Done With The Help Of Donators", icon: <Target className="w-8 h-8" /> },
-    { number: "5,000+", label: "People We Helped till this year", icon: <Users className="w-8 h-8" /> },
-    { number: "80+", label: "Number of Solved Causes till now", icon: <Award className="w-8 h-8" /> }
+  const statKeys = ['donations', 'projects', 'people', 'causes'];
+  const icons = [
+    <Heart className="w-8 h-8" />,
+    <Target className="w-8 h-8" />,
+    <Users className="w-8 h-8" />,
+    <Award className="w-8 h-8" />
   ];
+
+  const stats = statKeys.map((key, index) => ({
+    number: t(`stats.${key}.number`),
+    label: t(`stats.${key}.label`),
+    icon: icons[index]
+  }));
 
   useLayoutEffect(() => {
     let ctx = gsap.context(() => {
@@ -960,24 +883,16 @@ const Partners = () => {
 // Meet Our Volunteers Section
 const Volunteers = () => {
   const scope = useRef(null);
+  const { t } = useLanguage();
 
-  const volunteers = [
-    {
-      name: "Martin Luther",
-      role: "Field Director",
-      image: "https://picsum.photos/300/300?random=50"
-    },
-    {
-      name: "Keira Knightley",
-      role: "Education Coordinator",
-      image: "https://picsum.photos/300/300?random=51"
-    },
-    {
-      name: "Jack Sparrow",
-      role: "Community Outreach",
-      image: "https://picsum.photos/300/300?random=52"
-    }
-  ];
+  const roleKeys = ['fieldDirector', 'educationCoordinator', 'communityOutreach'];
+  const names = ["Martin Luther", "Keira Knightley", "Jack Sparrow"];
+
+  const volunteers = roleKeys.map((roleKey, index) => ({
+    name: names[index],
+    role: t(`volunteers.roles.${roleKey}`),
+    image: `https://picsum.photos/300/300?random=${50 + index}`
+  }));
 
   useLayoutEffect(() => {
     let ctx = gsap.context(() => {
@@ -1000,7 +915,7 @@ const Volunteers = () => {
     <section ref={scope} id="volunteers" className="py-20 md:py-32 px-6 md:px-12 bg-white">
       <div className="max-w-7xl mx-auto">
         <h2 className="font-serif text-4xl md:text-5xl font-bold text-primary text-center mb-16">
-          Meet Our Volunteers
+          {t('volunteers.title')}
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {volunteers.map((volunteer, index) => (
@@ -1036,14 +951,14 @@ const Volunteers = () => {
           <div className="inline-flex items-center gap-3 bg-secondary rounded-lg p-6">
             <Heart className="w-8 h-8 text-primary" />
             <div className="text-left">
-              <h3 className="font-serif text-2xl font-bold text-primary mb-1">Become a Volunteer</h3>
-              <p className="text-text/70">Centuries but also the leap electronic typesetting, remaining</p>
+              <h3 className="font-serif text-2xl font-bold text-primary mb-1">{t('volunteers.becomeVolunteer')}</h3>
+              <p className="text-text/70">{t('volunteers.becomeDescription')}</p>
             </div>
             <button 
               onClick={(e) => { e.preventDefault(); scrollToSection('volunteer-form'); }}
               className="ml-4 px-6 py-3 rounded-full bg-primary text-white hover:bg-primary-dark transition-colors font-medium"
             >
-              Join Us Today
+              {t('volunteers.joinUs')}
             </button>
           </div>
         </div>
@@ -1055,36 +970,19 @@ const Volunteers = () => {
 // Events Section
 const Events = () => {
   const scope = useRef(null);
+  const { t } = useLanguage();
 
-  const events = [
-    {
-      date: 30,
-      month: "July",
-      organizer: "Nattasha",
-      title: "Education for Poor Children",
-      description: "Podcasting operational change management inside of workflows to establish a framework indicators.",
-      time: "10:00 AM - 18:00 PM, Everyday",
-      location: "Kinshasa, Democratic Republic of Congo"
-    },
-    {
-      date: 15,
-      month: "August",
-      organizer: "David James",
-      title: "Community Health Outreach",
-      description: "Providing medical services and health education to remote villages.",
-      time: "9:00 AM - 5:00 PM",
-      location: "Eastern Province, DRC"
-    },
-    {
-      date: 22,
-      month: "August",
-      organizer: "Jake Gibson",
-      title: "Water Well Dedication",
-      description: "Celebrating the completion of new clean water access points.",
-      time: "2:00 PM - 4:00 PM",
-      location: "Kasai Region, DRC"
-    }
-  ];
+  const eventKeys = ['education', 'health', 'water'];
+  const dates = [30, 15, 22];
+  const monthKeys = ['july', 'august', 'august'];
+  const organizers = ["Nattasha", "David James", "Jake Gibson"];
+
+  const events = eventKeys.map((key, index) => ({
+    date: dates[index],
+    month: t(`events.months.${monthKeys[index]}`),
+    organizer: organizers[index],
+    key: key
+  }));
 
   useLayoutEffect(() => {
     let ctx = gsap.context(() => {
@@ -1108,9 +1006,9 @@ const Events = () => {
       <div className="max-w-7xl mx-auto">
         <div className="flex justify-between items-center mb-12">
           <h2 className="font-serif text-4xl md:text-5xl font-bold text-primary">
-            Join Upcoming Events and Webinars
+            {t('events.title')}
           </h2>
-          <button className="text-primary hover:underline font-medium">More Events</button>
+          <button className="text-primary hover:underline font-medium">{t('events.moreEvents')}</button>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {events.map((event, index) => (
@@ -1121,7 +1019,7 @@ const Events = () => {
               <div className="relative">
                 <img 
                   src={`https://picsum.photos/400/250?random=${60 + index}`} 
-                  alt={event.title} 
+                  alt={t(`events.items.${event.key}.title`)} 
                   className="w-full h-48 object-cover"
                 />
                 <div className="absolute top-4 left-4 bg-primary text-white rounded-lg p-3 text-center">
@@ -1130,17 +1028,17 @@ const Events = () => {
                 </div>
               </div>
               <div className="p-6">
-                <p className="text-sm text-text/60 mb-2">Organized By: {event.organizer}</p>
-                <h3 className="font-serif text-xl font-bold text-primary mb-3">{event.title}</h3>
-                <p className="text-text/70 text-sm mb-4">{event.description}</p>
+                <p className="text-sm text-text/60 mb-2">{t('events.organizedBy')}: {event.organizer}</p>
+                <h3 className="font-serif text-xl font-bold text-primary mb-3">{t(`events.items.${event.key}.title`)}</h3>
+                <p className="text-text/70 text-sm mb-4">{t(`events.items.${event.key}.description`)}</p>
                 <div className="space-y-2 text-sm text-text/60">
                   <div className="flex items-center gap-2">
                     <Clock className="w-4 h-4" />
-                    <span>{event.time}</span>
+                    <span>{t(`events.items.${event.key}.time`)}</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <LocationIcon className="w-4 h-4" />
-                    <span>{event.location}</span>
+                    <span>{t(`events.items.${event.key}.location`)}</span>
                   </div>
                 </div>
               </div>
@@ -1157,6 +1055,7 @@ const Newsletter = () => {
   const scope = useRef(null);
   const [email, setEmail] = useState('');
   const [submitted, setSubmitted] = useState(false);
+  const { t } = useLanguage();
 
   useLayoutEffect(() => {
     let ctx = gsap.context(() => {
@@ -1186,16 +1085,16 @@ const Newsletter = () => {
   return (
     <section ref={scope} className="py-20 md:py-32 px-6 md:px-12 bg-secondary">
       <div className="max-w-4xl mx-auto text-center newsletter-content">
-        <h2 className="font-serif text-4xl md:text-5xl font-bold text-primary mb-4">Newsletter</h2>
+        <h2 className="font-serif text-4xl md:text-5xl font-bold text-primary mb-4">{t('newsletter.title')}</h2>
         <p className="text-lg text-text/80 mb-8">
-          Sign up our monthly newsletter to get the latest news, events, volunteer opportunities.
+          {t('newsletter.description')}
         </p>
         <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4 max-w-2xl mx-auto">
           <input
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            placeholder="Enter your email"
+            placeholder={t('newsletter.placeholder')}
             className="flex-1 px-6 py-4 rounded-full border border-text/20 focus:outline-none focus:border-primary"
             required
           />
@@ -1203,11 +1102,11 @@ const Newsletter = () => {
             type="submit"
             className="px-8 py-4 rounded-full bg-primary text-white hover:bg-primary-dark transition-colors font-medium"
           >
-            Subscribe
+            {t('newsletter.subscribe')}
           </button>
         </form>
         {submitted && (
-          <p className="mt-4 text-primary font-medium">Thank you! Your submission has been received!</p>
+          <p className="mt-4 text-primary font-medium">{t('newsletter.thankYou')}</p>
         )}
       </div>
     </section>
@@ -1217,27 +1116,16 @@ const Newsletter = () => {
 // Recent Blog Section
 const Blog = () => {
   const scope = useRef(null);
+  const { t } = useLanguage();
 
-  const posts = [
-    {
-      image: "https://picsum.photos/400/250?random=70",
-      title: "Building Hope: Our Latest School Project",
-      excerpt: "Learn about our recent efforts to build educational facilities in remote Congo villages.",
-      date: "July 15, 2025"
-    },
-    {
-      image: "https://picsum.photos/400/250?random=71",
-      title: "Water Well Success Stories",
-      excerpt: "Discover how clean water access is transforming communities across the DRC.",
-      date: "July 10, 2025"
-    },
-    {
-      image: "https://picsum.photos/400/250?random=72",
-      title: "Volunteer Spotlight: Making a Difference",
-      excerpt: "Meet the dedicated volunteers who are bringing hope to Congo villages.",
-      date: "July 5, 2025"
-    }
-  ];
+  const postKeys = ['hope', 'water', 'volunteer'];
+  const dates = ["July 15, 2025", "July 10, 2025", "July 5, 2025"];
+
+  const posts = postKeys.map((key, index) => ({
+    image: `https://picsum.photos/400/250?random=${70 + index}`,
+    key: key,
+    date: dates[index]
+  }));
 
   useLayoutEffect(() => {
     let ctx = gsap.context(() => {
@@ -1261,9 +1149,9 @@ const Blog = () => {
       <div className="max-w-7xl mx-auto">
         <div className="flex justify-between items-center mb-12">
           <h2 className="font-serif text-4xl md:text-5xl font-bold text-primary">
-            Take Look At Recent Blog Posts
+            {t('blog.title')}
           </h2>
-          <button className="text-primary hover:underline font-medium">See Our Blogs</button>
+          <button className="text-primary hover:underline font-medium">{t('blog.seeBlogs')}</button>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {posts.map((post, index) => (
@@ -1273,13 +1161,13 @@ const Blog = () => {
             >
               <img 
                 src={post.image} 
-                alt={post.title} 
+                alt={t(`blog.items.${post.key}.title`)} 
                 className="w-full h-48 object-cover"
               />
               <div className="p-6">
                 <p className="text-sm text-text/60 mb-2">{post.date}</p>
-                <h3 className="font-serif text-2xl font-bold text-primary mb-3">{post.title}</h3>
-                <p className="text-text/70">{post.excerpt}</p>
+                <h3 className="font-serif text-2xl font-bold text-primary mb-3">{t(`blog.items.${post.key}.title`)}</h3>
+                <p className="text-text/70">{t(`blog.items.${post.key}.excerpt`)}</p>
               </div>
             </div>
           ))}
@@ -1291,15 +1179,16 @@ const Blog = () => {
 
 // Enhanced Footer
 const Footer = () => {
+  const { t } = useLanguage();
+  
   return (
     <footer id="contact" className="bg-primary text-white py-16 px-6 md:px-12">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           <div className="space-y-6">
-            <h3 className="font-serif text-3xl font-bold">Hope for Congo</h3>
+            <h3 className="font-serif text-3xl font-bold">{t('navbar.brand')}</h3>
             <p className="text-white/80 leading-relaxed">
-              No one knows what an equitable world looks like. We are working together with only hope 
-              for raising a better tomorrow.
+              {t('footer.description')}
             </p>
             <div className="flex gap-4">
               <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors">
@@ -1318,29 +1207,29 @@ const Footer = () => {
           </div>
           
           <div className="space-y-6">
-            <h4 className="font-semibold text-lg">Get Involved</h4>
+            <h4 className="font-semibold text-lg">{t('footer.getInvolved')}</h4>
             <ul className="space-y-3 text-white/80">
-              <li><a href="#about" onClick={(e) => { e.preventDefault(); scrollToSection('about'); }} className="hover:text-white transition-colors">About Us</a></li>
-              <li><a href="#volunteer-form" onClick={(e) => { e.preventDefault(); scrollToSection('volunteer-form'); }} className="hover:text-white transition-colors">Volunteer</a></li>
-              <li><a href="#causes" onClick={(e) => { e.preventDefault(); scrollToSection('causes'); }} className="hover:text-white transition-colors">Causes</a></li>
-              <li><a href="#projects" onClick={(e) => { e.preventDefault(); scrollToSection('projects'); }} className="hover:text-white transition-colors">Projects</a></li>
-              <li><a href="#volunteers" onClick={(e) => { e.preventDefault(); scrollToSection('volunteers'); }} className="hover:text-white transition-colors">Team</a></li>
+              <li><a href="#about" onClick={(e) => { e.preventDefault(); scrollToSection('about'); }} className="hover:text-white transition-colors">{t('navbar.about')}</a></li>
+              <li><a href="#volunteer-form" onClick={(e) => { e.preventDefault(); scrollToSection('volunteer-form'); }} className="hover:text-white transition-colors">{t('navbar.volunteer')}</a></li>
+              <li><a href="#causes" onClick={(e) => { e.preventDefault(); scrollToSection('causes'); }} className="hover:text-white transition-colors">{t('navbar.causes')}</a></li>
+              <li><a href="#projects" onClick={(e) => { e.preventDefault(); scrollToSection('projects'); }} className="hover:text-white transition-colors">{t('navbar.projects')}</a></li>
+              <li><a href="#volunteers" onClick={(e) => { e.preventDefault(); scrollToSection('volunteers'); }} className="hover:text-white transition-colors">{t('navbar.team')}</a></li>
             </ul>
           </div>
 
           <div className="space-y-6">
-            <h4 className="font-semibold text-lg">Utility Page</h4>
+            <h4 className="font-semibold text-lg">{t('footer.utilityPage')}</h4>
             <ul className="space-y-3 text-white/80">
-              <li><a href="#" className="hover:text-white transition-colors">Style Guide</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Licenses</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Password</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">404 Page</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Changelog</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">{t('footer.styleGuide')}</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">{t('footer.licenses')}</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">{t('footer.password')}</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">{t('footer.page404')}</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">{t('footer.changelog')}</a></li>
             </ul>
           </div>
 
           <div className="space-y-6">
-            <h4 className="font-semibold text-lg">Contact</h4>
+            <h4 className="font-semibold text-lg">{t('footer.contact')}</h4>
             <div className="space-y-4 text-white/80">
               <div className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 mt-1 flex-shrink-0" />
@@ -1360,7 +1249,7 @@ const Footer = () => {
         
         <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="text-sm text-white/60">
-            Copyright © Hope for Congo | Designed by Hope for Congo - Powered by React
+            {t('footer.copyright')}
           </div>
         </div>
       </div>
