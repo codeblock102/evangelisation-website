@@ -10,6 +10,35 @@ import { useLanguage } from './LanguageContext';
 
 gsap.registerPlugin(ScrollTrigger);
 
+// Optimized Image Component with WebP support
+const OptimizedImage = ({ src, alt, className, loading = 'lazy', ...props }) => {
+  // Handle both /images/ and /images/compressed/ paths
+  let webpSrc, compressedSrc;
+  
+  if (src.includes('/images/compressed/')) {
+    // Already using compressed path
+    compressedSrc = src;
+    webpSrc = src.replace('/images/compressed/', '/images/compressed-webp/').replace(/\.jpg$/, '.webp');
+  } else {
+    // Using regular /images/ path
+    compressedSrc = src.replace('/images/', '/images/compressed/');
+    webpSrc = src.replace('/images/', '/images/compressed-webp/').replace(/\.jpg$/, '.webp');
+  }
+  
+  return (
+    <picture>
+      <source srcSet={webpSrc} type="image/webp" />
+      <img 
+        src={compressedSrc} 
+        alt={alt} 
+        className={className}
+        loading={loading}
+        {...props}
+      />
+    </picture>
+  );
+};
+
 // Helper function for smooth scrolling
 const scrollToSection = (id) => {
   const element = document.getElementById(id);
@@ -101,10 +130,11 @@ const Hero = () => {
   return (
     <section ref={scope} id="home" className="relative h-screen w-full flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 z-0">
-        <img 
+        <OptimizedImage 
           src="/images/Support for the population of villages in the East/PHOTO-2026-02-23-20-53-15_3.jpg" 
           alt="Ministry in Action" 
           className="w-full h-full object-cover"
+          loading="eager"
         />
         <div className="absolute inset-0 bg-primary/60"></div>
       </div>
@@ -182,7 +212,7 @@ const AboutUs = () => {
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center mb-16">
           <div className="about-content">
-            <img 
+            <OptimizedImage 
               src="/images/Yaounde headquarters building nearing completion/PHOTO-2026-02-23-21-00-20_1.jpg" 
               alt="Our Mission" 
               className="w-full h-auto rounded-lg shadow-lg"
@@ -307,12 +337,12 @@ const Causes = () => {
 
   const causeKeys = ['school', 'water', 'medical', 'food', 'education', 'community'];
   const causeImages = [
-    '/images/Distribution of school supplies to Pygmy students from the eastern part of the country in the village/PHOTO-2026-02-08-16-51-07.jpg',
-    '/images/Support for the population of villages in the East/PHOTO-2026-02-23-20-53-16.jpg',
-    '/images/Support for the population of villages in the East/PHOTO-2026-02-23-20-53-15_1.jpg',
-    '/images/Support for the population of villages in the East/PHOTO-2026-02-23-20-49-01.jpg',
-    '/images/Distribution of school supplies to students in Yaoundé/PHOTO-2026-03-02-17-17-05.jpg',
-    '/images/Support for the population of villages in the East/PHOTO-2026-02-23-20-48-13.jpg'
+    '/images/compressed/Distribution of school supplies to Pygmy students from the eastern part of the country in the village/PHOTO-2026-02-08-16-51-07.jpg',
+    '/images/compressed/Support for the population of villages in the East/PHOTO-2026-02-23-20-53-16.jpg',
+    '/images/compressed/Support for the population of villages in the East/PHOTO-2026-02-23-20-53-15_1.jpg',
+    '/images/compressed/Support for the population of villages in the East/PHOTO-2026-02-23-20-49-01.jpg',
+    '/images/compressed/Distribution of school supplies to students in Yaoundé/PHOTO-2026-03-02-17-17-05.jpg',
+    '/images/compressed/Support for the population of villages in the East/PHOTO-2026-02-23-20-48-13.jpg'
   ];
   
   const causes = causeKeys.map((key, index) => ({
@@ -363,7 +393,7 @@ const Causes = () => {
           <div className="bg-background rounded-lg overflow-hidden shadow-xl">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
               <div className="relative h-64 md:h-auto">
-                <img 
+                <OptimizedImage 
                   src={currentCause.image} 
                   alt={t(`causes.items.${currentCause.key}.title`)} 
                   className="w-full h-full object-cover"
@@ -457,7 +487,7 @@ const JoinBanner = () => {
   return (
     <section ref={scope} className="py-20 md:py-32 px-6 md:px-12 bg-secondary relative overflow-hidden">
       <div className="absolute inset-0 z-0">
-        <img 
+        <OptimizedImage 
           src="/images/Support for the population of villages in the East/PHOTO-2026-02-23-20-53-15_3.jpg" 
           alt="Join Us" 
           className="w-full h-full object-cover opacity-20"
@@ -635,12 +665,12 @@ const Projects = () => {
 
   const projectKeys = ['believe', 'well', 'walk', 'drinking', 'freedom', 'passion'];
   const projectImages = [
-    '/images/Mission and Objectif of minister 2023-2025/PHOTO-2026-01-23-20-01-47.jpg',
-    '/images/Yaounde headquarters building nearing completion/PHOTO-2026-02-23-21-00-20.jpg',
-    '/images/Distribution of school supplies to Pygmy students from the eastern part of the country in the village/PHOTO-2026-02-08-16-51-06_3.jpg',
-    '/images/Support for the population of villages in the East/PHOTO-2026-02-23-20-53-14.jpg',
-    '/images/International Minister Ghana/PHOTO-2025-06-02-15-09-06.jpg',
-    '/images/Mission at international Edmonton Canada/PHOTO-2026-01-27-02-25-08.jpg'
+    '/images/compressed/Mission and Objectif of minister 2023-2025/PHOTO-2026-01-23-20-01-47.jpg',
+    '/images/compressed/Yaounde headquarters building nearing completion/PHOTO-2026-02-23-21-00-20.jpg',
+    '/images/compressed/Distribution of school supplies to Pygmy students from the eastern part of the country in the village/PHOTO-2026-02-08-16-51-06_3.jpg',
+    '/images/compressed/Support for the population of villages in the East/PHOTO-2026-02-23-20-53-14.jpg',
+    '/images/compressed/International Minister Ghana/PHOTO-2025-06-02-15-09-06.jpg',
+    '/images/compressed/Mission at international Edmonton Canada/PHOTO-2026-01-27-02-25-08.jpg'
   ];
   
   const projects = projectKeys.map((key, index) => ({
@@ -683,7 +713,7 @@ const Projects = () => {
               key={index}
               className="project-card bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
             >
-              <img 
+              <OptimizedImage 
                 src={project.image} 
                 alt={t(`projects.items.${project.key}.title`)} 
                 className="w-full h-64 object-cover"
@@ -716,10 +746,10 @@ const Testimonials = () => {
 
   const testimonialKeys = ['pastor', 'marie', 'elder', 'sara'];
   const testimonialAvatars = [
-    '/images/International Minister Ghana/PHOTO-2025-06-02-15-06-38.jpg',
-    '/images/Distribution of school supplies to students in Yaoundé/PHOTO-2026-03-02-17-17-05.jpg',
-    '/images/International Minister South Sudan/PHOTO-2025-09-01-12-03-33.jpg',
-    '/images/Mission at international Edmonton Canada/PHOTO-2026-01-25-21-42-09.jpg'
+    '/images/compressed/International Minister Ghana/PHOTO-2025-06-02-15-06-38.jpg',
+    '/images/compressed/Distribution of school supplies to students in Yaoundé/PHOTO-2026-03-02-17-17-05.jpg',
+    '/images/compressed/International Minister South Sudan/PHOTO-2025-09-01-12-03-33.jpg',
+    '/images/compressed/Mission at international Edmonton Canada/PHOTO-2026-01-25-21-42-09.jpg'
   ];
   
   const testimonials = testimonialKeys.map((key, index) => ({
@@ -765,7 +795,7 @@ const Testimonials = () => {
             <div className="text-6xl text-primary/20 font-serif mb-6">"</div>
             <p className="text-xl text-text/80 mb-8 leading-relaxed">{t(`testimonials.items.${current.key}.quote`)}</p>
             <div className="flex items-center justify-center gap-4">
-              <img 
+              <OptimizedImage 
                 src={current.avatar} 
                 alt={t(`testimonials.items.${current.key}.name`)} 
                 className="w-16 h-16 rounded-full object-cover"
@@ -910,9 +940,9 @@ const Volunteers = () => {
   const roleKeys = ['fieldDirector', 'educationCoordinator', 'communityOutreach'];
   const names = ["Martin Luther", "Keira Knightley", "Jack Sparrow"];
   const volunteerImages = [
-    '/images/International Minister Ghana/PHOTO-2025-06-02-15-06-37 (1).jpg',
-    '/images/Distribution of school supplies to Pygmy students from the eastern part of the country in the village/PHOTO-2026-02-08-16-51-06_4.jpg',
-    '/images/Mission at international Edmonton Canada/PHOTO-2026-01-25-21-42-08_1.jpg'
+    '/images/compressed/International Minister Ghana/PHOTO-2025-06-02-15-06-37 (1).jpg',
+    '/images/compressed/Distribution of school supplies to Pygmy students from the eastern part of the country in the village/PHOTO-2026-02-08-16-51-06_4.jpg',
+    '/images/compressed/Mission at international Edmonton Canada/PHOTO-2026-01-25-21-42-08_1.jpg'
   ];
 
   const volunteers = roleKeys.map((roleKey, index) => ({
@@ -950,7 +980,7 @@ const Volunteers = () => {
               key={index}
               className="volunteer-card bg-background rounded-lg overflow-hidden text-center hover:shadow-lg transition-shadow"
             >
-              <img 
+              <OptimizedImage 
                 src={volunteer.image} 
                 alt={volunteer.name} 
                 className="w-full h-80 object-cover"
@@ -1004,9 +1034,9 @@ const Events = () => {
   const monthKeys = ['july', 'august', 'august'];
   const organizers = ["Nattasha", "David James", "Jake Gibson"];
   const eventImages = [
-    '/images/Distribution of school supplies to students in Yaoundé/PHOTO-2026-03-02-17-17-06.jpg',
-    '/images/Support for the population of villages in the East/PHOTO-2026-02-23-20-53-15_2.jpg',
-    '/images/Support for the population of villages in the East/PHOTO-2026-02-23-20-53-16_1.jpg'
+    '/images/compressed/Distribution of school supplies to students in Yaoundé/PHOTO-2026-03-02-17-17-06.jpg',
+    '/images/compressed/Support for the population of villages in the East/PHOTO-2026-02-23-20-53-15_2.jpg',
+    '/images/compressed/Support for the population of villages in the East/PHOTO-2026-02-23-20-53-16_1.jpg'
   ];
 
   const events = eventKeys.map((key, index) => ({
@@ -1050,7 +1080,7 @@ const Events = () => {
               className="event-card bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all"
             >
               <div className="relative">
-                <img 
+                <OptimizedImage 
                   src={event.image} 
                   alt={t(`events.items.${event.key}.title`)} 
                   className="w-full h-48 object-cover"
@@ -1154,9 +1184,9 @@ const Blog = () => {
   const postKeys = ['hope', 'water', 'volunteer'];
   const dates = ["July 15, 2025", "July 10, 2025", "July 5, 2025"];
   const blogImages = [
-    '/images/Mission and Objectif of minister 2023-2025/PHOTO-2026-01-23-20-02-18.jpg',
-    '/images/Support for the population of villages in the East/PHOTO-2026-02-23-20-53-18.jpg',
-    '/images/International Minister Ghana/PHOTO-2025-06-02-15-06-37.jpg'
+    '/images/compressed/Mission and Objectif of minister 2023-2025/PHOTO-2026-01-23-20-02-18.jpg',
+    '/images/compressed/Support for the population of villages in the East/PHOTO-2026-02-23-20-53-18.jpg',
+    '/images/compressed/International Minister Ghana/PHOTO-2025-06-02-15-06-37.jpg'
   ];
 
   const posts = postKeys.map((key, index) => ({
@@ -1197,7 +1227,7 @@ const Blog = () => {
               key={index}
               className="blog-card bg-background rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all hover:-translate-y-2"
             >
-              <img 
+              <OptimizedImage 
                 src={post.image} 
                 alt={t(`blog.items.${post.key}.title`)} 
                 className="w-full h-48 object-cover"
