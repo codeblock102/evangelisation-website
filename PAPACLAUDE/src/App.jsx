@@ -102,8 +102,8 @@ const Hero = () => {
     <section ref={scope} id="home" className="relative h-screen w-full flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 z-0">
         <img 
-          src="https://picsum.photos/1920/1080?random=1" 
-          alt="Congo Village" 
+          src="/images/Support for the population of villages in the East/PHOTO-2026-02-23-20-53-15_3.jpg" 
+          alt="Ministry in Action" 
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-primary/60"></div>
@@ -183,7 +183,7 @@ const AboutUs = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center mb-16">
           <div className="about-content">
             <img 
-              src="https://picsum.photos/600/700?random=2" 
+              src="/images/Yaounde headquarters building nearing completion/PHOTO-2026-02-23-21-00-20_1.jpg" 
               alt="Our Mission" 
               className="w-full h-auto rounded-lg shadow-lg"
             />
@@ -306,9 +306,17 @@ const Causes = () => {
   const { t } = useLanguage();
 
   const causeKeys = ['school', 'water', 'medical', 'food', 'education', 'community'];
+  const causeImages = [
+    '/images/Distribution of school supplies to Pygmy students from the eastern part of the country in the village/PHOTO-2026-02-08-16-51-07.jpg',
+    '/images/Support for the population of villages in the East/PHOTO-2026-02-23-20-53-16.jpg',
+    '/images/Support for the population of villages in the East/PHOTO-2026-02-23-20-53-15_1.jpg',
+    '/images/Support for the population of villages in the East/PHOTO-2026-02-23-20-49-01.jpg',
+    '/images/Distribution of school supplies to students in Yaoundé/PHOTO-2026-03-02-17-17-05.jpg',
+    '/images/Support for the population of villages in the East/PHOTO-2026-02-23-20-48-13.jpg'
+  ];
   
   const causes = causeKeys.map((key, index) => ({
-    image: `https://picsum.photos/600/400?random=${10 + index}`,
+    image: causeImages[index],
     key: key,
     amount: [10000, 18000, 25000, 15000, 8000, 20000][index],
     raised: [7500, 12000, 15000, 9000, 5000, 11000][index]
@@ -450,7 +458,7 @@ const JoinBanner = () => {
     <section ref={scope} className="py-20 md:py-32 px-6 md:px-12 bg-secondary relative overflow-hidden">
       <div className="absolute inset-0 z-0">
         <img 
-          src="https://picsum.photos/1920/600?random=20" 
+          src="/images/Support for the population of villages in the East/PHOTO-2026-02-23-20-53-15_3.jpg" 
           alt="Join Us" 
           className="w-full h-full object-cover opacity-20"
         />
@@ -626,9 +634,17 @@ const Projects = () => {
   const { t } = useLanguage();
 
   const projectKeys = ['believe', 'well', 'walk', 'drinking', 'freedom', 'passion'];
+  const projectImages = [
+    '/images/Mission and Objectif of minister 2023-2025/PHOTO-2026-01-23-20-01-47.jpg',
+    '/images/Yaounde headquarters building nearing completion/PHOTO-2026-02-23-21-00-20.jpg',
+    '/images/Distribution of school supplies to Pygmy students from the eastern part of the country in the village/PHOTO-2026-02-08-16-51-06_3.jpg',
+    '/images/Support for the population of villages in the East/PHOTO-2026-02-23-20-53-14.jpg',
+    '/images/International Minister Ghana/PHOTO-2025-06-02-15-09-06.jpg',
+    '/images/Mission at international Edmonton Canada/PHOTO-2026-01-27-02-25-08.jpg'
+  ];
   
   const projects = projectKeys.map((key, index) => ({
-    image: `https://picsum.photos/400/300?random=${30 + index}`,
+    image: projectImages[index],
     key: key
   }));
 
@@ -699,10 +715,16 @@ const Testimonials = () => {
   const { t } = useLanguage();
 
   const testimonialKeys = ['pastor', 'marie', 'elder', 'sara'];
+  const testimonialAvatars = [
+    '/images/International Minister Ghana/PHOTO-2025-06-02-15-06-38.jpg',
+    '/images/Distribution of school supplies to students in Yaoundé/PHOTO-2026-03-02-17-17-05.jpg',
+    '/images/International Minister South Sudan/PHOTO-2025-09-01-12-03-33.jpg',
+    '/images/Mission at international Edmonton Canada/PHOTO-2026-01-25-21-42-09.jpg'
+  ];
   
   const testimonials = testimonialKeys.map((key, index) => ({
     key: key,
-    avatar: `https://picsum.photos/100/100?random=${40 + index}`
+    avatar: testimonialAvatars[index]
   }));
 
   useLayoutEffect(() => {
@@ -887,11 +909,16 @@ const Volunteers = () => {
 
   const roleKeys = ['fieldDirector', 'educationCoordinator', 'communityOutreach'];
   const names = ["Martin Luther", "Keira Knightley", "Jack Sparrow"];
+  const volunteerImages = [
+    '/images/International Minister Ghana/PHOTO-2025-06-02-15-06-37 (1).jpg',
+    '/images/Distribution of school supplies to Pygmy students from the eastern part of the country in the village/PHOTO-2026-02-08-16-51-06_4.jpg',
+    '/images/Mission at international Edmonton Canada/PHOTO-2026-01-25-21-42-08_1.jpg'
+  ];
 
   const volunteers = roleKeys.map((roleKey, index) => ({
     name: names[index],
     role: t(`volunteers.roles.${roleKey}`),
-    image: `https://picsum.photos/300/300?random=${50 + index}`
+    image: volunteerImages[index]
   }));
 
   useLayoutEffect(() => {
@@ -976,12 +1003,18 @@ const Events = () => {
   const dates = [30, 15, 22];
   const monthKeys = ['july', 'august', 'august'];
   const organizers = ["Nattasha", "David James", "Jake Gibson"];
+  const eventImages = [
+    '/images/Distribution of school supplies to students in Yaoundé/PHOTO-2026-03-02-17-17-06.jpg',
+    '/images/Support for the population of villages in the East/PHOTO-2026-02-23-20-53-15_2.jpg',
+    '/images/Support for the population of villages in the East/PHOTO-2026-02-23-20-53-16_1.jpg'
+  ];
 
   const events = eventKeys.map((key, index) => ({
     date: dates[index],
     month: t(`events.months.${monthKeys[index]}`),
     organizer: organizers[index],
-    key: key
+    key: key,
+    image: eventImages[index]
   }));
 
   useLayoutEffect(() => {
@@ -1018,7 +1051,7 @@ const Events = () => {
             >
               <div className="relative">
                 <img 
-                  src={`https://picsum.photos/400/250?random=${60 + index}`} 
+                  src={event.image} 
                   alt={t(`events.items.${event.key}.title`)} 
                   className="w-full h-48 object-cover"
                 />
@@ -1120,9 +1153,14 @@ const Blog = () => {
 
   const postKeys = ['hope', 'water', 'volunteer'];
   const dates = ["July 15, 2025", "July 10, 2025", "July 5, 2025"];
+  const blogImages = [
+    '/images/Mission and Objectif of minister 2023-2025/PHOTO-2026-01-23-20-02-18.jpg',
+    '/images/Support for the population of villages in the East/PHOTO-2026-02-23-20-53-18.jpg',
+    '/images/International Minister Ghana/PHOTO-2025-06-02-15-06-37.jpg'
+  ];
 
   const posts = postKeys.map((key, index) => ({
-    image: `https://picsum.photos/400/250?random=${70 + index}`,
+    image: blogImages[index],
     key: key,
     date: dates[index]
   }));

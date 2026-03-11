@@ -1,0 +1,12 @@
+{
+  "name": "evangelisation-website",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "compress-images": "node compress-images.js"
+  },
+  "devDependencies": {
+    "sharp": "^0.33.0"
+  }
+}

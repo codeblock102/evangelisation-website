@@ -294,37 +294,41 @@
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
         }
 
+        .gallery-item.hidden {
+            display: none;
+        }
+
+        .show-more-btn {
+            display: block;
+            margin: 30px auto 0;
+            padding: 12px 30px;
+            background-color: var(--terracotta);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .show-more-btn:hover {
+            background-color: var(--terracotta-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(74, 144, 217, 0.3);
+        }
+
+        .show-more-btn:active {
+            transform: translateY(0);
+        }
+
         .gallery-image {
             width: 100%;
             height: 100%;
-            background-size: cover;
-            background-position: center;
-            position: relative;
-        }
-
-        /* Warm gradient placeholders for images */
-        .gallery-image.placeholder-1 {
-            background: linear-gradient(135deg, var(--terracotta), var(--warm-amber));
-        }
-
-        .gallery-image.placeholder-2 {
-            background: linear-gradient(135deg, var(--warm-amber), var(--dusty-rose));
-        }
-
-        .gallery-image.placeholder-3 {
-            background: linear-gradient(135deg, var(--dusty-rose), var(--terracotta));
-        }
-
-        .gallery-image.placeholder-4 {
-            background: linear-gradient(135deg, var(--terracotta-deep), var(--terracotta));
-        }
-
-        .gallery-image.placeholder-5 {
-            background: linear-gradient(135deg, var(--warm-amber), var(--terracotta-deep));
-        }
-
-        .gallery-image.placeholder-6 {
-            background: linear-gradient(135deg, var(--terracotta), var(--dusty-rose));
+            object-fit: cover;
+            object-position: center;
+            display: block;
         }
 
         .gallery-overlay {
@@ -361,6 +365,12 @@
         }
 
         .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Make gallery section visible immediately */
+        section.fade-in {
             opacity: 1;
             transform: translateY(0);
         }
@@ -580,146 +590,1654 @@
     <section class="fade-in">
         <div class="section-inner">
             <div class="gallery-section">
-                <h2>Our Work Across Cameroon</h2>
+                <h2>School Supplies Distribution to Pygmy Students</h2>
                 <div class="gallery-grid">
                 <div class="gallery-item">
-                    <div class="gallery-image placeholder-1"></div>
+                    <img 
+                        src="images/compressed/Distribution%20of%20school%20supplies%20to%20Pygmy%20students%20from%20the%20eastern%20part%20of%20the%20country%20in%20the%20village/PHOTO-2026-02-08-16-51-01.jpg" 
+                        alt="School Supplies Distribution to Pygmy Students - Image 1"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
                     <div class="gallery-overlay">
-                        <h3>Yaound&eacute; Headquarters</h3>
-                        <p>Saturday evangelism outreach in Mefou-Assi, Etoa, and Ahala</p>
+                        <h3>School Supplies Distribution to Pygmy Students</h3>
+                        <p>Image 1 of 93</p>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <div class="gallery-image placeholder-2"></div>
+                    <img 
+                        src="images/compressed/Distribution%20of%20school%20supplies%20to%20Pygmy%20students%20from%20the%20eastern%20part%20of%20the%20country%20in%20the%20village/PHOTO-2026-02-08-16-51-01_1.jpg" 
+                        alt="School Supplies Distribution to Pygmy Students - Image 2"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
                     <div class="gallery-overlay">
-                        <h3>Eastern Region Outreach</h3>
-                        <p>Evangelism teams reaching jungle villages on foot</p>
+                        <h3>School Supplies Distribution to Pygmy Students</h3>
+                        <p>Image 2 of 93</p>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <div class="gallery-image placeholder-3"></div>
+                    <img 
+                        src="images/compressed/Distribution%20of%20school%20supplies%20to%20Pygmy%20students%20from%20the%20eastern%20part%20of%20the%20country%20in%20the%20village/PHOTO-2026-02-08-16-51-01_2.jpg" 
+                        alt="School Supplies Distribution to Pygmy Students - Image 3"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
                     <div class="gallery-overlay">
-                        <h3>School of Evangelism</h3>
-                        <p>Seven villages evangelized with over 300 souls won for the Lord</p>
+                        <h3>School Supplies Distribution to Pygmy Students</h3>
+                        <p>Image 3 of 93</p>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <div class="gallery-image placeholder-4"></div>
+                    <img 
+                        src="images/compressed/Distribution%20of%20school%20supplies%20to%20Pygmy%20students%20from%20the%20eastern%20part%20of%20the%20country%20in%20the%20village/PHOTO-2026-02-08-16-51-02.jpg" 
+                        alt="School Supplies Distribution to Pygmy Students - Image 4"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
                     <div class="gallery-overlay">
-                        <h3>Christmas Love Feast</h3>
-                        <p>Special Christmas outreaches and missions in the Eastern region</p>
+                        <h3>School Supplies Distribution to Pygmy Students</h3>
+                        <p>Image 4 of 93</p>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <div class="gallery-image placeholder-5"></div>
+                    <img 
+                        src="images/compressed/Distribution%20of%20school%20supplies%20to%20Pygmy%20students%20from%20the%20eastern%20part%20of%20the%20country%20in%20the%20village/PHOTO-2026-02-08-16-51-02_1.jpg" 
+                        alt="School Supplies Distribution to Pygmy Students - Image 5"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
                     <div class="gallery-overlay">
-                        <h3>Let There Be Light</h3>
-                        <p>Families receiving solar torchlights after evangelistic outreach</p>
+                        <h3>School Supplies Distribution to Pygmy Students</h3>
+                        <p>Image 5 of 93</p>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <div class="gallery-image placeholder-6"></div>
+                    <img 
+                        src="images/compressed/Distribution%20of%20school%20supplies%20to%20Pygmy%20students%20from%20the%20eastern%20part%20of%20the%20country%20in%20the%20village/PHOTO-2026-02-08-16-51-02_10.jpg" 
+                        alt="School Supplies Distribution to Pygmy Students - Image 6"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
                     <div class="gallery-overlay">
-                        <h3>Back-to-School Program</h3>
-                        <p>Sponsored students heading to school with new uniforms and books</p>
+                        <h3>School Supplies Distribution to Pygmy Students</h3>
+                        <p>Image 6 of 93</p>
                     </div>
+                </div>
+                <div class="gallery-item">
+                    <img 
+                        src="images/compressed/Distribution%20of%20school%20supplies%20to%20Pygmy%20students%20from%20the%20eastern%20part%20of%20the%20country%20in%20the%20village/PHOTO-2026-02-08-16-51-02_2.jpg" 
+                        alt="School Supplies Distribution to Pygmy Students - Image 7"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <h3>School Supplies Distribution to Pygmy Students</h3>
+                        <p>Image 7 of 93</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img 
+                        src="images/compressed/Distribution%20of%20school%20supplies%20to%20Pygmy%20students%20from%20the%20eastern%20part%20of%20the%20country%20in%20the%20village/PHOTO-2026-02-08-16-51-02_3.jpg" 
+                        alt="School Supplies Distribution to Pygmy Students - Image 8"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <h3>School Supplies Distribution to Pygmy Students</h3>
+                        <p>Image 8 of 93</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img 
+                        src="images/compressed/Distribution%20of%20school%20supplies%20to%20Pygmy%20students%20from%20the%20eastern%20part%20of%20the%20country%20in%20the%20village/PHOTO-2026-02-08-16-51-02_4.jpg" 
+                        alt="School Supplies Distribution to Pygmy Students - Image 9"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <h3>School Supplies Distribution to Pygmy Students</h3>
+                        <p>Image 9 of 93</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img 
+                        src="images/compressed/Distribution%20of%20school%20supplies%20to%20Pygmy%20students%20from%20the%20eastern%20part%20of%20the%20country%20in%20the%20village/PHOTO-2026-02-08-16-51-02_5.jpg" 
+                        alt="School Supplies Distribution to Pygmy Students - Image 10"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <h3>School Supplies Distribution to Pygmy Students</h3>
+                        <p>Image 10 of 93</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img 
+                        src="images/compressed/Distribution%20of%20school%20supplies%20to%20Pygmy%20students%20from%20the%20eastern%20part%20of%20the%20country%20in%20the%20village/PHOTO-2026-02-08-16-51-02_6.jpg" 
+                        alt="School Supplies Distribution to Pygmy Students - Image 11"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <h3>School Supplies Distribution to Pygmy Students</h3>
+                        <p>Image 11 of 93</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img 
+                        src="images/compressed/Distribution%20of%20school%20supplies%20to%20Pygmy%20students%20from%20the%20eastern%20part%20of%20the%20country%20in%20the%20village/PHOTO-2026-02-08-16-51-02_7.jpg" 
+                        alt="School Supplies Distribution to Pygmy Students - Image 12"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <h3>School Supplies Distribution to Pygmy Students</h3>
+                        <p>Image 12 of 93</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img 
+                        src="images/compressed/Distribution%20of%20school%20supplies%20to%20Pygmy%20students%20from%20the%20eastern%20part%20of%20the%20country%20in%20the%20village/PHOTO-2026-02-08-16-51-02_8.jpg" 
+                        alt="School Supplies Distribution to Pygmy Students - Image 13"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <h3>School Supplies Distribution to Pygmy Students</h3>
+                        <p>Image 13 of 93</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img 
+                        src="images/compressed/Distribution%20of%20school%20supplies%20to%20Pygmy%20students%20from%20the%20eastern%20part%20of%20the%20country%20in%20the%20village/PHOTO-2026-02-08-16-51-02_9.jpg" 
+                        alt="School Supplies Distribution to Pygmy Students - Image 14"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <h3>School Supplies Distribution to Pygmy Students</h3>
+                        <p>Image 14 of 93</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img 
+                        src="images/compressed/Distribution%20of%20school%20supplies%20to%20Pygmy%20students%20from%20the%20eastern%20part%20of%20the%20country%20in%20the%20village/PHOTO-2026-02-08-16-51-03.jpg" 
+                        alt="School Supplies Distribution to Pygmy Students - Image 15"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <h3>School Supplies Distribution to Pygmy Students</h3>
+                        <p>Image 15 of 93</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img 
+                        src="images/compressed/Distribution%20of%20school%20supplies%20to%20Pygmy%20students%20from%20the%20eastern%20part%20of%20the%20country%20in%20the%20village/PHOTO-2026-02-08-16-51-03_1.jpg" 
+                        alt="School Supplies Distribution to Pygmy Students - Image 16"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <h3>School Supplies Distribution to Pygmy Students</h3>
+                        <p>Image 16 of 93</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img 
+                        src="images/compressed/Distribution%20of%20school%20supplies%20to%20Pygmy%20students%20from%20the%20eastern%20part%20of%20the%20country%20in%20the%20village/PHOTO-2026-02-08-16-51-03_10.jpg" 
+                        alt="School Supplies Distribution to Pygmy Students - Image 17"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <h3>School Supplies Distribution to Pygmy Students</h3>
+                        <p>Image 17 of 93</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img 
+                        src="images/compressed/Distribution%20of%20school%20supplies%20to%20Pygmy%20students%20from%20the%20eastern%20part%20of%20the%20country%20in%20the%20village/PHOTO-2026-02-08-16-51-03_2.jpg" 
+                        alt="School Supplies Distribution to Pygmy Students - Image 18"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <h3>School Supplies Distribution to Pygmy Students</h3>
+                        <p>Image 18 of 93</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img 
+                        src="images/compressed/Distribution%20of%20school%20supplies%20to%20Pygmy%20students%20from%20the%20eastern%20part%20of%20the%20country%20in%20the%20village/PHOTO-2026-02-08-16-51-03_3.jpg" 
+                        alt="School Supplies Distribution to Pygmy Students - Image 19"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <h3>School Supplies Distribution to Pygmy Students</h3>
+                        <p>Image 19 of 93</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img 
+                        src="images/compressed/Distribution%20of%20school%20supplies%20to%20Pygmy%20students%20from%20the%20eastern%20part%20of%20the%20country%20in%20the%20village/PHOTO-2026-02-08-16-51-03_4.jpg" 
+                        alt="School Supplies Distribution to Pygmy Students - Image 20"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <h3>School Supplies Distribution to Pygmy Students</h3>
+                        <p>Image 20 of 93</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img 
+                        src="images/compressed/Distribution%20of%20school%20supplies%20to%20Pygmy%20students%20from%20the%20eastern%20part%20of%20the%20country%20in%20the%20village/PHOTO-2026-02-08-16-51-03_5.jpg" 
+                        alt="School Supplies Distribution to Pygmy Students - Image 21"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <h3>School Supplies Distribution to Pygmy Students</h3>
+                        <p>Image 21 of 93</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img 
+                        src="images/compressed/Distribution%20of%20school%20supplies%20to%20Pygmy%20students%20from%20the%20eastern%20part%20of%20the%20country%20in%20the%20village/PHOTO-2026-02-08-16-51-03_6.jpg" 
+                        alt="School Supplies Distribution to Pygmy Students - Image 22"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <h3>School Supplies Distribution to Pygmy Students</h3>
+                        <p>Image 22 of 93</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img 
+                        src="images/compressed/Distribution%20of%20school%20supplies%20to%20Pygmy%20students%20from%20the%20eastern%20part%20of%20the%20country%20in%20the%20village/PHOTO-2026-02-08-16-51-03_7.jpg" 
+                        alt="School Supplies Distribution to Pygmy Students - Image 23"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <h3>School Supplies Distribution to Pygmy Students</h3>
+                        <p>Image 23 of 93</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img 
+                        src="images/compressed/Distribution%20of%20school%20supplies%20to%20Pygmy%20students%20from%20the%20eastern%20part%20of%20the%20country%20in%20the%20village/PHOTO-2026-02-08-16-51-03_8.jpg" 
+                        alt="School Supplies Distribution to Pygmy Students - Image 24"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <h3>School Supplies Distribution to Pygmy Students</h3>
+                        <p>Image 24 of 93</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img 
+                        src="images/compressed/Distribution%20of%20school%20supplies%20to%20Pygmy%20students%20from%20the%20eastern%20part%20of%20the%20country%20in%20the%20village/PHOTO-2026-02-08-16-51-03_9.jpg" 
+                        alt="School Supplies Distribution to Pygmy Students - Image 25"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <h3>School Supplies Distribution to Pygmy Students</h3>
+                        <p>Image 25 of 93</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img 
+                        src="images/compressed/Distribution%20of%20school%20supplies%20to%20Pygmy%20students%20from%20the%20eastern%20part%20of%20the%20country%20in%20the%20village/PHOTO-2026-02-08-16-51-04.jpg" 
+                        alt="School Supplies Distribution to Pygmy Students - Image 26"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <h3>School Supplies Distribution to Pygmy Students</h3>
+                        <p>Image 26 of 93</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img 
+                        src="images/compressed/Distribution%20of%20school%20supplies%20to%20Pygmy%20students%20from%20the%20eastern%20part%20of%20the%20country%20in%20the%20village/PHOTO-2026-02-08-16-51-04_1.jpg" 
+                        alt="School Supplies Distribution to Pygmy Students - Image 27"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <h3>School Supplies Distribution to Pygmy Students</h3>
+                        <p>Image 27 of 93</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img 
+                        src="images/compressed/Distribution%20of%20school%20supplies%20to%20Pygmy%20students%20from%20the%20eastern%20part%20of%20the%20country%20in%20the%20village/PHOTO-2026-02-08-16-51-04_10.jpg" 
+                        alt="School Supplies Distribution to Pygmy Students - Image 28"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <h3>School Supplies Distribution to Pygmy Students</h3>
+                        <p>Image 28 of 93</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img 
+                        src="images/compressed/Distribution%20of%20school%20supplies%20to%20Pygmy%20students%20from%20the%20eastern%20part%20of%20the%20country%20in%20the%20village/PHOTO-2026-02-08-16-51-04_2.jpg" 
+                        alt="School Supplies Distribution to Pygmy Students - Image 29"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <h3>School Supplies Distribution to Pygmy Students</h3>
+                        <p>Image 29 of 93</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img 
+                        src="images/compressed/Distribution%20of%20school%20supplies%20to%20Pygmy%20students%20from%20the%20eastern%20part%20of%20the%20country%20in%20the%20village/PHOTO-2026-02-08-16-51-04_3.jpg" 
+                        alt="School Supplies Distribution to Pygmy Students - Image 30"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <h3>School Supplies Distribution to Pygmy Students</h3>
+                        <p>Image 30 of 93</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img 
+                        src="images/compressed/Distribution%20of%20school%20supplies%20to%20Pygmy%20students%20from%20the%20eastern%20part%20of%20the%20country%20in%20the%20village/PHOTO-2026-02-08-16-51-04_4.jpg" 
+                        alt="School Supplies Distribution to Pygmy Students - Image 31"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <h3>School Supplies Distribution to Pygmy Students</h3>
+                        <p>Image 31 of 93</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img 
+                        src="images/compressed/Distribution%20of%20school%20supplies%20to%20Pygmy%20students%20from%20the%20eastern%20part%20of%20the%20country%20in%20the%20village/PHOTO-2026-02-08-16-51-04_5.jpg" 
+                        alt="School Supplies Distribution to Pygmy Students - Image 32"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <h3>School Supplies Distribution to Pygmy Students</h3>
+                        <p>Image 32 of 93</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img 
+                        src="images/compressed/Distribution%20of%20school%20supplies%20to%20Pygmy%20students%20from%20the%20eastern%20part%20of%20the%20country%20in%20the%20village/PHOTO-2026-02-08-16-51-04_6.jpg" 
+                        alt="School Supplies Distribution to Pygmy Students - Image 33"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <h3>School Supplies Distribution to Pygmy Students</h3>
+                        <p>Image 33 of 93</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img 
+                        src="images/compressed/Distribution%20of%20school%20supplies%20to%20Pygmy%20students%20from%20the%20eastern%20part%20of%20the%20country%20in%20the%20village/PHOTO-2026-02-08-16-51-04_7.jpg" 
+                        alt="School Supplies Distribution to Pygmy Students - Image 34"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <h3>School Supplies Distribution to Pygmy Students</h3>
+                        <p>Image 34 of 93</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img 
+                        src="images/compressed/Distribution%20of%20school%20supplies%20to%20Pygmy%20students%20from%20the%20eastern%20part%20of%20the%20country%20in%20the%20village/PHOTO-2026-02-08-16-51-04_8.jpg" 
+                        alt="School Supplies Distribution to Pygmy Students - Image 35"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <h3>School Supplies Distribution to Pygmy Students</h3>
+                        <p>Image 35 of 93</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img 
+                        src="images/compressed/Distribution%20of%20school%20supplies%20to%20Pygmy%20students%20from%20the%20eastern%20part%20of%20the%20country%20in%20the%20village/PHOTO-2026-02-08-16-51-04_9.jpg" 
+                        alt="School Supplies Distribution to Pygmy Students - Image 36"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <h3>School Supplies Distribution to Pygmy Students</h3>
+                        <p>Image 36 of 93</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img 
+                        src="images/compressed/Distribution%20of%20school%20supplies%20to%20Pygmy%20students%20from%20the%20eastern%20part%20of%20the%20country%20in%20the%20village/PHOTO-2026-02-08-16-51-05.jpg" 
+                        alt="School Supplies Distribution to Pygmy Students - Image 37"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <h3>School Supplies Distribution to Pygmy Students</h3>
+                        <p>Image 37 of 93</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img 
+                        src="images/compressed/Distribution%20of%20school%20supplies%20to%20Pygmy%20students%20from%20the%20eastern%20part%20of%20the%20country%20in%20the%20village/PHOTO-2026-02-08-16-51-05_1.jpg" 
+                        alt="School Supplies Distribution to Pygmy Students - Image 38"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <h3>School Supplies Distribution to Pygmy Students</h3>
+                        <p>Image 38 of 93</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img 
+                        src="images/compressed/Distribution%20of%20school%20supplies%20to%20Pygmy%20students%20from%20the%20eastern%20part%20of%20the%20country%20in%20the%20village/PHOTO-2026-02-08-16-51-05_10.jpg" 
+                        alt="School Supplies Distribution to Pygmy Students - Image 39"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <h3>School Supplies Distribution to Pygmy Students</h3>
+                        <p>Image 39 of 93</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img 
+                        src="images/compressed/Distribution%20of%20school%20supplies%20to%20Pygmy%20students%20from%20the%20eastern%20part%20of%20the%20country%20in%20the%20village/PHOTO-2026-02-08-16-51-05_2.jpg" 
+                        alt="School Supplies Distribution to Pygmy Students - Image 40"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <h3>School Supplies Distribution to Pygmy Students</h3>
+                        <p>Image 40 of 93</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img 
+                        src="images/compressed/Distribution%20of%20school%20supplies%20to%20Pygmy%20students%20from%20the%20eastern%20part%20of%20the%20country%20in%20the%20village/PHOTO-2026-02-08-16-51-05_3.jpg" 
+                        alt="School Supplies Distribution to Pygmy Students - Image 41"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <h3>School Supplies Distribution to Pygmy Students</h3>
+                        <p>Image 41 of 93</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img 
+                        src="images/compressed/Distribution%20of%20school%20supplies%20to%20Pygmy%20students%20from%20the%20eastern%20part%20of%20the%20country%20in%20the%20village/PHOTO-2026-02-08-16-51-05_4.jpg" 
+                        alt="School Supplies Distribution to Pygmy Students - Image 42"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <h3>School Supplies Distribution to Pygmy Students</h3>
+                        <p>Image 42 of 93</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img 
+                        src="images/compressed/Distribution%20of%20school%20supplies%20to%20Pygmy%20students%20from%20the%20eastern%20part%20of%20the%20country%20in%20the%20village/PHOTO-2026-02-08-16-51-05_5.jpg" 
+                        alt="School Supplies Distribution to Pygmy Students - Image 43"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <h3>School Supplies Distribution to Pygmy Students</h3>
+                        <p>Image 43 of 93</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img 
+                        src="images/compressed/Distribution%20of%20school%20supplies%20to%20Pygmy%20students%20from%20the%20eastern%20part%20of%20the%20country%20in%20the%20village/PHOTO-2026-02-08-16-51-05_6.jpg" 
+                        alt="School Supplies Distribution to Pygmy Students - Image 44"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <h3>School Supplies Distribution to Pygmy Students</h3>
+                        <p>Image 44 of 93</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img 
+                        src="images/compressed/Distribution%20of%20school%20supplies%20to%20Pygmy%20students%20from%20the%20eastern%20part%20of%20the%20country%20in%20the%20village/PHOTO-2026-02-08-16-51-05_7.jpg" 
+                        alt="School Supplies Distribution to Pygmy Students - Image 45"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <h3>School Supplies Distribution to Pygmy Students</h3>
+                        <p>Image 45 of 93</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img 
+                        src="images/compressed/Distribution%20of%20school%20supplies%20to%20Pygmy%20students%20from%20the%20eastern%20part%20of%20the%20country%20in%20the%20village/PHOTO-2026-02-08-16-51-05_8.jpg" 
+                        alt="School Supplies Distribution to Pygmy Students - Image 46"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <h3>School Supplies Distribution to Pygmy Students</h3>
+                        <p>Image 46 of 93</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img 
+                        src="images/compressed/Distribution%20of%20school%20supplies%20to%20Pygmy%20students%20from%20the%20eastern%20part%20of%20the%20country%20in%20the%20village/PHOTO-2026-02-08-16-51-05_9.jpg" 
+                        alt="School Supplies Distribution to Pygmy Students - Image 47"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <h3>School Supplies Distribution to Pygmy Students</h3>
+                        <p>Image 47 of 93</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img 
+                        src="images/compressed/Distribution%20of%20school%20supplies%20to%20Pygmy%20students%20from%20the%20eastern%20part%20of%20the%20country%20in%20the%20village/PHOTO-2026-02-08-16-51-06.jpg" 
+                        alt="School Supplies Distribution to Pygmy Students - Image 48"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <h3>School Supplies Distribution to Pygmy Students</h3>
+                        <p>Image 48 of 93</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img 
+                        src="images/compressed/Distribution%20of%20school%20supplies%20to%20Pygmy%20students%20from%20the%20eastern%20part%20of%20the%20country%20in%20the%20village/PHOTO-2026-02-08-16-51-06_1.jpg" 
+                        alt="School Supplies Distribution to Pygmy Students - Image 49"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <h3>School Supplies Distribution to Pygmy Students</h3>
+                        <p>Image 49 of 93</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img 
+                        src="images/compressed/Distribution%20of%20school%20supplies%20to%20Pygmy%20students%20from%20the%20eastern%20part%20of%20the%20country%20in%20the%20village/PHOTO-2026-02-08-16-51-06_2.jpg" 
+                        alt="School Supplies Distribution to Pygmy Students - Image 50"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <h3>School Supplies Distribution to Pygmy Students</h3>
+                        <p>Image 50 of 93</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img 
+                        src="images/compressed/Distribution%20of%20school%20supplies%20to%20Pygmy%20students%20from%20the%20eastern%20part%20of%20the%20country%20in%20the%20village/PHOTO-2026-02-08-16-51-06_3.jpg" 
+                        alt="School Supplies Distribution to Pygmy Students - Image 51"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <h3>School Supplies Distribution to Pygmy Students</h3>
+                        <p>Image 51 of 93</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img 
+                        src="images/compressed/Distribution%20of%20school%20supplies%20to%20Pygmy%20students%20from%20the%20eastern%20part%20of%20the%20country%20in%20the%20village/PHOTO-2026-02-08-16-51-06_4.jpg" 
+                        alt="School Supplies Distribution to Pygmy Students - Image 52"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <h3>School Supplies Distribution to Pygmy Students</h3>
+                        <p>Image 52 of 93</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img 
+                        src="images/compressed/Distribution%20of%20school%20supplies%20to%20Pygmy%20students%20from%20the%20eastern%20part%20of%20the%20country%20in%20the%20village/PHOTO-2026-02-08-16-51-06_5.jpg" 
+                        alt="School Supplies Distribution to Pygmy Students - Image 53"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <h3>School Supplies Distribution to Pygmy Students</h3>
+                        <p>Image 53 of 93</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img 
+                        src="images/compressed/Distribution%20of%20school%20supplies%20to%20Pygmy%20students%20from%20the%20eastern%20part%20of%20the%20country%20in%20the%20village/PHOTO-2026-02-08-16-51-07.jpg" 
+                        alt="School Supplies Distribution to Pygmy Students - Image 54"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <h3>School Supplies Distribution to Pygmy Students</h3>
+                        <p>Image 54 of 93</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img 
+                        src="images/compressed/Distribution%20of%20school%20supplies%20to%20Pygmy%20students%20from%20the%20eastern%20part%20of%20the%20country%20in%20the%20village/PHOTO-2026-02-08-16-51-07_1.jpg" 
+                        alt="School Supplies Distribution to Pygmy Students - Image 55"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <h3>School Supplies Distribution to Pygmy Students</h3>
+                        <p>Image 55 of 93</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img 
+                        src="images/compressed/Distribution%20of%20school%20supplies%20to%20Pygmy%20students%20from%20the%20eastern%20part%20of%20the%20country%20in%20the%20village/PHOTO-2026-02-08-16-51-07_2.jpg" 
+                        alt="School Supplies Distribution to Pygmy Students - Image 56"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <h3>School Supplies Distribution to Pygmy Students</h3>
+                        <p>Image 56 of 93</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img 
+                        src="images/compressed/Distribution%20of%20school%20supplies%20to%20Pygmy%20students%20from%20the%20eastern%20part%20of%20the%20country%20in%20the%20village/PHOTO-2026-02-08-16-51-07_3.jpg" 
+                        alt="School Supplies Distribution to Pygmy Students - Image 57"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <h3>School Supplies Distribution to Pygmy Students</h3>
+                        <p>Image 57 of 93</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img 
+                        src="images/compressed/Distribution%20of%20school%20supplies%20to%20Pygmy%20students%20from%20the%20eastern%20part%20of%20the%20country%20in%20the%20village/PHOTO-2026-02-08-16-51-07_4.jpg" 
+                        alt="School Supplies Distribution to Pygmy Students - Image 58"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <h3>School Supplies Distribution to Pygmy Students</h3>
+                        <p>Image 58 of 93</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img 
+                        src="images/compressed/Distribution%20of%20school%20supplies%20to%20Pygmy%20students%20from%20the%20eastern%20part%20of%20the%20country%20in%20the%20village/PHOTO-2026-02-08-16-51-07_5.jpg" 
+                        alt="School Supplies Distribution to Pygmy Students - Image 59"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <h3>School Supplies Distribution to Pygmy Students</h3>
+                        <p>Image 59 of 93</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img 
+                        src="images/compressed/Distribution%20of%20school%20supplies%20to%20Pygmy%20students%20from%20the%20eastern%20part%20of%20the%20country%20in%20the%20village/PHOTO-2026-02-08-16-51-07_6.jpg" 
+                        alt="School Supplies Distribution to Pygmy Students - Image 60"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <h3>School Supplies Distribution to Pygmy Students</h3>
+                        <p>Image 60 of 93</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img 
+                        src="images/compressed/Distribution%20of%20school%20supplies%20to%20Pygmy%20students%20from%20the%20eastern%20part%20of%20the%20country%20in%20the%20village/PHOTO-2026-02-08-16-51-07_7.jpg" 
+                        alt="School Supplies Distribution to Pygmy Students - Image 61"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <h3>School Supplies Distribution to Pygmy Students</h3>
+                        <p>Image 61 of 93</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img 
+                        src="images/compressed/Distribution%20of%20school%20supplies%20to%20Pygmy%20students%20from%20the%20eastern%20part%20of%20the%20country%20in%20the%20village/PHOTO-2026-02-08-16-51-07_8.jpg" 
+                        alt="School Supplies Distribution to Pygmy Students - Image 62"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <h3>School Supplies Distribution to Pygmy Students</h3>
+                        <p>Image 62 of 93</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img 
+                        src="images/compressed/Distribution%20of%20school%20supplies%20to%20Pygmy%20students%20from%20the%20eastern%20part%20of%20the%20country%20in%20the%20village/PHOTO-2026-02-08-16-51-07_9.jpg" 
+                        alt="School Supplies Distribution to Pygmy Students - Image 63"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <h3>School Supplies Distribution to Pygmy Students</h3>
+                        <p>Image 63 of 93</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img 
+                        src="images/compressed/Distribution%20of%20school%20supplies%20to%20Pygmy%20students%20from%20the%20eastern%20part%20of%20the%20country%20in%20the%20village/PHOTO-2026-02-08-16-51-08.jpg" 
+                        alt="School Supplies Distribution to Pygmy Students - Image 64"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <h3>School Supplies Distribution to Pygmy Students</h3>
+                        <p>Image 64 of 93</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img 
+                        src="images/compressed/Distribution%20of%20school%20supplies%20to%20Pygmy%20students%20from%20the%20eastern%20part%20of%20the%20country%20in%20the%20village/PHOTO-2026-02-08-16-51-08_1.jpg" 
+                        alt="School Supplies Distribution to Pygmy Students - Image 65"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <h3>School Supplies Distribution to Pygmy Students</h3>
+                        <p>Image 65 of 93</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img 
+                        src="images/compressed/Distribution%20of%20school%20supplies%20to%20Pygmy%20students%20from%20the%20eastern%20part%20of%20the%20country%20in%20the%20village/PHOTO-2026-02-08-16-51-08_2.jpg" 
+                        alt="School Supplies Distribution to Pygmy Students - Image 66"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <h3>School Supplies Distribution to Pygmy Students</h3>
+                        <p>Image 66 of 93</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img 
+                        src="images/compressed/Distribution%20of%20school%20supplies%20to%20Pygmy%20students%20from%20the%20eastern%20part%20of%20the%20country%20in%20the%20village/PHOTO-2026-02-08-16-51-08_3.jpg" 
+                        alt="School Supplies Distribution to Pygmy Students - Image 67"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <h3>School Supplies Distribution to Pygmy Students</h3>
+                        <p>Image 67 of 93</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img 
+                        src="images/compressed/Distribution%20of%20school%20supplies%20to%20Pygmy%20students%20from%20the%20eastern%20part%20of%20the%20country%20in%20the%20village/PHOTO-2026-02-24-09-09-54.jpg" 
+                        alt="School Supplies Distribution to Pygmy Students - Image 68"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <h3>School Supplies Distribution to Pygmy Students</h3>
+                        <p>Image 68 of 93</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img 
+                        src="images/compressed/Distribution%20of%20school%20supplies%20to%20Pygmy%20students%20from%20the%20eastern%20part%20of%20the%20country%20in%20the%20village/PHOTO-2026-02-24-09-09-59.jpg" 
+                        alt="School Supplies Distribution to Pygmy Students - Image 69"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <h3>School Supplies Distribution to Pygmy Students</h3>
+                        <p>Image 69 of 93</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img 
+                        src="images/compressed/Distribution%20of%20school%20supplies%20to%20Pygmy%20students%20from%20the%20eastern%20part%20of%20the%20country%20in%20the%20village/PHOTO-2026-02-24-09-10-03.jpg" 
+                        alt="School Supplies Distribution to Pygmy Students - Image 70"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <h3>School Supplies Distribution to Pygmy Students</h3>
+                        <p>Image 70 of 93</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img 
+                        src="images/compressed/Distribution%20of%20school%20supplies%20to%20Pygmy%20students%20from%20the%20eastern%20part%20of%20the%20country%20in%20the%20village/PHOTO-2026-02-24-09-10-04.jpg" 
+                        alt="School Supplies Distribution to Pygmy Students - Image 71"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <h3>School Supplies Distribution to Pygmy Students</h3>
+                        <p>Image 71 of 93</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img 
+                        src="images/compressed/Distribution%20of%20school%20supplies%20to%20Pygmy%20students%20from%20the%20eastern%20part%20of%20the%20country%20in%20the%20village/PHOTO-2026-02-24-09-10-06.jpg" 
+                        alt="School Supplies Distribution to Pygmy Students - Image 72"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <h3>School Supplies Distribution to Pygmy Students</h3>
+                        <p>Image 72 of 93</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img 
+                        src="images/compressed/Distribution%20of%20school%20supplies%20to%20Pygmy%20students%20from%20the%20eastern%20part%20of%20the%20country%20in%20the%20village/PHOTO-2026-02-24-09-10-09.jpg" 
+                        alt="School Supplies Distribution to Pygmy Students - Image 73"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <h3>School Supplies Distribution to Pygmy Students</h3>
+                        <p>Image 73 of 93</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img 
+                        src="images/compressed/Distribution%20of%20school%20supplies%20to%20Pygmy%20students%20from%20the%20eastern%20part%20of%20the%20country%20in%20the%20village/PHOTO-2026-02-24-09-10-09_1.jpg" 
+                        alt="School Supplies Distribution to Pygmy Students - Image 74"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <h3>School Supplies Distribution to Pygmy Students</h3>
+                        <p>Image 74 of 93</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img 
+                        src="images/compressed/Distribution%20of%20school%20supplies%20to%20Pygmy%20students%20from%20the%20eastern%20part%20of%20the%20country%20in%20the%20village/PHOTO-2026-02-24-09-10-09_2.jpg" 
+                        alt="School Supplies Distribution to Pygmy Students - Image 75"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <h3>School Supplies Distribution to Pygmy Students</h3>
+                        <p>Image 75 of 93</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img 
+                        src="images/compressed/Distribution%20of%20school%20supplies%20to%20Pygmy%20students%20from%20the%20eastern%20part%20of%20the%20country%20in%20the%20village/PHOTO-2026-02-24-09-10-10.jpg" 
+                        alt="School Supplies Distribution to Pygmy Students - Image 76"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <h3>School Supplies Distribution to Pygmy Students</h3>
+                        <p>Image 76 of 93</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img 
+                        src="images/compressed/Distribution%20of%20school%20supplies%20to%20Pygmy%20students%20from%20the%20eastern%20part%20of%20the%20country%20in%20the%20village/PHOTO-2026-02-24-09-10-10_1.jpg" 
+                        alt="School Supplies Distribution to Pygmy Students - Image 77"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <h3>School Supplies Distribution to Pygmy Students</h3>
+                        <p>Image 77 of 93</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img 
+                        src="images/compressed/Distribution%20of%20school%20supplies%20to%20Pygmy%20students%20from%20the%20eastern%20part%20of%20the%20country%20in%20the%20village/PHOTO-2026-02-24-09-10-10_2.jpg" 
+                        alt="School Supplies Distribution to Pygmy Students - Image 78"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <h3>School Supplies Distribution to Pygmy Students</h3>
+                        <p>Image 78 of 93</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img 
+                        src="images/compressed/Distribution%20of%20school%20supplies%20to%20Pygmy%20students%20from%20the%20eastern%20part%20of%20the%20country%20in%20the%20village/PHOTO-2026-02-24-09-10-11.jpg" 
+                        alt="School Supplies Distribution to Pygmy Students - Image 79"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <h3>School Supplies Distribution to Pygmy Students</h3>
+                        <p>Image 79 of 93</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img 
+                        src="images/compressed/Distribution%20of%20school%20supplies%20to%20Pygmy%20students%20from%20the%20eastern%20part%20of%20the%20country%20in%20the%20village/PHOTO-2026-02-24-09-10-11_1.jpg" 
+                        alt="School Supplies Distribution to Pygmy Students - Image 80"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <h3>School Supplies Distribution to Pygmy Students</h3>
+                        <p>Image 80 of 93</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img 
+                        src="images/compressed/Distribution%20of%20school%20supplies%20to%20Pygmy%20students%20from%20the%20eastern%20part%20of%20the%20country%20in%20the%20village/PHOTO-2026-02-24-09-10-11_2.jpg" 
+                        alt="School Supplies Distribution to Pygmy Students - Image 81"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <h3>School Supplies Distribution to Pygmy Students</h3>
+                        <p>Image 81 of 93</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img 
+                        src="images/compressed/Distribution%20of%20school%20supplies%20to%20Pygmy%20students%20from%20the%20eastern%20part%20of%20the%20country%20in%20the%20village/PHOTO-2026-02-24-09-10-11_3.jpg" 
+                        alt="School Supplies Distribution to Pygmy Students - Image 82"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <h3>School Supplies Distribution to Pygmy Students</h3>
+                        <p>Image 82 of 93</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img 
+                        src="images/compressed/Distribution%20of%20school%20supplies%20to%20Pygmy%20students%20from%20the%20eastern%20part%20of%20the%20country%20in%20the%20village/PHOTO-2026-02-24-09-10-12.jpg" 
+                        alt="School Supplies Distribution to Pygmy Students - Image 83"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <h3>School Supplies Distribution to Pygmy Students</h3>
+                        <p>Image 83 of 93</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img 
+                        src="images/compressed/Distribution%20of%20school%20supplies%20to%20Pygmy%20students%20from%20the%20eastern%20part%20of%20the%20country%20in%20the%20village/PHOTO-2026-02-24-09-10-12_1.jpg" 
+                        alt="School Supplies Distribution to Pygmy Students - Image 84"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <h3>School Supplies Distribution to Pygmy Students</h3>
+                        <p>Image 84 of 93</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img 
+                        src="images/compressed/Distribution%20of%20school%20supplies%20to%20Pygmy%20students%20from%20the%20eastern%20part%20of%20the%20country%20in%20the%20village/PHOTO-2026-02-24-09-10-13.jpg" 
+                        alt="School Supplies Distribution to Pygmy Students - Image 85"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <h3>School Supplies Distribution to Pygmy Students</h3>
+                        <p>Image 85 of 93</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img 
+                        src="images/compressed/Distribution%20of%20school%20supplies%20to%20Pygmy%20students%20from%20the%20eastern%20part%20of%20the%20country%20in%20the%20village/PHOTO-2026-02-24-09-10-13_1.jpg" 
+                        alt="School Supplies Distribution to Pygmy Students - Image 86"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <h3>School Supplies Distribution to Pygmy Students</h3>
+                        <p>Image 86 of 93</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img 
+                        src="images/compressed/Distribution%20of%20school%20supplies%20to%20Pygmy%20students%20from%20the%20eastern%20part%20of%20the%20country%20in%20the%20village/PHOTO-2026-02-24-09-10-14.jpg" 
+                        alt="School Supplies Distribution to Pygmy Students - Image 87"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <h3>School Supplies Distribution to Pygmy Students</h3>
+                        <p>Image 87 of 93</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img 
+                        src="images/compressed/Distribution%20of%20school%20supplies%20to%20Pygmy%20students%20from%20the%20eastern%20part%20of%20the%20country%20in%20the%20village/PHOTO-2026-02-24-09-10-15.jpg" 
+                        alt="School Supplies Distribution to Pygmy Students - Image 88"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <h3>School Supplies Distribution to Pygmy Students</h3>
+                        <p>Image 88 of 93</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img 
+                        src="images/compressed/Distribution%20of%20school%20supplies%20to%20Pygmy%20students%20from%20the%20eastern%20part%20of%20the%20country%20in%20the%20village/PHOTO-2026-02-24-09-10-15_1.jpg" 
+                        alt="School Supplies Distribution to Pygmy Students - Image 89"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <h3>School Supplies Distribution to Pygmy Students</h3>
+                        <p>Image 89 of 93</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img 
+                        src="images/compressed/Distribution%20of%20school%20supplies%20to%20Pygmy%20students%20from%20the%20eastern%20part%20of%20the%20country%20in%20the%20village/PHOTO-2026-02-24-09-10-15_2.jpg" 
+                        alt="School Supplies Distribution to Pygmy Students - Image 90"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <h3>School Supplies Distribution to Pygmy Students</h3>
+                        <p>Image 90 of 93</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img 
+                        src="images/compressed/Distribution%20of%20school%20supplies%20to%20Pygmy%20students%20from%20the%20eastern%20part%20of%20the%20country%20in%20the%20village/PHOTO-2026-02-24-09-10-16.jpg" 
+                        alt="School Supplies Distribution to Pygmy Students - Image 91"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <h3>School Supplies Distribution to Pygmy Students</h3>
+                        <p>Image 91 of 93</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img 
+                        src="images/compressed/Distribution%20of%20school%20supplies%20to%20Pygmy%20students%20from%20the%20eastern%20part%20of%20the%20country%20in%20the%20village/PHOTO-2026-02-24-09-10-16_1.jpg" 
+                        alt="School Supplies Distribution to Pygmy Students - Image 92"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <h3>School Supplies Distribution to Pygmy Students</h3>
+                        <p>Image 92 of 93</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img 
+                        src="images/compressed/Distribution%20of%20school%20supplies%20to%20Pygmy%20students%20from%20the%20eastern%20part%20of%20the%20country%20in%20the%20village/PHOTO-2026-02-24-09-10-17.jpg" 
+                        alt="School Supplies Distribution to Pygmy Students - Image 93"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <h3>School Supplies Distribution to Pygmy Students</h3>
+                        <p>Image 93 of 93</p>
+                    </div>
+                </div>
                 </div>
             </div>
-        </div>
-        </div>
-    </section>
-
-    <section class="fade-in">
-        <div class="section-inner">
             <div class="gallery-section">
-                <h2>Ministry in Action</h2>
+                <h2>Support for Eastern Villages</h2>
                 <div class="gallery-grid">
                 <div class="gallery-item">
-                    <div class="gallery-image placeholder-2"></div>
+                    <img 
+                        src="images/compressed/Support%20for%20the%20population%20of%20villages%20in%20the%20East/PHOTO-2026-02-23-20-48-13(1).jpg" 
+                        alt="Support for Eastern Villages - Image 1"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
                     <div class="gallery-overlay">
-                        <h3>Village Evangelism</h3>
-                        <p>Sharing the Gospel in one of 138 surrounding villages</p>
+                        <h3>Support for Eastern Villages</h3>
+                        <p>Image 1 of 19</p>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <div class="gallery-image placeholder-3"></div>
+                    <img 
+                        src="images/compressed/Support%20for%20the%20population%20of%20villages%20in%20the%20East/PHOTO-2026-02-23-20-48-13.jpg" 
+                        alt="Support for Eastern Villages - Image 2"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
                     <div class="gallery-overlay">
-                        <h3>Thursday Discipleship</h3>
-                        <p>Weekly discipleship school for new converts at headquarters</p>
+                        <h3>Support for Eastern Villages</h3>
+                        <p>Image 2 of 19</p>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <div class="gallery-image placeholder-1"></div>
+                    <img 
+                        src="images/compressed/Support%20for%20the%20population%20of%20villages%20in%20the%20East/PHOTO-2026-02-23-20-48-13_1.jpg" 
+                        alt="Support for Eastern Villages - Image 3"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
                     <div class="gallery-overlay">
-                        <h3>Easter Baptisms</h3>
-                        <p>Over 100 converts baptized following the Eastern region outreach</p>
+                        <h3>Support for Eastern Villages</h3>
+                        <p>Image 3 of 19</p>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <div class="gallery-image placeholder-4"></div>
+                    <img 
+                        src="images/compressed/Support%20for%20the%20population%20of%20villages%20in%20the%20East/PHOTO-2026-02-23-20-49-01.jpg" 
+                        alt="Support for Eastern Villages - Image 4"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
                     <div class="gallery-overlay">
-                        <h3>Apostolic Bible College</h3>
-                        <p>Students in the second-level program of the ABC</p>
+                        <h3>Support for Eastern Villages</h3>
+                        <p>Image 4 of 19</p>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <div class="gallery-image placeholder-5"></div>
+                    <img 
+                        src="images/compressed/Support%20for%20the%20population%20of%20villages%20in%20the%20East/PHOTO-2026-02-23-20-49-02.jpg" 
+                        alt="Support for Eastern Villages - Image 5"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
                     <div class="gallery-overlay">
-                        <h3>Children's Music School</h3>
-                        <p>15 new children registered in the music program in 2023</p>
+                        <h3>Support for Eastern Villages</h3>
+                        <p>Image 5 of 19</p>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <div class="gallery-image placeholder-6"></div>
+                    <img 
+                        src="images/compressed/Support%20for%20the%20population%20of%20villages%20in%20the%20East/PHOTO-2026-02-23-20-49-02_1.jpg" 
+                        alt="Support for Eastern Villages - Image 6"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
                     <div class="gallery-overlay">
-                        <h3>AWAKE Conference — Dubai</h3>
-                        <p>Brother Daniel at the Middle East prayers and leadership conference</p>
+                        <h3>Support for Eastern Villages</h3>
+                        <p>Image 6 of 19</p>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <div class="gallery-image placeholder-1"></div>
+                    <img 
+                        src="images/compressed/Support%20for%20the%20population%20of%20villages%20in%20the%20East/PHOTO-2026-02-23-20-49-03.jpg" 
+                        alt="Support for Eastern Villages - Image 7"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
                     <div class="gallery-overlay">
-                        <h3>Ahala Market Outreach</h3>
-                        <p>Evangelism at the Ahala food market in Yaound&eacute;</p>
+                        <h3>Support for Eastern Villages</h3>
+                        <p>Image 7 of 19</p>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <div class="gallery-image placeholder-2"></div>
+                    <img 
+                        src="images/compressed/Support%20for%20the%20population%20of%20villages%20in%20the%20East/PHOTO-2026-02-23-20-53-14.jpg" 
+                        alt="Support for Eastern Villages - Image 8"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
                     <div class="gallery-overlay">
-                        <h3>Scholarship Students</h3>
-                        <p>Sponsored children from nursery to university — all promoted</p>
+                        <h3>Support for Eastern Villages</h3>
+                        <p>Image 8 of 19</p>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <div class="gallery-image placeholder-3"></div>
+                    <img 
+                        src="images/compressed/Support%20for%20the%20population%20of%20villages%20in%20the%20East/PHOTO-2026-02-23-20-53-15.jpg" 
+                        alt="Support for Eastern Villages - Image 9"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
                     <div class="gallery-overlay">
-                        <h3>Solar Light Distribution</h3>
-                        <p>Handing out solar torchlights to families in the jungle</p>
+                        <h3>Support for Eastern Villages</h3>
+                        <p>Image 9 of 19</p>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <div class="gallery-image placeholder-4"></div>
+                    <img 
+                        src="images/compressed/Support%20for%20the%20population%20of%20villages%20in%20the%20East/PHOTO-2026-02-23-20-53-15_1.jpg" 
+                        alt="Support for Eastern Villages - Image 10"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
                     <div class="gallery-overlay">
-                        <h3>Church in Construction</h3>
-                        <p>Building permanent worship spaces for new congregations</p>
+                        <h3>Support for Eastern Villages</h3>
+                        <p>Image 10 of 19</p>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <div class="gallery-image placeholder-5"></div>
+                    <img 
+                        src="images/compressed/Support%20for%20the%20population%20of%20villages%20in%20the%20East/PHOTO-2026-02-23-20-53-15_2.jpg" 
+                        alt="Support for Eastern Villages - Image 11"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
                     <div class="gallery-overlay">
-                        <h3>Orphan Sponsorship</h3>
-                        <p>Orphans and displaced children benefitting from education support</p>
+                        <h3>Support for Eastern Villages</h3>
+                        <p>Image 11 of 19</p>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <div class="gallery-image placeholder-6"></div>
+                    <img 
+                        src="images/compressed/Support%20for%20the%20population%20of%20villages%20in%20the%20East/PHOTO-2026-02-23-20-53-15_3.jpg" 
+                        alt="Support for Eastern Villages - Image 12"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
                     <div class="gallery-overlay">
-                        <h3>U.S. Missions Trip</h3>
-                        <p>Brother Daniel and wife on international missions and outreach</p>
+                        <h3>Support for Eastern Villages</h3>
+                        <p>Image 12 of 19</p>
                     </div>
+                </div>
+                <div class="gallery-item">
+                    <img 
+                        src="images/compressed/Support%20for%20the%20population%20of%20villages%20in%20the%20East/PHOTO-2026-02-23-20-53-16.jpg" 
+                        alt="Support for Eastern Villages - Image 13"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <h3>Support for Eastern Villages</h3>
+                        <p>Image 13 of 19</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img 
+                        src="images/compressed/Support%20for%20the%20population%20of%20villages%20in%20the%20East/PHOTO-2026-02-23-20-53-16_1.jpg" 
+                        alt="Support for Eastern Villages - Image 14"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <h3>Support for Eastern Villages</h3>
+                        <p>Image 14 of 19</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img 
+                        src="images/compressed/Support%20for%20the%20population%20of%20villages%20in%20the%20East/PHOTO-2026-02-23-20-53-16_2.jpg" 
+                        alt="Support for Eastern Villages - Image 15"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <h3>Support for Eastern Villages</h3>
+                        <p>Image 15 of 19</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img 
+                        src="images/compressed/Support%20for%20the%20population%20of%20villages%20in%20the%20East/PHOTO-2026-02-23-20-53-18.jpg" 
+                        alt="Support for Eastern Villages - Image 16"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <h3>Support for Eastern Villages</h3>
+                        <p>Image 16 of 19</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img 
+                        src="images/compressed/Support%20for%20the%20population%20of%20villages%20in%20the%20East/PHOTO-2026-02-23-20-53-23.jpg" 
+                        alt="Support for Eastern Villages - Image 17"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <h3>Support for Eastern Villages</h3>
+                        <p>Image 17 of 19</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img 
+                        src="images/compressed/Support%20for%20the%20population%20of%20villages%20in%20the%20East/PHOTO-2026-02-23-20-53-27.jpg" 
+                        alt="Support for Eastern Villages - Image 18"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <h3>Support for Eastern Villages</h3>
+                        <p>Image 18 of 19</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img 
+                        src="images/compressed/Support%20for%20the%20population%20of%20villages%20in%20the%20East/PHOTO-2026-02-23-20-53-34.jpg" 
+                        alt="Support for Eastern Villages - Image 19"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <h3>Support for Eastern Villages</h3>
+                        <p>Image 19 of 19</p>
+                    </div>
+                </div>
                 </div>
             </div>
-        </div>
+            <div class="gallery-section">
+                <h2>International Mission - Edmonton, Canada</h2>
+                <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img 
+                        src="images/compressed/Mission%20at%20international%20Edmonton%20Canada/PHOTO-2026-01-25-21-42-08.jpg" 
+                        alt="International Mission - Edmonton, Canada - Image 1"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <h3>International Mission - Edmonton, Canada</h3>
+                        <p>Image 1 of 7</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img 
+                        src="images/compressed/Mission%20at%20international%20Edmonton%20Canada/PHOTO-2026-01-25-21-42-08_1.jpg" 
+                        alt="International Mission - Edmonton, Canada - Image 2"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <h3>International Mission - Edmonton, Canada</h3>
+                        <p>Image 2 of 7</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img 
+                        src="images/compressed/Mission%20at%20international%20Edmonton%20Canada/PHOTO-2026-01-25-21-42-09.jpg" 
+                        alt="International Mission - Edmonton, Canada - Image 3"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <h3>International Mission - Edmonton, Canada</h3>
+                        <p>Image 3 of 7</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img 
+                        src="images/compressed/Mission%20at%20international%20Edmonton%20Canada/PHOTO-2026-01-25-21-42-09_1.jpg" 
+                        alt="International Mission - Edmonton, Canada - Image 4"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <h3>International Mission - Edmonton, Canada</h3>
+                        <p>Image 4 of 7</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img 
+                        src="images/compressed/Mission%20at%20international%20Edmonton%20Canada/PHOTO-2026-01-25-21-42-09_2.jpg" 
+                        alt="International Mission - Edmonton, Canada - Image 5"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <h3>International Mission - Edmonton, Canada</h3>
+                        <p>Image 5 of 7</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img 
+                        src="images/compressed/Mission%20at%20international%20Edmonton%20Canada/PHOTO-2026-01-27-02-25-08.jpg" 
+                        alt="International Mission - Edmonton, Canada - Image 6"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <h3>International Mission - Edmonton, Canada</h3>
+                        <p>Image 6 of 7</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img 
+                        src="images/compressed/Mission%20at%20international%20Edmonton%20Canada/PHOTO-2026-01-27-02-25-08_1.jpg" 
+                        alt="International Mission - Edmonton, Canada - Image 7"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <h3>International Mission - Edmonton, Canada</h3>
+                        <p>Image 7 of 7</p>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div class="gallery-section">
+                <h2>School Supplies Distribution in Yaoundé</h2>
+                <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img 
+                        src="images/compressed/Distribution%20of%20school%20supplies%20to%20students%20in%20Yaound%C3%A9/PHOTO-2026-03-02-17-17-05.jpg" 
+                        alt="School Supplies Distribution in Yaoundé - Image 1"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <h3>School Supplies Distribution in Yaoundé</h3>
+                        <p>Image 1 of 5</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img 
+                        src="images/compressed/Distribution%20of%20school%20supplies%20to%20students%20in%20Yaound%C3%A9/PHOTO-2026-03-02-17-17-06%20(1).jpg" 
+                        alt="School Supplies Distribution in Yaoundé - Image 2"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <h3>School Supplies Distribution in Yaoundé</h3>
+                        <p>Image 2 of 5</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img 
+                        src="images/compressed/Distribution%20of%20school%20supplies%20to%20students%20in%20Yaound%C3%A9/PHOTO-2026-03-02-17-17-06%20(2).jpg" 
+                        alt="School Supplies Distribution in Yaoundé - Image 3"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <h3>School Supplies Distribution in Yaoundé</h3>
+                        <p>Image 3 of 5</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img 
+                        src="images/compressed/Distribution%20of%20school%20supplies%20to%20students%20in%20Yaound%C3%A9/PHOTO-2026-03-02-17-17-06.jpg" 
+                        alt="School Supplies Distribution in Yaoundé - Image 4"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <h3>School Supplies Distribution in Yaoundé</h3>
+                        <p>Image 4 of 5</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img 
+                        src="images/compressed/Distribution%20of%20school%20supplies%20to%20students%20in%20Yaound%C3%A9/PHOTO-2026-03-02-17-18-28.jpg" 
+                        alt="School Supplies Distribution in Yaoundé - Image 5"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <h3>School Supplies Distribution in Yaoundé</h3>
+                        <p>Image 5 of 5</p>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div class="gallery-section">
+                <h2>International Ministry - Ghana</h2>
+                <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img 
+                        src="images/compressed/International%20Minister%20Ghana/PHOTO-2025-06-02-15-06-37%20(1).jpg" 
+                        alt="International Ministry - Ghana - Image 1"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <h3>International Ministry - Ghana</h3>
+                        <p>Image 1 of 5</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img 
+                        src="images/compressed/International%20Minister%20Ghana/PHOTO-2025-06-02-15-06-37.jpg" 
+                        alt="International Ministry - Ghana - Image 2"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <h3>International Ministry - Ghana</h3>
+                        <p>Image 2 of 5</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img 
+                        src="images/compressed/International%20Minister%20Ghana/PHOTO-2025-06-02-15-06-38%20(1).jpg" 
+                        alt="International Ministry - Ghana - Image 3"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <h3>International Ministry - Ghana</h3>
+                        <p>Image 3 of 5</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img 
+                        src="images/compressed/International%20Minister%20Ghana/PHOTO-2025-06-02-15-06-38.jpg" 
+                        alt="International Ministry - Ghana - Image 4"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <h3>International Ministry - Ghana</h3>
+                        <p>Image 4 of 5</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img 
+                        src="images/compressed/International%20Minister%20Ghana/PHOTO-2025-06-02-15-09-06.jpg" 
+                        alt="International Ministry - Ghana - Image 5"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <h3>International Ministry - Ghana</h3>
+                        <p>Image 5 of 5</p>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div class="gallery-section">
+                <h2>Mission and Objectives 2023-2025</h2>
+                <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img 
+                        src="images/compressed/Mission%20and%20Objectif%20of%20minister%202023-2025/PHOTO-2026-01-23-20-01-47.jpg" 
+                        alt="Mission and Objectives 2023-2025 - Image 1"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <h3>Mission and Objectives 2023-2025</h3>
+                        <p>Image 1 of 2</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img 
+                        src="images/compressed/Mission%20and%20Objectif%20of%20minister%202023-2025/PHOTO-2026-01-23-20-02-18.jpg" 
+                        alt="Mission and Objectives 2023-2025 - Image 2"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <h3>Mission and Objectives 2023-2025</h3>
+                        <p>Image 2 of 2</p>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div class="gallery-section">
+                <h2>Yaoundé Headquarters Building</h2>
+                <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img 
+                        src="images/compressed/Yaounde%20headquarters%20building%20nearing%20completion/PHOTO-2026-02-23-21-00-20.jpg" 
+                        alt="Yaoundé Headquarters Building - Image 1"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <h3>Yaoundé Headquarters Building</h3>
+                        <p>Image 1 of 2</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img 
+                        src="images/compressed/Yaounde%20headquarters%20building%20nearing%20completion/PHOTO-2026-02-23-21-00-20_1.jpg" 
+                        alt="Yaoundé Headquarters Building - Image 2"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <h3>Yaoundé Headquarters Building</h3>
+                        <p>Image 2 of 2</p>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div class="gallery-section">
+                <h2>International Ministry - South Sudan</h2>
+                <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img 
+                        src="images/compressed/International%20Minister%20South%20Sudan/PHOTO-2025-09-01-12-03-33.jpg" 
+                        alt="International Ministry - South Sudan - Image 1"
+                        class="gallery-image"
+                        loading="lazy"
+                    />
+                    <div class="gallery-overlay">
+                        <h3>International Ministry - South Sudan</h3>
+                        <p>Image 1 of 1</p>
+                    </div>
+                </div>
+                </div>
+            </div>
+
         </div>
     </section>
 
@@ -780,6 +2298,70 @@
             observer.observe(el);
         });
 
+        // Image limiting functionality
+        function initializeImageLimiting() {
+            const gallerySections = document.querySelectorAll('.gallery-section');
+            const initialLimit = 6;
+
+            gallerySections.forEach(section => {
+                const galleryGrid = section.querySelector('.gallery-grid');
+                if (!galleryGrid) return;
+
+                const galleryItems = galleryGrid.querySelectorAll('.gallery-item');
+                const totalImages = galleryItems.length;
+
+                if (totalImages > initialLimit) {
+                    // Hide images beyond the initial limit
+                    galleryItems.forEach((item, index) => {
+                        if (index >= initialLimit) {
+                            item.classList.add('hidden');
+                        }
+                    });
+
+                    // Create and add "Show More" button
+                    const hiddenCount = totalImages - initialLimit;
+                    const showMoreBtn = document.createElement('button');
+                    showMoreBtn.className = 'show-more-btn';
+                    showMoreBtn.textContent = `Show ${hiddenCount} More Image${hiddenCount !== 1 ? 's' : ''}`;
+                    showMoreBtn.setAttribute('aria-label', `Show ${hiddenCount} more images`);
+                    
+                    let isExpanded = false;
+
+                    showMoreBtn.addEventListener('click', () => {
+                        if (isExpanded) {
+                            // Collapse: hide images beyond initial limit
+                            galleryItems.forEach((item, index) => {
+                                if (index >= initialLimit) {
+                                    item.classList.add('hidden');
+                                }
+                            });
+                            showMoreBtn.textContent = `Show ${hiddenCount} More Image${hiddenCount !== 1 ? 's' : ''}`;
+                            showMoreBtn.setAttribute('aria-label', `Show ${hiddenCount} more images`);
+                            isExpanded = false;
+                        } else {
+                            // Expand: show all images
+                            galleryItems.forEach(item => {
+                                item.classList.remove('hidden');
+                            });
+                            showMoreBtn.textContent = 'Show Less';
+                            showMoreBtn.setAttribute('aria-label', 'Show less images');
+                            isExpanded = true;
+                        }
+                    });
+
+                    // Insert button after the gallery grid
+                    galleryGrid.parentNode.insertBefore(showMoreBtn, galleryGrid.nextSibling);
+                }
+            });
+        }
+
+        // Initialize image limiting when DOM is ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initializeImageLimiting);
+        } else {
+            initializeImageLimiting();
+        }
+
         // Hamburger menu toggle
         const hamburger = document.querySelector('.hamburger');
         const navLinks = document.querySelector('.nav-links');
@@ -809,3 +2391,5 @@
     </script>
 </body>
 </html>
+
+
