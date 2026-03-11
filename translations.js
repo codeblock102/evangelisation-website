@@ -12,11 +12,12 @@ const translations = {
     // Hero Section
     hero: {
       title: "Carrying Light to the Heart of Cameroon",
+      subtitle: "LET THERE BE LIGHT PROJECT CAMEROON - Carrying the light to unreached communities in Cameroon",
       cta: "Join the Mission"
     },
     // Our Story
     story: {
-      quote: "\"We go not because it is easy, but because the light must reach those who wait in darkness.\"",
+      quote: "\"We go not because it is easy, but because the light must reach those who dwell in darkness.\"",
       text1: "Lumière Congo was born from a profound calling: to bring the Gospel to unreached villages across Cameroon — particularly in the Eastern region, where communities living in the jungle have never heard the name of Jesus. Led by Brother Daniel, our teams journey into some of the most remote areas, building relationships, sharing truth, and planting seeds of faith that transform entire communities.",
       text2: "From our headquarters church in Yaoundé, we carry out weekly evangelism outreaches, run discipleship schools, and send mission teams across Cameroon and beyond. We also sponsor children's education, provide solar torchlights to families living in darkness, and train local leaders through the Apostolic Bible College. The light we bring doesn't just illuminate; it transforms, heals, and restores.",
       photoCaption1: "Village outreach in Eastern Cameroon.",
@@ -55,6 +56,7 @@ const translations = {
     // Hero Section
     hero: {
       title: "Porter la lumière au cœur du Cameroun",
+      subtitle: "PROJET QU'IL Y AIT DE LA LUMIÈRE CAMEROUN - Porter la lumière aux communautés non atteintes du Cameroun",
       cta: "Rejoindre la mission"
     },
     // Our Story
