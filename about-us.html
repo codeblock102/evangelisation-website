@@ -85,11 +85,66 @@
         }
 
         .logo {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.8rem;
-            font-weight: 600;
-            color: var(--terracotta);
+            display: flex;
+            align-items: center;
+            gap: 10px;
             text-decoration: none;
+        }
+
+        .logo-mark {
+            width: 36px;
+            height: 36px;
+            border-radius: 999px;
+            background: radial-gradient(circle at 30% 20%, #FFFFFF 0%, #FDF8E9 32%, var(--terracotta) 90%);
+            box-shadow: 0 8px 18px rgba(42, 52, 68, 0.25);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .logo-mark::after {
+            content: '';
+            position: absolute;
+            inset: 6px;
+            border-radius: inherit;
+            border: 2px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.25);
+        }
+
+        .logo-icon {
+            position: relative;
+            z-index: 1;
+            width: 16px;
+            height: 16px;
+            border-radius: 3px;
+            background: linear-gradient(145deg, #FFE8A3, #FFFFFF);
+            box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.7), 0 4px 8px rgba(0, 0, 0, 0.15);
+            transform: rotate(-18deg);
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.1;
+        }
+
+        .logo-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.6rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--terracotta);
+        }
+
+        .logo-subtitle {
+            font-size: 0.7rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: rgba(26, 38, 54, 0.7);
         }
 
         .nav-links {
@@ -107,6 +162,135 @@
 
         .nav-links a:hover {
             color: var(--terracotta);
+        }
+
+        /* Dropdown Menu */
+        .nav-item-dropdown {
+            position: relative;
+        }
+
+        .nav-item-dropdown > a {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .dropdown-toggle {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        .dropdown-arrow {
+            width: 12px;
+            height: 12px;
+            transition: transform 0.3s ease;
+            display: inline-block;
+        }
+
+        .nav-item-dropdown.active .dropdown-arrow {
+            transform: rotate(180deg);
+        }
+
+        /* Open dropdown on hover for pointer devices (desktop) */
+        @media (hover: hover) and (pointer: fine) {
+            .nav-item-dropdown:hover .dropdown-menu {
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0);
+            }
+
+            .nav-item-dropdown:hover .dropdown-arrow {
+                transform: rotate(180deg);
+            }
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            margin-top: 10px;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            min-width: 280px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            padding: 8px 0;
+            border: 1px solid rgba(42, 52, 68, 0.1);
+        }
+
+        .nav-item-dropdown.active .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: 12px 20px;
+            color: var(--text-dark);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: all 0.2s ease;
+            border-bottom: 1px solid rgba(42, 52, 68, 0.05);
+        }
+
+        .dropdown-menu a:last-child {
+            border-bottom: none;
+        }
+
+        .dropdown-menu a:hover {
+            background-color: var(--warm-cream);
+            color: var(--terracotta);
+            padding-left: 25px;
+        }
+
+        /* Language Switcher */
+        .language-switcher {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 16px;
+            background-color: rgba(74, 144, 217, 0.1);
+            border: 2px solid rgba(74, 144, 217, 0.3);
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            color: var(--terracotta);
+            font-size: 0.9rem;
+            min-width: 70px;
+            justify-content: center;
+        }
+
+        .language-switcher:hover {
+            background-color: rgba(74, 144, 217, 0.15);
+            border-color: rgba(74, 144, 217, 0.5);
+            transform: scale(1.05);
+        }
+
+        .language-switcher svg {
+            flex-shrink: 0;
+        }
+
+        .language-switcher .lang-text {
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-container {
+            gap: 20px;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
         }
 
         /* Hamburger Menu */
@@ -740,25 +924,58 @@
 
     <nav>
         <div class="nav-container">
-            <a href="index.html" class="logo">Lumière Congo</a>
+            <a href="index.html" class="logo">
+                <span class="logo-mark">
+                    <span class="logo-icon"></span>
+                </span>
+                <span class="logo-text">
+                    <span class="logo-title">Lumière Congo</span>
+                    <span class="logo-subtitle">Carrying light to Cameroon</span>
+                </span>
+            </a>
             <button class="hamburger" aria-label="Toggle menu">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
             <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="get-involved.html">Get Involved</a></li>
-                <li><a href="about-us.html">About Us</a></li>
-                <li><a href="donate.html">Donate</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="index.html" data-translate="nav.home">Home</a></li>
+                <li class="nav-item-dropdown">
+                    <a href="get-involved.html" class="dropdown-toggle" data-translate="nav.getInvolved">
+                        Get Involved
+                        <span class="dropdown-arrow">▼</span>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="get-involved.html#gi-building-project">Building Project</a>
+                        <a href="get-involved.html#gi-evangelize-138-villages">Evangelize 138 Surrounding Villages</a>
+                        <a href="get-involved.html#gi-water-wells">Dig Drinking Water Wells</a>
+                        <a href="get-involved.html#gi-health-center">Build a Health Center</a>
+                    </div>
+                </li>
+                <li><a href="about-us.html" data-translate="nav.about">About Us</a></li>
+                <li><a href="donate.html" data-translate="nav.donate">Donate</a></li>
+                <li class="nav-item-dropdown">
+                    <a href="gallery.html" class="dropdown-toggle" data-translate="nav.gallery">
+                        Gallery
+                        <span class="dropdown-arrow">▼</span>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="gallery.html#gallery-pygmy-students">School Supplies Distribution to Pygmy Students</a>
+                        <a href="gallery.html#gallery-eastern-villages">Support for Eastern Villages</a>
+                        <a href="gallery.html#gallery-edmonton">International Mission - Edmonton, Canada</a>
+                        <a href="gallery.html#gallery-yaounde-supplies">School Supplies Distribution in Yaoundé</a>
+                        <a href="gallery.html#gallery-ghana">International Ministry - Ghana</a>
+                        <a href="gallery.html#gallery-mission-objectives">Mission and Objectives 2023-2025</a>
+                        <a href="gallery.html#gallery-headquarters">Yaoundé Headquarters Building</a>
+                    </div>
+                </li>
             </ul>
         </div>
     </nav>
 
     <div class="page-header">
-        <h1>About Us</h1>
-        <p>Our story, our heart, and the people who make this mission possible</p>
+        <h1 data-translate="aboutUs.title">About Us</h1>
+        <p data-translate="aboutUs.subtitle">Our story, our heart, and the people who make this mission possible</p>
     </div>
 
     <section class="fade-in">
@@ -983,6 +1200,56 @@
                 }
             });
         }
+
+        // Dropdown menu toggle (supports multiple dropdowns)
+        const navDropdowns = document.querySelectorAll('.nav-item-dropdown');
+        const prefersHover = window.matchMedia && window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+        
+        if (navDropdowns.length > 0) {
+            navDropdowns.forEach(dropdown => {
+                const toggle = dropdown.querySelector('.dropdown-toggle');
+                const menu = dropdown.querySelector('.dropdown-menu');
+
+                if (!toggle) return;
+
+                toggle.addEventListener('click', (e) => {
+                    if (prefersHover) {
+                        e.preventDefault();
+                        const isActive = dropdown.classList.contains('active');
+                        
+                        // Close all dropdowns first
+                        navDropdowns.forEach(d => d.classList.remove('active'));
+                        
+                        // Toggle current dropdown
+                        if (!isActive) {
+                            dropdown.classList.add('active');
+                        }
+                    }
+                });
+
+                // Close dropdown when clicking on a dropdown link
+                if (menu) {
+                    menu.querySelectorAll('a').forEach(link => {
+                        link.addEventListener('click', () => {
+                            dropdown.classList.remove('active');
+                        });
+                    });
+                }
+            });
+
+            // Close any open dropdown when clicking outside
+            document.addEventListener('click', (e) => {
+                navDropdowns.forEach(dropdown => {
+                    if (!dropdown.contains(e.target)) {
+                        dropdown.classList.remove('active');
+                    }
+                });
+            });
+        }
     </script>
+    
+    <!-- Language Switcher Scripts -->
+    <script src="translations.js"></script>
+    <script src="language-switcher.js"></script>
 </body>
 </html>

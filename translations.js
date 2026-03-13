@@ -42,6 +42,26 @@ const translations = {
         title: "Humanitarian Aid",
         description: "We provide practical help including solar torchlights for families without electricity, food assistance, and support for vulnerable communities."
       }
+    },
+    // Gallery Page
+    gallery: {
+      title: "Gallery",
+      subtitle: "Moments from our missions to remote villages across Cameroon"
+    },
+    // About Us Page
+    aboutUs: {
+      title: "About Us",
+      subtitle: "Our story, our heart, and the people who make this mission possible"
+    },
+    // Donate Page
+    donate: {
+      title: "Donate",
+      subtitle: "Your gift brings light to villages that have never heard the Gospel"
+    },
+    // Get Involved Page
+    getInvolved: {
+      title: "Get Involved",
+      subtitle: "Evangelism, humanitarian projects, and community development across Cameroon — discover the projects that are transforming lives and how you can be a part of it"
     }
   },
   fr: {
@@ -86,6 +106,26 @@ const translations = {
         title: "Aide humanitaire",
         description: "Nous fournissons une aide pratique incluant des lampes solaires pour les familles sans électricité, une assistance alimentaire et un soutien aux communautés vulnérables."
       }
+    },
+    // Gallery Page
+    gallery: {
+      title: "Galerie",
+      subtitle: "Moments de nos missions dans les villages reculés du Cameroun"
+    },
+    // About Us Page
+    aboutUs: {
+      title: "À propos de nous",
+      subtitle: "Notre histoire, notre cœur et les personnes qui rendent cette mission possible"
+    },
+    // Donate Page
+    donate: {
+      title: "Faire un don",
+      subtitle: "Votre don apporte la lumière aux villages qui n'ont jamais entendu l'Évangile"
+    },
+    // Get Involved Page
+    getInvolved: {
+      title: "S'impliquer",
+      subtitle: "Évangélisation, projets humanitaires et développement communautaire à travers le Cameroun — découvrez les projets qui transforment des vies et comment vous pouvez y participer"
     }
   }
 };
