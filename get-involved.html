@@ -94,6 +94,7 @@
             align-items: center;
             gap: 10px;
             text-decoration: none;
+            min-width: 0;
         }
 
         .logo-mark {
@@ -133,23 +134,26 @@
         .logo-text {
             display: flex;
             flex-direction: column;
-            line-height: 1.1;
+            line-height: 1.15;
+            min-width: 0;
         }
 
         .logo-title {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 1.6rem;
+            font-size: 1.15rem;
             font-weight: 600;
-            letter-spacing: 0.08em;
+            letter-spacing: 0.06em;
             text-transform: uppercase;
             color: var(--terracotta);
+            line-height: 1.2;
         }
 
         .logo-subtitle {
-            font-size: 0.7rem;
-            letter-spacing: 0.18em;
+            font-size: 0.62rem;
+            letter-spacing: 0.1em;
             text-transform: uppercase;
             color: rgba(26, 38, 54, 0.7);
+            line-height: 1.35;
         }
 
         .nav-links {
@@ -547,6 +551,20 @@
         .fade-in.visible {
             opacity: 1;
             transform: translateY(0);
+        }
+
+        /* Mission cards should always be visible, not affected by fade-in */
+        .mission-card.fade-in,
+        .fade-in .mission-card {
+            opacity: 1 !important;
+            transform: none !important;
+        }
+
+        /* Section containing mission cards should be visible immediately */
+        section.fade-in:has(.mission-card),
+        .fade-in:has(.mission-card) {
+            opacity: 1 !important;
+            transform: none !important;
         }
 
         /* On mobile, disable fade-in so content is always visible */
@@ -1201,8 +1219,8 @@
                     <span class="logo-icon"></span>
                 </span>
                 <span class="logo-text">
-                    <span class="logo-title">Lumière Congo</span>
-                    <span class="logo-subtitle">Carrying light to Cameroon</span>
+                    <span class="logo-title">JUBILEE APOSTOLIC HARVEST MINISTRIES,</span>
+                    <span class="logo-subtitle">Proclaiming The Jubilee Of The Lord To The Nations</span>
                 </span>
             </a>
             <button class="hamburger" aria-label="Toggle menu">
@@ -1234,9 +1252,9 @@
                     <div class="dropdown-menu">
                         <a href="gallery.html#gallery-pygmy-students">School Supplies Distribution to Pygmy Students</a>
                         <a href="gallery.html#gallery-eastern-villages">Support for Eastern Villages</a>
-                        <a href="gallery.html#gallery-edmonton">International Mission - Edmonton, Canada</a>
+                        <a href="gallery.html#gallery-edmonton">Apostolic International Mission - Edmonton, Canada</a>
                         <a href="gallery.html#gallery-yaounde-supplies">School Supplies Distribution in Yaoundé</a>
-                        <a href="gallery.html#gallery-ghana">International Ministry - Ghana</a>
+                        <a href="gallery.html#gallery-ghana">International Mission - Ghana</a>
                         <a href="gallery.html#gallery-mission-objectives">Mission and Objectives 2023-2025</a>
                         <a href="gallery.html#gallery-headquarters">Yaoundé Headquarters Building</a>
                     </div>
@@ -1302,7 +1320,7 @@
                 <!-- Project 5 -->
                 <div class="mission-card">
                     <div class="mission-image">
-                        <img src="images/compressed/Distribution%20of%20school%20supplies%20to%20Pygmy%20students%20from%20the%20eastern%20part%20of%20the%20country%20in%20the%20village/PHOTO-2026-02-08-16-51-06_4.jpg" alt="Children at a primary school in Cameroon" loading="lazy">
+                        <img src="images/compressed/Support%20for%20the%20population%20of%20villages%20in%20the%20East/PHOTO-2026-02-23-20-53-15_1.jpg" alt="Solar torchlight bringing light to families in Eastern Cameroon" loading="lazy">
                     </div>
                     <div class="icon">🏫</div>
                     <h2>Build a Primary School</h2>
@@ -1313,7 +1331,7 @@
                 <!-- Project 6: Let There Be Light -->
                 <div class="mission-card">
                     <div class="mission-image">
-                        <img src="images/compressed/Support%20for%20the%20population%20of%20villages%20in%20the%20East/PHOTO-2026-02-23-20-53-15_1.jpg" alt="Solar torchlight bringing light to families in Eastern Cameroon" loading="lazy">
+                        <img src="images/compressed/Distribution%20of%20school%20supplies%20to%20Pygmy%20students%20from%20the%20eastern%20part%20of%20the%20country%20in%20the%20village/PHOTO-2026-02-08-16-51-06_4.jpg" alt="Children at a primary school in Cameroon" loading="lazy">
                     </div>
                     <div class="icon">🔦</div>
                     <h2>"Let There Be Light" Project</h2>
@@ -1432,7 +1450,7 @@
             <div class="footer-top">
                 <div class="footer-brand">
                     <h3>Lumière Congo</h3>
-                    <p>Carrying light to the heart of Cameroon, one village at a time. Join us in bringing hope and truth to those who need it most.</p>
+                    <p>Proclaiming The Jubilee Of The Lord To The Nations, One Village At A Time. Join Us In Bringing Hope And Truth To Those Who Need It Most.</p>
                     <div class="footer-social">
                         <a href="#" class="social-icon" aria-label="Facebook">f</a>
                         <a href="#" class="social-icon" aria-label="Instagram">@</a>
@@ -1486,7 +1504,12 @@
             }, observerOptions);
 
             document.querySelectorAll('.fade-in').forEach(el => {
-                observer.observe(el);
+                // Immediately show sections containing mission cards
+                if (el.querySelector('.mission-card')) {
+                    el.classList.add('visible');
+                } else {
+                    observer.observe(el);
+                }
             });
         } else {
             // Older mobile browsers: show content immediately
@@ -1557,94 +1580,94 @@
         // Village Data with Zone Assignment
         const villages = [
             {
-                name: "Kribi Region",
-                region: "South Province",
-                lat: 2.9390,
-                lng: 9.9079,
-                year: 2018,
-                zone: "zone1",
-                description: "Coastal evangelism outreach. Established local church that serves as a base for nearby communities."
-            },
-            {
-                name: "Douala Outskirts",
-                region: "Littoral Province",
-                lat: 4.0511,
-                lng: 9.7679,
-                year: 2022,
-                zone: "zone1",
-                description: "Urban outreach providing community support and planting new believers' groups."
-            },
-            {
-                name: "Buea Community",
-                region: "South West Province",
-                lat: 4.1539,
-                lng: 9.2410,
-                year: 2022,
-                zone: "zone1",
-                description: "University town ministry engaging youth and distributing Bibles to students."
-            },
-            {
-                name: "Yaoundé Surroundings",
-                region: "Centre Province",
-                lat: 3.8480,
-                lng: 11.5021,
-                year: 2019,
-                zone: "zone2",
-                description: "Central base for discipleship training and equipping local leaders to multiply the work."
-            },
-            {
-                name: "Bertoua Region",
+                name: "LELEN",
                 region: "East Province",
-                lat: 4.5773,
-                lng: 13.6846,
-                year: 2020,
+                lat: 3.4567,
+                lng: 13.6234,
+                year: 2024,
                 zone: "zone2",
-                description: "Brought clean water and spiritual hope to remote eastern communities."
+                description: "Evangelism outreach bringing the Gospel to unreached communities. Entire village experienced transformation during Easter 2024 outreach."
             },
             {
-                name: "Bamenda Outreach",
-                region: "North West Province",
-                lat: 5.9586,
-                lng: 10.1528,
-                year: 2021,
-                zone: "zone3",
-                description: "Peace-building initiative through the Gospel in highland communities."
-            },
-            {
-                name: "Bafoussam Village",
-                region: "West Province",
-                lat: 5.4778,
-                lng: 10.4181,
-                year: 2020,
-                zone: "zone3",
-                description: "Medical and practical care mission alongside active church planting."
-            },
-            {
-                name: "Garoua Center",
-                region: "North Province",
-                lat: 9.3000,
-                lng: 13.4000,
-                year: 2019,
-                zone: "zone4",
-                description: "Northern initiative establishing Bible study groups and leadership training."
-            },
-            {
-                name: "Ngaoundéré Community",
-                region: "Adamawa Province",
-                lat: 7.3227,
-                lng: 13.5836,
+                name: "NDIMAKO",
+                region: "East Province",
+                lat: 3.5234,
+                lng: 13.7123,
                 year: 2024,
-                zone: "zone4",
-                description: "Reaching nomadic and pastoral communities with the message of hope."
+                zone: "zone2",
+                description: "Baka Pygmy community outreach. Community renounced allegiance to forest spirits and embraced the Word of God with overflowing joy."
             },
             {
-                name: "Maroua Outreach",
-                region: "Far North Province",
-                lat: 10.5936,
-                lng: 14.3258,
+                name: "ETEKESSENG",
+                region: "East Province",
+                lat: 3.3890,
+                lng: 13.5456,
+                year: 2023,
+                zone: "zone2",
+                description: "Remote village evangelism mission. Sharing the Gospel through personal relationships and community gatherings."
+            },
+            {
+                name: "DOUMSOG",
+                region: "East Province",
+                lat: 3.6123,
+                lng: 13.8012,
+                year: 2023,
+                zone: "zone2",
+                description: "Jungle village outreach. Teams traveled through dense forest trails to bring light to unreached families."
+            },
+            {
+                name: "NGOYLA",
+                region: "East Province",
+                lat: 3.3456,
+                lng: 13.4789,
+                year: 2023,
+                zone: "zone2",
+                description: "Community evangelism and discipleship. Establishing Bible study groups and training local leaders."
+            },
+            {
+                name: "ETAT- CHEFFERIE",
+                region: "East Province",
+                lat: 3.6789,
+                lng: 13.8901,
                 year: 2024,
-                zone: "zone4",
-                description: "First Gospel presentations in the arid far north regions."
+                zone: "zone2",
+                description: "Traditional leadership outreach. Building relationships with village chiefs and community leaders to share the Gospel."
+            },
+            {
+                name: "MENKOUM",
+                region: "East Province",
+                lat: 3.3012,
+                lng: 13.4123,
+                year: 2023,
+                zone: "zone2",
+                description: "Remote community mission. Providing solar torchlights and sharing the message of hope with families living in darkness."
+            },
+            {
+                name: "DJADOM",
+                region: "East Province",
+                lat: 3.7456,
+                lng: 13.9567,
+                year: 2024,
+                zone: "zone2",
+                description: "Village evangelism outreach. Personal conversations and open-air gatherings bringing transformation to the community."
+            },
+            {
+                name: "NTAM- CAMEROUN",
+                region: "East Province",
+                lat: 3.2567,
+                lng: 13.3456,
+                year: 2023,
+                zone: "zone2",
+                description: "Eastern region mission. Planting seeds of faith that transform entire communities through the power of the Gospel."
+            },
+            {
+                name: "MBALAM",
+                region: "East Province",
+                lat: 3.8123,
+                lng: 14.0123,
+                year: 2024,
+                zone: "zone2",
+                description: "Community outreach and discipleship. Training local believers to continue the work and multiply the impact."
             }
         ];
 

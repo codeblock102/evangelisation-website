@@ -11,8 +11,8 @@ const translations = {
     },
     // Hero Section
     hero: {
-      title: "Carrying Light to the Heart of Cameroon",
-      subtitle: "LET THERE BE LIGHT PROJECT CAMEROON - Carrying the light to unreached communities in Cameroon",
+      title: "Proclaiming The Jubilee Of The Lord To The Nations",
+      subtitle: "Evangelism, Church Planting, And Humanitarian Ministry Across Cameroon",
       cta: "Join the Mission"
     },
     // Our Story
@@ -75,8 +75,8 @@ const translations = {
     },
     // Hero Section
     hero: {
-      title: "Porter la lumière au cœur du Cameroun",
-      subtitle: "PROJET QU'IL Y AIT DE LA LUMIÈRE CAMEROUN - Porter la lumière aux communautés non atteintes du Cameroun",
+      title: "Proclamant Le Jubilé Du Seigneur Aux Nations",
+      subtitle: "Évangélisation, Plantation D'Églises Et Ministère Humanitaire Au Cameroun",
       cta: "Rejoindre la mission"
     },
     // Our Story

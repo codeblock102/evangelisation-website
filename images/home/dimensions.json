@@ -1,0 +1,30 @@
+{
+  "home-story-village.jpg": {
+    "width": 900,
+    "height": 675
+  },
+  "home-story-yaounde.jpg": {
+    "width": 900,
+    "height": 674
+  },
+  "home-portrait-shekinah.jpg": {
+    "width": 480,
+    "height": 222
+  },
+  "home-portrait-daniel.jpg": {
+    "width": 480,
+    "height": 480
+  },
+  "home-portrait-mendo.jpg": {
+    "width": 480,
+    "height": 1063
+  },
+  "home-portrait-bivina.jpg": {
+    "width": 480,
+    "height": 447
+  },
+  "home-portrait-sylvia.jpg": {
+    "width": 480,
+    "height": 416
+  }
+}

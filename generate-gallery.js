@@ -11,10 +11,10 @@ const compressedDir = path.join(__dirname, 'images', 'compressed');
 const folderDisplayNames = {
   'Distribution of school supplies to Pygmy students from the eastern part of the country in the village': 'School Supplies Distribution to Pygmy Students',
   'Distribution of school supplies to students in Yaoundé': 'School Supplies Distribution in Yaoundé',
-  'International Minister Ghana': 'International Ministry - Ghana',
-  'International Minister South Sudan': 'International Ministry - South Sudan',
+  'International Minister Ghana': 'International Mission - Ghana',
+  'International Minister South Sudan': 'Apostolic International Mission - South Sudan',
   'Mission and Objectif of minister 2023-2025': 'Mission and Objectives 2023-2025',
-  'Mission at international Edmonton Canada': 'International Mission - Edmonton, Canada',
+  'Mission at international Edmonton Canada': 'Apostolic International Mission - Edmonton, Canada',
   'Support for the population of villages in the East': 'Support for Eastern Villages',
   'Yaounde headquarters building nearing completion': 'Yaoundé Headquarters Building',
   'Deliverance in the middle of the ministry': 'Deliverance Ministry',

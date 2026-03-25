@@ -4,7 +4,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "compress-images": "node compress-images.js"
+    "compress-images": "node compress-images.js",
+    "optimize-homepage-images": "node optimize-homepage-images.js"
   },
   "devDependencies": {
     "sharp": "^0.33.0"
