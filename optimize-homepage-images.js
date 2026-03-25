@@ -63,8 +63,8 @@ const jobs = [
     w: 480,
   },
   {
-    input: 'images/People/Sylvia NGUH.jpg',
-    out: 'home-portrait-sylvia.jpg',
+    input: 'images/People/Nguh Sylvia Bih.jpg',
+    out: 'home-portrait-nguh.jpg',
     w: 480,
   },
 ];
