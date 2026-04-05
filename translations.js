@@ -18,7 +18,7 @@ const translations = {
     // Our Story
     story: {
       quote: "\"We go not because it is easy, but because the light must reach those who dwell in darkness.\"",
-      text1: "Lumière Congo was born from a profound calling: to bring the Gospel to unreached villages across Cameroon — particularly in the Eastern region, where communities living in the jungle have never heard the name of Jesus. Led by Brother Daniel, our teams journey into some of the most remote areas, building relationships, sharing truth, and planting seeds of faith that transform entire communities.",
+      text1: "JUBILEE APOSTOLIC HARVEST MINISTRIES was born from a profound calling: to bring the Gospel to unreached villages across Cameroon — particularly in the Eastern region, where communities living in the jungle have never heard the name of Jesus. Led by Brother Daniel, our teams journey into some of the most remote areas, building relationships, sharing truth, and planting seeds of faith that transform entire communities.",
       text2: "From our headquarters church in Yaoundé, we carry out weekly evangelism outreaches, run discipleship schools, and send mission teams across Cameroon and beyond. We also sponsor children's education, provide solar torchlights to families living in darkness, and train local leaders through the Apostolic Bible College. The light we bring doesn't just illuminate; it transforms, heals, and restores.",
       photoCaption1: "Village outreach in Eastern Cameroon.",
       photoCaption2: "Local believers gathering for worship in Yaoundé."
@@ -82,7 +82,7 @@ const translations = {
     // Our Story
     story: {
       quote: "\"Nous y allons non pas parce que c'est facile, mais parce que la lumière doit atteindre ceux qui attendent dans les ténèbres.\"",
-      text1: "Lumière Congo est née d'un appel profond : apporter l'Évangile aux villages non atteints à travers le Cameroun — particulièrement dans la région de l'Est, où les communautés vivant dans la jungle n'ont jamais entendu le nom de Jésus. Dirigées par le frère Daniel, nos équipes se rendent dans certaines des zones les plus reculées, construisant des relations, partageant la vérité et plantant des graines de foi qui transforment des communautés entières.",
+      text1: "JUBILEE APOSTOLIC HARVEST MINISTRIES est né d'un appel profond : apporter l'Évangile aux villages non atteints à travers le Cameroun — particulièrement dans la région de l'Est, où les communautés vivant dans la jungle n'ont jamais entendu le nom de Jésus. Dirigées par le frère Daniel, nos équipes se rendent dans certaines des zones les plus reculées, construisant des relations, partageant la vérité et plantant des graines de foi qui transforment des communautés entières.",
       text2: "Depuis notre église principale à Yaoundé, nous menons des actions d'évangélisation hebdomadaires, dirigeons des écoles de disciples et envoyons des équipes missionnaires à travers le Cameroun et au-delà. Nous parrainons également l'éducation des enfants, fournissons des lampes solaires aux familles vivant dans l'obscurité et formons des leaders locaux à travers le Collège Biblique Apostolique. La lumière que nous apportons ne fait pas qu'illuminer ; elle transforme, guérit et restaure.",
       photoCaption1: "Action dans un village de l'Est du Cameroun.",
       photoCaption2: "Croyants locaux se rassemblant pour le culte à Yaoundé."
